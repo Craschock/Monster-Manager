@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://tugmlpebvabs"
-path="res://.godot/imported/Blockout.glb-1af92bb06fbf8b99189a66b309dc7276.scn"
+path="res://.godot/imported/Blockout.glb-058a0447ce9a64e2f67f6fe36a2fd71d.scn"
 
 [deps]
 
-source_file="res://!/geometry/Blockout.glb"
-dest_files=["res://.godot/imported/Blockout.glb-1af92bb06fbf8b99189a66b309dc7276.scn"]
+source_file="res://!/assets/geometry/Blockout.glb"
+dest_files=["res://.godot/imported/Blockout.glb-058a0447ce9a64e2f67f6fe36a2fd71d.scn"]
 
 [params]
 

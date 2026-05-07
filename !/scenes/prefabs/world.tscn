@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://dltaqbilikqfn"]
-
-[ext_resource type="PackedScene" uid="uid://tugmlpebvabs" path="res://!/geometry/Blockout.glb" id="1_2ygb3"]
-
-[node name="World" type="Node3D" unique_id=387539890]
-
-[node name="Blockout" parent="." unique_id=1079165733 instance=ExtResource("1_2ygb3")]

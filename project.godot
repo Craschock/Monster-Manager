@@ -14,6 +14,16 @@ config/name="Monster Manager"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[file_customization]
+
+folder_colors={
+"res://!/assets/": "purple",
+"res://!/scenes/components/": "gray",
+"res://!/scenes/entities/": "blue",
+"res://!/scenes/menus/": "orange",
+"res://!/scenes/prefabs/": "red"
+}
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
