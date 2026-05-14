@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b3kd4uqq0ivsp"]
+
+[ext_resource type="Script" uid="uid://db3fsu7m8bpdg" path="res://dragon.gd" id="1_g2tbl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oyhfb"]
+albedo_color = Color(0.78605044, 0.12126329, 9.62615e-08, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g2tbl"]
+material = SubResource("StandardMaterial3D_oyhfb")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oq5cr"]
+
+[node name="Dragon" type="StaticBody3D" unique_id=9164169]
+script = ExtResource("1_g2tbl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=448106840]
+mesh = SubResource("BoxMesh_g2tbl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=744021491]
+shape = SubResource("BoxShape3D_oq5cr")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
