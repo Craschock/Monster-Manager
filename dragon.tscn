@@ -20,5 +20,3 @@ mesh = SubResource("BoxMesh_g2tbl")
 shape = SubResource("BoxShape3D_oq5cr")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

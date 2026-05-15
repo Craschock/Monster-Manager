@@ -1,20 +1,15 @@
 extends StaticBody3D
 
+class_name Dragon
+
+signal dragon_clicked(dragon: Dragon)
+
 var is_red: bool = true
-
-func _on_mouse_entered() -> void:
-	print("entered")
-
-
-func _on_mouse_exited() -> void:
-	print("exited")
-
 
 func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed:
-			print("clicked")
-			toggle_color()
+			dragon_clicked.emit(self)
 			
 
 func toggle_color():
