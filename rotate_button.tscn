@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dkfxbcfqk3dk8"]
+
+[node name="Rotate" type="Button" unique_id=190738528]
+offset_left = 69.0
+offset_top = 1182.0
+offset_right = 269.0
+offset_bottom = 1322.0
+theme_override_font_sizes/font_size = 100
+text = "⟳"

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bdbib8khd22jp"]
+
+[ext_resource type="PackedScene" uid="uid://dkfxbcfqk3dk8" path="res://rotate_button.tscn" id="1_fyqef"]
+
+[node name="UI" type="Node2D" unique_id=757927047]
+
+[node name="RotateAntiClockwise" parent="." unique_id=190738528 instance=ExtResource("1_fyqef")]
+text = "⟲"
+
+[node name="RotateClockwise" parent="." unique_id=290634585 instance=ExtResource("1_fyqef")]
+offset_left = 295.0
+offset_top = 1183.0
+offset_right = 495.0
+offset_bottom = 1328.0
