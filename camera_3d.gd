@@ -52,10 +52,13 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("rotate_clockwise"):
 			source_rotation = rotation.y
 			target_rotation = source_rotation - PI/2
+			target_rotation = fmod(target_rotation, TAU)
 			elapsed = 0.0
+			
 		if Input.is_action_just_pressed("rotate_anticlockwise"):
 			source_rotation = rotation.y
 			target_rotation = source_rotation + PI/2
+			target_rotation = fmod(target_rotation, TAU)
 			elapsed = 0.0
 	else:
 		elapsed += delta * angular_speed
