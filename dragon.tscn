@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://b4y40p2uakyet"]
+
+[ext_resource type="Script" uid="uid://d3cflad60meec" path="res://dragon.gd" id="1_ixu8j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1krxc"]
+size = Vector3(2, 1, 2)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ixu8j"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n6spy"]
+
+[node name="Dragon" type="Node3D" unique_id=1896641644]
+script = ExtResource("1_ixu8j")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1815922867]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=558261031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_1krxc")
+
+[node name="Model" type="StaticBody3D" parent="." unique_id=91543039]
+collision_layer = 2
+collision_mask = 7
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Model" unique_id=964084557]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0)
+mesh = SubResource("CapsuleMesh_ixu8j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Model" unique_id=2029610885]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_n6spy")
+
+[node name="TaskTimer" type="Timer" parent="." unique_id=1891377130]
+one_shot = true
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="timeout" from="TaskTimer" to="." method="_on_task_timer_timeout"]
