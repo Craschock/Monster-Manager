@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bthtrlr50lr6y"]
+
+[ext_resource type="Script" uid="uid://bkbvauq0o56xt" path="res://!/scripts/entities/StateMachine/StateMachine.gd" id="1_35uh4"]
+[ext_resource type="Script" uid="uid://dbgvkqp24dg6w" path="res://!/scripts/entities/StateMachine/state.gd" id="2_11kg5"]
+
+[node name="BaseEntity" type="CharacterBody3D" unique_id=1660977353]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=493728355]
+
+[node name="Visuals" type="Node3D" parent="." unique_id=675076071]
+
+[node name="Components" type="Node" parent="." unique_id=1083894879]
+
+[node name="StateMachine" type="Node" parent="." unique_id=1681997412 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("1_35uh4")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1294836889]
+script = ExtResource("2_11kg5")

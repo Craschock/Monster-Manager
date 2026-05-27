@@ -11,18 +11,30 @@ config_version=5
 [application]
 
 config/name="Monster Manager"
+run/main_scene="uid://lsujlyk4ow3t"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+UIManager="*uid://ol5hmo4n3hby"
 
 [file_customization]
 
 folder_colors={
 "res://!/assets/": "purple",
+"res://!/resources/": "green",
+"res://!/scenes/": "gray",
 "res://!/scenes/components/": "gray",
-"res://!/scenes/entities/": "blue",
-"res://!/scenes/menus/": "orange",
-"res://!/scenes/prefabs/": "red"
+"res://!/scenes/entities/": "gray",
+"res://!/scenes/menus/": "gray",
+"res://!/scenes/prefabs/": "gray",
+"res://!/scripts/": "yellow"
 }
+
+[global_group]
+
+selectable="Entities that can be selected by the player"
 
 [physics]
 
