@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 UIManager="*uid://ol5hmo4n3hby"
+CurrencyManager="*uid://dln3a2vwxvky"
+SaveManager="*uid://cygxm84inis1j"
 
 [file_customization]
 
