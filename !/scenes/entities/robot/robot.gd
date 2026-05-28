@@ -5,6 +5,7 @@ class_name Robot
 var is_selected: bool = false
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
+@onready var mesh: MeshInstance3D = $MeshInstance3D
 
 const SPEED = 5.0
 
@@ -20,17 +21,22 @@ func set_target_position(position: Vector3):
 	print("navigating to %s..." % position)
 	nav_agent.target_position = position
 
-#func select():
-	#is_selected = true
-	#$Outline.visible = true
-	#
-#func deselect():
-	#is_selected = false
-	#$Outline.visible = false
+func select():
+	var color = Color.DARK_BLUE
+	var mat = StandardMaterial3D.new()
+	mat.albedo_color = color
+	mesh.material_override = mat
+	
+	
+func deselect():
+	var color = Color.SKY_BLUE
+	var mat = StandardMaterial3D.new()
+	mat.albedo_color = color
+	mesh.material_override = mat
 
 
 func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed:
+			print("Robot sclicked")
 			Events.robot_clicked.emit(self)
-			

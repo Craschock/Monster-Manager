@@ -22,3 +22,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_t22qa")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1434063140]
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

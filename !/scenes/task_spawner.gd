@@ -1,7 +1,5 @@
 extends Node
 
-
-
 const TaskScn = preload("res://!/scenes/task.tscn")
 
 # instead of colors, use models
@@ -14,7 +12,7 @@ const TYPE_TO_MODEL = {
 const CAPACITY = 3
 
 var type_to_sp: Dictionary[Task.Type, Area3D]
-var tasks: Dictionary
+var tasks: Dictionary[Task.Type, Array]
 
 func _ready() -> void:
 	var spawn_point1: Area3D = $Task1SpawnPoint
@@ -53,5 +51,24 @@ func create_new_task() -> void:
 	task.set_color(color)
 	task.visible = true
 	
-	tasks[type].append(task)
-	
+	tasks[type].push_back(task)
+
+
+func _on_spawn_point_body_entered(body: Node3D, type: Task.Type) -> void:
+	if body is Robot:
+		var robot = body as Robot
+		if !tasks[type].is_empty():
+			var task: Task = tasks[type].pop_back()
+			task.carrier = robot
+
+
+func _on_task_1_spawn_point_body_entered(body: Node3D) -> void:
+	_on_spawn_point_body_entered(body, Task.Type.TYPE1)
+
+
+func _on_task_2_spawn_point_body_entered(body: Node3D) -> void:
+	_on_spawn_point_body_entered(body, Task.Type.TYPE2)
+
+
+func _on_task_3_spawn_point_body_entered(body: Node3D) -> void:
+	_on_spawn_point_body_entered(body, Task.Type.TYPE3)

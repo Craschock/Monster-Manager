@@ -17,3 +17,6 @@ autostart = true
 [node name="Task3SpawnPoint" parent="." unique_id=1216308898 instance=ExtResource("2_plc02")]
 
 [connection signal="timeout" from="NewTaskTimer" to="." method="_on_new_task_timer_timeout"]
+[connection signal="body_entered" from="Task1SpawnPoint" to="." method="_on_task_1_spawn_point_body_entered"]
+[connection signal="body_entered" from="Task2SpawnPoint" to="." method="_on_task_2_spawn_point_body_entered"]
+[connection signal="body_entered" from="Task3SpawnPoint" to="." method="_on_task_3_spawn_point_body_entered"]

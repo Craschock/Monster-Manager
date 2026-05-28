@@ -27,10 +27,8 @@ func start_timer() -> void:
 
 
 func _on_new_dragon_timer_timeout() -> void:
-	print("Spawning..")
 	if !free_spawn_points.is_empty():
 		var spawn_point: SpawnPoint = free_spawn_points.pick_random()
-		print("There is free space")
 		var dragon: Dragon = DragonScn.instantiate()
 		dragon.position = spawn_point.position
 		dragon.dragon_leaving.connect(_on_dragon_leaving)
@@ -39,13 +37,12 @@ func _on_new_dragon_timer_timeout() -> void:
 		free_spawn_points.erase(spawn_point)
 		occupied_spawn_points[dragon] = spawn_point
 	else:
-		print("All spaces occupied")
+		pass
 		
 	start_timer()
 
 
 func _on_dragon_leaving(dragon: Dragon) -> void:
-	print("Freeing occupied space")
 	var spawn_point = occupied_spawn_points[dragon]
 	occupied_spawn_points.erase(dragon)
 	free_spawn_points.append(spawn_point)
