@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://tugmlpebvabs" path="res://!/assets/geometry/Blockout.glb" id="1_6ydyh"]
 [ext_resource type="PackedScene" uid="uid://dj74vh1w1x4gh" path="res://camera_3d.tscn" id="2_ifcfv"]
 [ext_resource type="PackedScene" uid="uid://bdbib8khd22jp" path="res://ui.tscn" id="3_y2q83"]
+[ext_resource type="PackedScene" uid="uid://chdlf20qdrj2l" path="res://!/scenes/dragon_spawner/dragon_spawner.tscn" id="5_eox87"]
+[ext_resource type="PackedScene" uid="uid://mtucxswpq4n5" path="res://!/scenes/dragon_spawner/spawn_point.tscn" id="6_3c6ts"]
 
 [node name="World" type="Node3D" unique_id=387539890]
 
@@ -12,13 +14,25 @@
 transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 15, 19)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=571358143]
-transform = Transform3D(0.635842, 0.6638355, -0.3937351, 0.17433406, 0.37342864, 0.91113055, 0.75187284, -0.6479765, 0.12171246, 0, 8, 0)
+transform = Transform3D(0.6358419, 0.6638356, -0.3937351, 0.17433403, 0.3734286, 0.9111304, 0.75187266, -0.6479764, 0.12171243, 0, 8, 0)
 
 [node name="UI" parent="." unique_id=757927047 instance=ExtResource("3_y2q83")]
+
+[node name="PlayerUI" type="CanvasLayer" parent="." unique_id=1797392603]
+
+[node name="DragonSpawner" parent="." unique_id=2000993081 instance=ExtResource("5_eox87")]
+
+[node name="SpawnPoint1" parent="DragonSpawner" index="1" unique_id=585279413]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.881871, -9.536743e-07, 14.714339)
+
+[node name="SpawnPoint2" parent="DragonSpawner" unique_id=1577506908 instance=ExtResource("6_3c6ts")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1645155, 0, 14.6240425)
+
+[node name="SpawnPoint3" parent="DragonSpawner" unique_id=1906423705 instance=ExtResource("6_3c6ts")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.511456, 0, -0.20553017)
 
 [connection signal="pressed" from="UI/RotateAntiClockwise" to="Camera3D" method="_on_rotate_anti_clockwise_pressed"]
 [connection signal="pressed" from="UI/RotateClockwise" to="Camera3D" method="_on_rotate_clockwise_pressed"]
 
-[node name="PlayerUI" type="CanvasLayer" parent="." unique_id=1797392603]
-
 [editable path="UI"]
+[editable path="DragonSpawner"]

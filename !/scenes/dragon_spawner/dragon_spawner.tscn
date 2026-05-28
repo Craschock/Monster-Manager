@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://chdlf20qdrj2l"]
+
+[ext_resource type="Script" uid="uid://ctffwjnmrdamc" path="res://!/scenes/dragon_spawner/dragon_spawner.gd" id="1_4bndy"]
+[ext_resource type="PackedScene" uid="uid://mtucxswpq4n5" path="res://!/scenes/dragon_spawner/spawn_point.tscn" id="2_qb125"]
+
+[node name="DragonSpawner" type="Node" unique_id=2000993081]
+script = ExtResource("1_4bndy")
+
+[node name="NewDragonTimer" type="Timer" parent="." unique_id=163237900]
+one_shot = true
+
+[node name="SpawnPoint1" parent="." unique_id=585279413 instance=ExtResource("2_qb125")]
+
+[connection signal="timeout" from="NewDragonTimer" to="." method="_on_new_dragon_timer_timeout"]

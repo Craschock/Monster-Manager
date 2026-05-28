@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://mtucxswpq4n5"]
+
+[ext_resource type="Script" uid="uid://br620gv7lhfgq" path="res://!/scenes/dragon_spawner/spawn_point.gd" id="1_5ancg"]
+
+[node name="SpawnPoint" type="Marker3D" unique_id=585279413]
+script = ExtResource("1_5ancg")
