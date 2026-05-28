@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://mtucxswpq4n5" path="res://!/scenes/dragon_spawner/spawn_point.tscn" id="6_3c6ts"]
 [ext_resource type="PackedScene" uid="uid://csvsuqeoivur0" path="res://!/scenes/robot_manager.tscn" id="6_7kto3"]
 [ext_resource type="PackedScene" uid="uid://cjn0jnsbyu5tn" path="res://!/scenes/shop.tscn" id="7_7kto3"]
+[ext_resource type="PackedScene" uid="uid://bk7y221frgjcy" path="res://!/scenes/task_spawner.tscn" id="8_em27n"]
 
 [node name="World" type="Node3D" unique_id=387539890]
 
@@ -46,9 +47,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 
 [node name="Shop" parent="." unique_id=1139307655 instance=ExtResource("7_7kto3")]
 
+[node name="TaskSpawner" parent="." unique_id=2017946129 instance=ExtResource("8_em27n")]
+
+[node name="Task1SpawnPoint" parent="TaskSpawner" index="1" unique_id=1125616198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.80942, 0.72623634, 6.2182627)
+
+[node name="Task2SpawnPoint" parent="TaskSpawner" index="2" unique_id=816336724]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 11)
+
+[node name="Task3SpawnPoint" parent="TaskSpawner" index="3" unique_id=1216308898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 17)
+
 [connection signal="pressed" from="UI/RotateAntiClockwise" to="Camera3D" method="_on_rotate_anti_clockwise_pressed"]
 [connection signal="pressed" from="UI/RotateClockwise" to="Camera3D" method="_on_rotate_clockwise_pressed"]
 
 [editable path="UI"]
 [editable path="DragonSpawner"]
 [editable path="RobotManager"]
+[editable path="TaskSpawner"]

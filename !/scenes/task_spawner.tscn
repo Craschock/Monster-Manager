@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bk7y221frgjcy"]
+
+[ext_resource type="Script" uid="uid://3ffbb0rxsm13" path="res://!/scenes/task_spawner.gd" id="1_gerjr"]
+[ext_resource type="PackedScene" uid="uid://drm30dfny4dhf" path="res://!/scenes/task_spawn_point.tscn" id="2_plc02"]
+
+[node name="TaskSpawner" type="Node" unique_id=2017946129]
+script = ExtResource("1_gerjr")
+
+[node name="NewTaskTimer" type="Timer" parent="." unique_id=1363970363]
+wait_time = 2.0
+autostart = true
+
+[node name="Task1SpawnPoint" parent="." unique_id=1125616198 instance=ExtResource("2_plc02")]
+
+[node name="Task2SpawnPoint" parent="." unique_id=816336724 instance=ExtResource("2_plc02")]
+
+[node name="Task3SpawnPoint" parent="." unique_id=1216308898 instance=ExtResource("2_plc02")]
+
+[connection signal="timeout" from="NewTaskTimer" to="." method="_on_new_task_timer_timeout"]
