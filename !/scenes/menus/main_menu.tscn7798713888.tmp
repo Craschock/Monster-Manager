@@ -4,13 +4,12 @@
 [ext_resource type="Script" uid="uid://cpbdcv60qsfl7" path="res://!/scripts/ui/buttons/B_SceneSwitcher.gd" id="1_olmj7"]
 [ext_resource type="Texture2D" uid="uid://b8lt7jd1gmeol" path="res://!/assets/Sprites/MainMenu_BG_Button-1.png" id="2_c5l3k"]
 [ext_resource type="PackedScene" uid="uid://dltaqbilikqfn" path="res://!/scenes/menus/world.tscn" id="2_clwcb"]
-[ext_resource type="Script" uid="uid://c2rq1acylus0v" path="res://!/scripts/ui/main menu/MainMenu_Animation.gd" id="2_pr7bo"]
 [ext_resource type="Texture2D" uid="uid://c77ussetmbklr" path="res://!/assets/Sprites/MainMenu_BG.png" id="2_s26h3"]
 [ext_resource type="Script" uid="uid://bmq6xhgo4n6sq" path="res://!/scripts/ui/buttons/B_QuitGame.gd" id="3_clwcb"]
 [ext_resource type="Texture2D" uid="uid://b7c5xlbgmd1n3" path="res://!/assets/Sprites/MainMenu_BG_Button-2.png" id="3_s26h3"]
 [ext_resource type="Texture2D" uid="uid://8awucuimahhb" path="res://!/assets/Sprites/MainMenu_GameTitle.png" id="8_bffc6"]
 
-[node name="Main Menu" type="Control" unique_id=1013141839 node_paths=PackedStringArray("title_sprite", "background_sprites", "menu_buttons")]
+[node name="Main Menu" type="Control" unique_id=1013141839]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,91 +19,48 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("1_7gqbu")
-script = ExtResource("2_pr7bo")
-title_sprite = NodePath("TPB_Title")
-background_sprites = [NodePath("TPB_Left"), NodePath("TPB_Right")]
-menu_buttons = [NodePath("B_Start"), NodePath("B_Settings"), NodePath("B_Highscore"), NodePath("B_Quit")]
 
 [node name="MainMenuBg" type="Sprite2D" parent="." unique_id=1809482102]
 position = Vector2(960, 540)
 texture = ExtResource("2_s26h3")
 
-[node name="TPB_Title" type="TextureProgressBar" parent="." unique_id=1247412059]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-value = 14.0
-fill_mode = 1
-texture_progress = ExtResource("8_bffc6")
-
-[node name="TPB_Left" type="TextureProgressBar" parent="." unique_id=1941360787]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture_progress = ExtResource("2_c5l3k")
-
-[node name="TPB_Right" type="TextureProgressBar" parent="." unique_id=259591817]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-fill_mode = 1
-texture_progress = ExtResource("3_s26h3")
-
 [node name="MainMenuBgButton1" type="Sprite2D" parent="." unique_id=1797434323]
-visible = false
 position = Vector2(959, 541)
 texture = ExtResource("2_c5l3k")
 
 [node name="MainMenuBgButton2" type="Sprite2D" parent="." unique_id=1139423576]
-visible = false
 position = Vector2(961, 541)
 texture = ExtResource("3_s26h3")
 
 [node name="MainMenuGameTitle" type="Sprite2D" parent="." unique_id=439196662]
-visible = false
 position = Vector2(961, 539)
 texture = ExtResource("8_bffc6")
 
-[node name="B_Start" type="Button" parent="." unique_id=1671570554]
+[node name="Container" type="Container" parent="." unique_id=1620493481]
 layout_mode = 0
-offset_left = -41.0
-offset_top = 497.0
-offset_right = 508.0
-offset_bottom = 659.0
-rotation = 0.12570539
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="B_Start" type="Button" parent="Container" unique_id=1671570554]
+layout_mode = 2
 text = "Start"
 flat = true
 script = ExtResource("1_olmj7")
 game_scene = ExtResource("2_clwcb")
 
-[node name="B_Settings" type="Button" parent="." unique_id=737593474]
-layout_mode = 0
-offset_left = 4.9999986
-offset_top = 699.99994
-offset_right = 554.0
-offset_bottom = 861.99994
-rotation = 0.054522537
+[node name="B_Settings" type="Button" parent="Container" unique_id=737593474]
+layout_mode = 2
 text = "Settings"
 flat = true
 
-[node name="B_Highscore" type="Button" parent="." unique_id=888246394]
-layout_mode = 0
-offset_left = 74.00001
-offset_top = 906.00006
-offset_right = 623.0
-offset_bottom = 1068.0
-rotation = -0.05136971
+[node name="B_Highscore" type="Button" parent="Container" unique_id=888246394]
+layout_mode = 2
 text = "Highscore
 "
 flat = true
 
-[node name="B_Quit" type="Button" parent="." unique_id=1857387965]
-layout_mode = 0
-offset_left = 1645.0
-offset_top = 969.0001
-offset_right = 1885.0
-offset_bottom = 1131.0001
-rotation = -0.52185345
+[node name="B_Quit" type="Button" parent="Container" unique_id=1857387965]
+layout_mode = 2
 text = "Quit"
 flat = true
 script = ExtResource("3_clwcb")
