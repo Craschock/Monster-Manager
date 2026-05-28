@@ -50,21 +50,6 @@ offset_bottom = 40.0
 fill_mode = 1
 texture_progress = ExtResource("3_s26h3")
 
-[node name="MainMenuBgButton1" type="Sprite2D" parent="." unique_id=1797434323]
-visible = false
-position = Vector2(959, 541)
-texture = ExtResource("2_c5l3k")
-
-[node name="MainMenuBgButton2" type="Sprite2D" parent="." unique_id=1139423576]
-visible = false
-position = Vector2(961, 541)
-texture = ExtResource("3_s26h3")
-
-[node name="MainMenuGameTitle" type="Sprite2D" parent="." unique_id=439196662]
-visible = false
-position = Vector2(961, 539)
-texture = ExtResource("8_bffc6")
-
 [node name="B_Start" type="Button" parent="." unique_id=1671570554]
 layout_mode = 0
 offset_left = -41.0
