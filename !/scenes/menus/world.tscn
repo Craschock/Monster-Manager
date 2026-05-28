@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dltaqbilikqfn"]
 
 [ext_resource type="PackedScene" uid="uid://tugmlpebvabs" path="res://!/assets/geometry/Blockout.glb" id="1_6ydyh"]
-[ext_resource type="Script" uid="uid://cp75juda1k7b4" path="res://!/scenes/menus/world.gd" id="1_em27n"]
 [ext_resource type="PackedScene" uid="uid://dj74vh1w1x4gh" path="res://camera_3d.tscn" id="2_ifcfv"]
 [ext_resource type="PackedScene" uid="uid://bdbib8khd22jp" path="res://ui.tscn" id="3_y2q83"]
 [ext_resource type="PackedScene" uid="uid://chdlf20qdrj2l" path="res://!/scenes/dragon_spawner/dragon_spawner.tscn" id="5_eox87"]
@@ -10,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://cjn0jnsbyu5tn" path="res://!/scenes/shop.tscn" id="7_7kto3"]
 
 [node name="World" type="Node3D" unique_id=387539890]
-script = ExtResource("1_em27n")
 
 [node name="Blockout" parent="." unique_id=238118470 instance=ExtResource("1_6ydyh")]
 

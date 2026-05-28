@@ -28,8 +28,8 @@ func start_timer() -> void:
 
 func _on_new_dragon_timer_timeout() -> void:
 	print("Spawning..")
-	var spawn_point: SpawnPoint = free_spawn_points.pick_random()
-	if spawn_point:
+	if !free_spawn_points.is_empty():
+		var spawn_point: SpawnPoint = free_spawn_points.pick_random()
 		print("There is free space")
 		var dragon: Dragon = DragonScn.instantiate()
 		dragon.position = spawn_point.position
