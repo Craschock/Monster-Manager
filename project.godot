@@ -21,6 +21,11 @@ UIManager="*uid://ol5hmo4n3hby"
 CurrencyManager="*uid://dln3a2vwxvky"
 SaveManager="*uid://cygxm84inis1j"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [file_customization]
 
 folder_colors={
@@ -37,6 +42,7 @@ folder_colors={
 [global_group]
 
 selectable="Entities that can be selected by the player"
+
 [input]
 
 move_left={
