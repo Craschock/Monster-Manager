@@ -1,14 +1,24 @@
 [gd_scene format=3 uid="uid://dltaqbilikqfn"]
 
 [ext_resource type="PackedScene" uid="uid://tugmlpebvabs" path="res://!/assets/geometry/Blockout.glb" id="1_6ydyh"]
+[ext_resource type="Script" uid="uid://cp75juda1k7b4" path="res://!/scenes/menus/world.gd" id="1_em27n"]
 [ext_resource type="PackedScene" uid="uid://dj74vh1w1x4gh" path="res://camera_3d.tscn" id="2_ifcfv"]
 [ext_resource type="PackedScene" uid="uid://bdbib8khd22jp" path="res://ui.tscn" id="3_y2q83"]
 [ext_resource type="PackedScene" uid="uid://chdlf20qdrj2l" path="res://!/scenes/dragon_spawner/dragon_spawner.tscn" id="5_eox87"]
 [ext_resource type="PackedScene" uid="uid://mtucxswpq4n5" path="res://!/scenes/dragon_spawner/spawn_point.tscn" id="6_3c6ts"]
+[ext_resource type="PackedScene" uid="uid://csvsuqeoivur0" path="res://!/scenes/robot_manager.tscn" id="6_7kto3"]
+[ext_resource type="PackedScene" uid="uid://cjn0jnsbyu5tn" path="res://!/scenes/shop.tscn" id="7_7kto3"]
 
 [node name="World" type="Node3D" unique_id=387539890]
+script = ExtResource("1_em27n")
 
 [node name="Blockout" parent="." unique_id=238118470 instance=ExtResource("1_6ydyh")]
+
+[node name="TemporaryGround" type="CSGBox3D" parent="Blockout" unique_id=957889986]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 6)
+visible = false
+use_collision = true
+size = Vector3(60, 1, 40)
 
 [node name="Camera3D" parent="." unique_id=1442915904 instance=ExtResource("2_ifcfv")]
 transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 15, 19)
@@ -31,8 +41,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1645155, 0, 14.6240425)
 [node name="SpawnPoint3" parent="DragonSpawner" unique_id=1906423705 instance=ExtResource("6_3c6ts")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.511456, 0, -0.20553017)
 
+[node name="RobotManager" parent="." unique_id=732904911 instance=ExtResource("6_7kto3")]
+
+[node name="SpawnPoint" parent="RobotManager" index="0" unique_id=2019209238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="Shop" parent="." unique_id=1139307655 instance=ExtResource("7_7kto3")]
+
 [connection signal="pressed" from="UI/RotateAntiClockwise" to="Camera3D" method="_on_rotate_anti_clockwise_pressed"]
 [connection signal="pressed" from="UI/RotateClockwise" to="Camera3D" method="_on_rotate_clockwise_pressed"]
 
 [editable path="UI"]
 [editable path="DragonSpawner"]
+[editable path="RobotManager"]

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://csvsuqeoivur0"]
+
+[ext_resource type="Script" uid="uid://cb6se86rh7ero" path="res://!/scenes/robot_manager.gd" id="1_v285o"]
+
+[node name="RobotManager" type="Node" unique_id=732904911]
+script = ExtResource("1_v285o")
+
+[node name="SpawnPoint" type="Marker3D" parent="." unique_id=2019209238]

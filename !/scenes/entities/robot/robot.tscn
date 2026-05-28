@@ -1,5 +1,24 @@
 [gd_scene format=3 uid="uid://ih3c5a18bpqy"]
 
-[ext_resource type="PackedScene" uid="uid://bthtrlr50lr6y" path="res://!/scenes/entities/base_entity.tscn" id="1_p4hhg"]
+[ext_resource type="Script" uid="uid://cevhys0hle3jy" path="res://!/scenes/entities/robot/robot.gd" id="1_p4hhg"]
 
-[node name="Robot" unique_id=1660977353 instance=ExtResource("1_p4hhg")]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nihdn"]
+albedo_color = Color(0.19607843, 0.49411765, 0.6745098, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_p4hhg"]
+material = SubResource("StandardMaterial3D_nihdn")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t22qa"]
+
+[node name="Robot" type="CharacterBody3D" unique_id=1959342297]
+script = ExtResource("1_p4hhg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=455990404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_p4hhg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=128201303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_t22qa")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1434063140]

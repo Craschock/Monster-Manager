@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cjn0jnsbyu5tn"]
+
+[ext_resource type="Script" uid="uid://cp5vpir4lid7v" path="res://!/scenes/shop.gd" id="1_pxcqy"]
+
+[node name="Shop" type="Node" unique_id=1139307655]
+script = ExtResource("1_pxcqy")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=72119047]
+
+[node name="BuyRobot" type="Button" parent="UI" unique_id=415500220]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -541.0
+offset_top = -211.0
+offset_right = -78.0
+offset_bottom = -79.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Buy New Robot"
+
+[node name="SpeedIncrease" type="Button" parent="UI" unique_id=485579935]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -541.0
+offset_top = -397.0
+offset_right = -78.0
+offset_bottom = -265.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Speed ++"
+
+[connection signal="pressed" from="UI/BuyRobot" to="." method="_on_buy_robot_pressed"]
+[connection signal="pressed" from="UI/SpeedIncrease" to="." method="_on_speed_increase_pressed"]
