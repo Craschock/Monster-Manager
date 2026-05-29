@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bp1kwx70ff54b"]
+
+[ext_resource type="PackedScene" uid="uid://dh1tsui4jwfsj" path="res://!/assets/geometry/Final_Blockout.glb" id="1_ydnw8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uehqn"]
+cull_mode = 2
+
+[node name="GameWorld" type="Node3D" unique_id=460750166]
+
+[node name="Final_Blockout" parent="." unique_id=1224256809 instance=ExtResource("1_ydnw8")]
+
+[node name="Mesh" parent="Final_Blockout" index="0" unique_id=1982266623]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_uehqn")
+
+[editable path="Final_Blockout"]
