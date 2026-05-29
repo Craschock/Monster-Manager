@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cpil7n2lbxsiw"]
+
+[ext_resource type="Script" uid="uid://cnhhrn3vfdb3u" path="res://!/scenes/tasks/task_3.gd" id="1_is4q8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n5wh5"]
+albedo_color = Color(0.21568628, 1, 0.5254902, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3ln4y"]
+material = SubResource("StandardMaterial3D_n5wh5")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4lns2"]
+
+[node name="Task3" type="RigidBody3D" unique_id=957677068]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_is4q8")
+metadata/_custom_type_script = "uid://k7r6ydg8utbw"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1088432949]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_3ln4y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1261365777]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_4lns2")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

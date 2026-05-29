@@ -1,12 +1,13 @@
 extends Node
 
-const TaskScn = preload("res://!/scenes/task.tscn")
+const Task1Scn = preload("res://!/scenes/tasks/task_1.tscn")
+const Task2Scn = preload("res://!/scenes/tasks/task_2.tscn")
+const Task3Scn = preload("res://!/scenes/tasks/task_3.tscn")
 
-# instead of colors, use models
-const TYPE_TO_MODEL = {
-	Task.Type.TYPE1 : Color.WEB_GREEN,
-	Task.Type.TYPE2 : Color.YELLOW,
-	Task.Type.TYPE3 : Color.HOT_PINK,
+const TYPE_TO_SCN: Dictionary[Task.Type, PackedScene] = {
+	Task.Type.TYPE1 : Task1Scn,
+	Task.Type.TYPE2 : Task2Scn,
+	Task.Type.TYPE3 : Task3Scn,
 }
 
 const CAPACITY = 3
@@ -18,7 +19,6 @@ func _ready() -> void:
 	var spawn_point1: Area3D = $Task1SpawnPoint
 	var spawn_point2: Area3D = $Task2SpawnPoint
 	var spawn_point3: Area3D = $Task3SpawnPoint
-	assert(TYPE_TO_MODEL.size() == Task.Type.size())
 	type_to_sp = {
 		Task.Type.TYPE1 : spawn_point1,
 		Task.Type.TYPE2 : spawn_point2,
@@ -41,15 +41,11 @@ func create_new_task() -> void:
 	if tasks[type].size() == CAPACITY:
 		return
 	
-	var task: Task = TaskScn.instantiate()
-	task.initialize(5, 100, type)
-	var color = TYPE_TO_MODEL[type]
+	var scn = TYPE_TO_SCN[type]
+	var task: Task = scn.instantiate()
 	var spawn_point = type_to_sp[type]
 	task.position = spawn_point.position
-	task.visible = false
 	add_child(task)
-	task.set_color(color)
-	task.visible = true
 	
 	tasks[type].push_back(task)
 
