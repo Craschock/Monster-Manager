@@ -31,3 +31,8 @@ func _on_buy_robot_pressed() -> void:
 func _on_speed_increase_pressed() -> void:
 	# todo currency check
 	Events.speed_increase_bought.emit()
+
+
+func _on_capacity_increase_pressed() -> void:
+	# todo currency check
+	Events.capacity_increase_bought.emit()

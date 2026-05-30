@@ -53,9 +53,10 @@ func create_new_task() -> void:
 func _on_spawn_point_body_entered(body: Node3D, type: Task.Type) -> void:
 	if body is Robot:
 		var robot = body as Robot
-		if !tasks[type].is_empty():
+		if !tasks[type].is_empty() and !robot.full():
 			var task: Task = tasks[type].pop_back()
 			task.carrier = robot
+			robot.add_load()
 
 
 func _on_task_1_spawn_point_body_entered(body: Node3D) -> void:

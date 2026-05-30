@@ -6,12 +6,15 @@ class_name RobotManager
 
 const RobotScn = preload("res://!/scenes/entities/robot/robot.tscn")
 
+var robots: Array[Robot] = []
+
 var selected_robot: Robot = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Events.robot_bought.connect(create_new_robot)
 	Events.speed_increase_bought.connect(increase_speed)
+	Events.capacity_increase_bought.connect(increase_capacity)
 	
 	Events.robot_clicked.connect(on_robot_clicked)
 	Events.dragon_clicked.connect(on_dragon_clicked)
@@ -28,11 +31,17 @@ func create_new_robot() -> void:
 	var robot: Robot = RobotScn.instantiate()
 	robot.position = spawn_point.position
 	add_child(robot)
+	robots.append(robot)
 
 
 func increase_speed() -> void:
-	print("increasing speed")
+	for robot in robots:
+		robot.speed += 5
 
+
+func increase_capacity() -> void:
+	for robot in robots:
+		robot.max_load += 1
 
 func on_robot_clicked(clicked_robot: Robot) -> void:
 	if selected_robot:
@@ -50,6 +59,7 @@ func on_robot_clicked(clicked_robot: Robot) -> void:
 func on_dragon_clicked(dragon: Dragon) -> void:
 	if selected_robot:
 		selected_robot.set_target_position(dragon.position)
+
 
 func on_task_clicked(task: Task) -> void:
 	if selected_robot:

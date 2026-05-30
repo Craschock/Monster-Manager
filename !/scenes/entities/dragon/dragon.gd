@@ -31,6 +31,8 @@ func leave() -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is Task:
 		var task = body as Task
+		var carrier = task.carrier
 		task.carrier = null
+		carrier.remove_load()
 		current_task = task
 		# todo start working on task
