@@ -10,7 +10,14 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		toggle_pause()
+		var tree = get_tree()
+		
+		# If we are paused and menu exists, trigger animation
+		if tree.paused and current_pause_menu != null and current_pause_menu.has_method("close_animation"):
+			current_pause_menu.close_animation()
+		# If not, pause normally
+		elif not tree.paused:
+			toggle_pause()
 
 func toggle_pause():
 	var tree = get_tree()

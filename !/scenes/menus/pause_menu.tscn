@@ -1,13 +1,31 @@
 [gd_scene format=3 uid="uid://btctdj4b8w45f"]
 
 [ext_resource type="Script" uid="uid://cpbdcv60qsfl7" path="res://!/scripts/ui/buttons/B_SceneSwitcher.gd" id="1_5m6w1"]
+[ext_resource type="Theme" uid="uid://3qoaw6d100xf" path="res://!/assets/fonts/MainUI_Theme.tres" id="1_fbntc"]
+[ext_resource type="Script" uid="uid://cs1bk0gj7l72l" path="res://!/scripts/ui/effects/PauseAnimation.gd" id="1_tbv22"]
 [ext_resource type="Script" uid="uid://c5fc5onxdvic4" path="res://!/scripts/ui/buttons/B_ResumeGame.gd" id="1_ymh6m"]
+[ext_resource type="Texture2D" uid="uid://chlbfpw38xtk8" path="res://!/assets/Sprites/New Project (1).png" id="2_mrtvg"]
 [ext_resource type="PackedScene" uid="uid://lsujlyk4ow3t" path="res://!/scenes/menus/main_menu.tscn" id="2_s1uer"]
+[ext_resource type="PackedScene" uid="uid://bfwjodia7ynbc" path="res://!/scenes/menus/button effects/ui_hover_component.tscn" id="5_vvr65"]
 
 [node name="Pause Menu" type="CanvasLayer" unique_id=459213527]
 process_mode = 3
+script = ExtResource("1_tbv22")
+rip_distance = 350.0
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1112115784]
+[node name="TearBackground" type="TextureRect" parent="." unique_id=415387564]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mrtvg")
+
+[node name="LeftHalf" type="Polygon2D" parent="." unique_id=1089213728]
+
+[node name="RightHalf" type="Polygon2D" parent="." unique_id=799528659]
+
+[node name="DimBackground" type="ColorRect" parent="." unique_id=1112115784]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -30,20 +48,36 @@ grow_vertical = 2
 
 [node name="B_Resume" type="Button" parent="VBoxContainer" unique_id=817842023]
 layout_mode = 2
-theme_override_font_sizes/font_size = 67
+theme = ExtResource("1_fbntc")
+theme_override_font_sizes/font_size = 128
 text = "Resume
 "
+flat = true
 script = ExtResource("1_ymh6m")
+
+[node name="UIHoverComponent" parent="VBoxContainer/B_Resume" unique_id=542984459 instance=ExtResource("5_vvr65")]
+auto_center_pivot = true
 
 [node name="B_Settings" type="Button" parent="VBoxContainer" unique_id=449200180]
 layout_mode = 2
-theme_override_font_sizes/font_size = 67
+theme = ExtResource("1_fbntc")
+theme_override_font_sizes/font_size = 128
 text = "Options"
+flat = true
+
+[node name="UIHoverComponent" parent="VBoxContainer/B_Settings" unique_id=1913458819 instance=ExtResource("5_vvr65")]
+tilt_angle_degrees = -5.0
+auto_center_pivot = true
 
 [node name="B_MainMenu" type="Button" parent="VBoxContainer" unique_id=1609144979]
 layout_mode = 2
-theme_override_font_sizes/font_size = 67
+theme = ExtResource("1_fbntc")
+theme_override_font_sizes/font_size = 128
 text = "Main Menu"
+flat = true
 script = ExtResource("1_5m6w1")
 game_scene = ExtResource("2_s1uer")
 unpause_on_switch = true
+
+[node name="UIHoverComponent" parent="VBoxContainer/B_MainMenu" unique_id=298125060 instance=ExtResource("5_vvr65")]
+auto_center_pivot = true

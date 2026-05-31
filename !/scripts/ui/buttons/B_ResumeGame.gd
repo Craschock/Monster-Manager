@@ -4,5 +4,6 @@ func _ready():
 	pressed.connect(_on_pressed)
 
 func _on_pressed():
-	# Tell UIManager to flip pause state and destroy menu
-	UIManager.toggle_pause()
+	var pause_menu_root = owner 
+	if pause_menu_root.has_method("close_animation"):
+		pause_menu_root.close_animation()

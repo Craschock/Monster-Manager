@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bfwjodia7ynbc"]
+
+[ext_resource type="Script" uid="uid://bw854yonyxvcw" path="res://!/scripts/ui/effects/UIHoverComponent.gd" id="1_j4qkl"]
+
+[node name="UIHoverComponent" type="Node" unique_id=542984459]
+script = ExtResource("1_j4qkl")

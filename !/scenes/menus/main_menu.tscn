@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bmq6xhgo4n6sq" path="res://!/scripts/ui/buttons/B_QuitGame.gd" id="3_clwcb"]
 [ext_resource type="Texture2D" uid="uid://b7c5xlbgmd1n3" path="res://!/assets/Sprites/MainMenu_BG_Button-2.png" id="3_s26h3"]
 [ext_resource type="Texture2D" uid="uid://8awucuimahhb" path="res://!/assets/Sprites/MainMenu_GameTitle.png" id="8_bffc6"]
+[ext_resource type="PackedScene" uid="uid://bfwjodia7ynbc" path="res://!/scenes/menus/button effects/ui_hover_component.tscn" id="9_nykys"]
 
 [node name="Main Menu" type="Control" unique_id=1013141839 node_paths=PackedStringArray("title_sprite", "background_sprites", "menu_buttons")]
 layout_mode = 3
@@ -52,44 +53,58 @@ texture_progress = ExtResource("3_s26h3")
 
 [node name="B_Start" type="Button" parent="." unique_id=1671570554]
 layout_mode = 0
-offset_left = -41.0
-offset_top = 497.0
-offset_right = 508.0
-offset_bottom = 659.0
+offset_left = -47.0
+offset_top = 540.0
+offset_right = 502.0
+offset_bottom = 702.0
 rotation = 0.12570539
+pivot_offset = Vector2(274.5, 81)
 text = "Start"
 flat = true
 script = ExtResource("1_olmj7")
 game_scene = ExtResource("2_clwcb")
 
+[node name="UIHoverComponent" parent="B_Start" unique_id=542984459 instance=ExtResource("9_nykys")]
+tilt_angle_degrees = -10.0
+
 [node name="B_Settings" type="Button" parent="." unique_id=737593474]
 layout_mode = 0
-offset_left = 4.9999986
-offset_top = 699.99994
-offset_right = 554.0
-offset_bottom = 861.99994
+offset_left = 4.0
+offset_top = 719.99994
+offset_right = 553.0
+offset_bottom = 881.99994
 rotation = 0.054522537
+pivot_offset = Vector2(274.5, 81)
 text = "Settings"
 flat = true
 
+[node name="UIHoverComponent" parent="B_Settings" unique_id=1355816796 instance=ExtResource("9_nykys")]
+tilt_angle_degrees = -5.0
+
 [node name="B_Highscore" type="Button" parent="." unique_id=888246394]
 layout_mode = 0
-offset_left = 74.00001
-offset_top = 906.00006
-offset_right = 623.0
-offset_bottom = 1068.0
+offset_left = 52.000008
+offset_top = 894.00006
+offset_right = 601.0
+offset_bottom = 1056.0
 rotation = -0.05136971
+pivot_offset = Vector2(274.5, 81)
 text = "Highscore
 "
 flat = true
 
+[node name="UIHoverComponent" parent="B_Highscore" unique_id=1453012231 instance=ExtResource("9_nykys")]
+
 [node name="B_Quit" type="Button" parent="." unique_id=1857387965]
 layout_mode = 0
-offset_left = 1645.0
-offset_top = 969.0001
-offset_right = 1885.0
-offset_bottom = 1131.0001
+offset_left = 1674.0001
+offset_top = 893.9998
+offset_right = 1914.0001
+offset_bottom = 1056.0
 rotation = -0.52185345
+pivot_offset = Vector2(120, 81)
 text = "Quit"
 flat = true
 script = ExtResource("3_clwcb")
+
+[node name="UIHoverComponent" parent="B_Quit" unique_id=1746445697 instance=ExtResource("9_nykys")]
