@@ -10,6 +10,9 @@ var robots: Array[Robot] = []
 
 var selected_robot: Robot = null
 
+var robots_speed: int = 5
+var robots_capacity: int = 1
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Events.robot_bought.connect(create_new_robot)
@@ -30,18 +33,23 @@ func create_new_robot() -> void:
 	print("creating new robot")
 	var robot: Robot = RobotScn.instantiate()
 	robot.position = spawn_point.position
+	robot.speed = robots_speed
+	robot.max_load = robots_capacity
 	add_child(robot)
 	robots.append(robot)
+	
 
 
 func increase_speed() -> void:
+	robots_speed += 5
 	for robot in robots:
-		robot.speed += 5
+		robot.speed = robots_speed
 
 
 func increase_capacity() -> void:
+	robots_capacity += 1
 	for robot in robots:
-		robot.max_load += 1
+		robot.max_load = robots_capacity
 
 func on_robot_clicked(clicked_robot: Robot) -> void:
 	if selected_robot:
