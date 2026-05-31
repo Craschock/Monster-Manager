@@ -2,31 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dcyavjoaabyes" path="res://!/scenes/entities/dragon/dragon.gd" id="1_3mxua"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j67v6"]
-albedo_color = Color(0.78589845, 0.25939205, 0.21267918, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_3mxua"]
-material = SubResource("StandardMaterial3D_j67v6")
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v6af5"]
-radius = 1.0
-height = 4.0
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_j67v6"]
 size = Vector3(4, 4, 5)
 
 [node name="Dragon" type="Node3D" unique_id=2073827000]
 script = ExtResource("1_3mxua")
-
-[node name="Model" type="StaticBody3D" parent="." unique_id=1469593698]
-
-[node name="Mesh" type="MeshInstance3D" parent="Model" unique_id=1670871894]
-transform = Transform3D(1.993571, 0, 0, 0, -8.714176e-08, 1.993571, 0, -1.993571, -8.714176e-08, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_3mxua")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model" unique_id=1988683723]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_v6af5")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1570793688]
 collision_layer = 3
@@ -37,5 +17,15 @@ input_ray_pickable = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("BoxShape3D_j67v6")
 
-[connection signal="input_event" from="Model" to="." method="_on_model_input_event"]
+[node name="TaskPrograssion" type="Label3D" parent="." unique_id=1903675422]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+visible = false
+billboard = 1
+text = "42 %"
+font_size = 128
+
+[node name="TaskTimer" type="Timer" parent="." unique_id=1667709277]
+one_shot = true
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="timeout" from="TaskTimer" to="." method="_on_task_timer_timeout"]

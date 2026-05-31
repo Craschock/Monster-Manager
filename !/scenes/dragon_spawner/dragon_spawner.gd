@@ -2,7 +2,13 @@ extends Node
 
 const MIN_WAIT_TIME = 3
 const MAX_WAIT_TIME = 6
-const DragonScn: PackedScene = preload("res://!/scenes/entities/dragon/dragon.tscn")
+
+const Dragon1Scn: PackedScene = preload("res://!/scenes/entities/dragon/dragon_1.tscn")
+const Dragon2Scn: PackedScene = preload("res://!/scenes/entities/dragon/dragon_2.tscn")
+const DRAGON_SCNS: Array[PackedScene] = [
+	Dragon1Scn,
+	Dragon2Scn,
+]
 
 @onready var new_dragon_timer: Timer = $NewDragonTimer
 var free_spawn_points: Array[SpawnPoint]
@@ -29,7 +35,11 @@ func start_timer() -> void:
 func _on_new_dragon_timer_timeout() -> void:
 	if !free_spawn_points.is_empty():
 		var spawn_point: SpawnPoint = free_spawn_points.pick_random()
-		var dragon: Dragon = DragonScn.instantiate()
+		#var dragon: Dragon = DragonScn.instantiate()
+		# todo pick random
+		# todo tweak coefficients
+		var dragon_scn = DRAGON_SCNS.pick_random()
+		var dragon: Dragon = dragon_scn.instantiate()
 		dragon.position = spawn_point.position
 		dragon.dragon_leaving.connect(_on_dragon_leaving)
 		add_child(dragon)

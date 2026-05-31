@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://beky5u2j004bn"]
+
+[ext_resource type="PackedScene" uid="uid://bryhnk4j43rug" path="res://!/scenes/entities/dragon/dragon.tscn" id="1_lp1jk"]
+[ext_resource type="Script" uid="uid://bdm24rl0l5noe" path="res://!/scenes/entities/dragon/dragon_2.gd" id="2_lp1jk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lp1jk"]
+albedo_color = Color(0.57800114, 0.25164607, 0.9044674, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3mxua"]
+material = SubResource("StandardMaterial3D_lp1jk")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v6af5"]
+radius = 1.0
+height = 4.0
+
+[node name="Dragon2" unique_id=2073827000 instance=ExtResource("1_lp1jk")]
+script = ExtResource("2_lp1jk")
+
+[node name="Model" type="StaticBody3D" parent="." index="0" unique_id=1505621459]
+
+[node name="Mesh" type="MeshInstance3D" parent="Model" index="0" unique_id=1843675699]
+transform = Transform3D(1.993571, 0, 0, 0, -8.714176e-08, 1.993571, 0, -1.993571, -8.714176e-08, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_3mxua")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Model" index="1" unique_id=774796856]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_v6af5")
+
+[connection signal="input_event" from="Model" to="." method="_on_model_input_event"]
