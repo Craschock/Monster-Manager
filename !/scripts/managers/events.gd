@@ -9,6 +9,7 @@ signal coffe_bought
 signal cake_bought
 
 signal robot_clicked(robot: Robot)
+signal robot_died(robot: Robot)
 
 # todo merge into single signal?
 signal dragon_clicked(dragon: Dragon)

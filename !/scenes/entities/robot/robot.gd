@@ -93,6 +93,13 @@ func handle_item_reached(item):
 
 func handle_dragon_reached(dragon: Dragon):
 	for item in carried_items:
-		dragon.handle_new_item(item)
+		dragon.handle_new_item(item, self)
 		remove_load()
 	carried_items.clear()
+
+
+func die() -> void:
+	for item in carried_items:
+		item.queue_free()
+	Events.robot_died.emit(self)
+	queue_free()

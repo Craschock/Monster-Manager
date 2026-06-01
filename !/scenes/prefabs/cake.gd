@@ -2,4 +2,4 @@ extends Prop
 
 
 func _ready() -> void:
-	mood_boost = 20
+	mood_boost = 50

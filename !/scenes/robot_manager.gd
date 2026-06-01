@@ -22,6 +22,8 @@ func _ready() -> void:
 	Events.dragon_clicked.connect(on_dragon_clicked)
 	Events.task_clicked.connect(on_task_clicked)
 	Events.prop_clicked.connect(on_prop_clicked)
+	
+	Events.robot_died.connect(remove_robot)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,6 +39,10 @@ func create_new_robot() -> void:
 	robot.max_load = robots_capacity
 	add_child(robot)
 	robots.append(robot)
+
+
+func remove_robot(robot: Robot) -> void:
+	robots.erase(robot)
 
 
 func increase_speed() -> void:

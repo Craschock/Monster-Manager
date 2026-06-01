@@ -9,10 +9,12 @@ var time_coefficients: Dictionary[Task.Type, float]
 var reward_coefficients: Dictionary[Task.Type, float]
 var completed_tasks: int = 0
 var max_tasks: int = 3
-# todo mood
+var mood: int = 100
 
 @onready var task_timer: Timer = $TaskTimer
 @onready var task_progression: Label3D = $TaskPrograssion
+@onready var mood_timer: Timer = $MoodTimer
+@onready var mood_label: Label3D = $MoodLabel
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,6 +24,16 @@ func _process(_delta: float) -> void:
 		var time_total = task_timer.wait_time
 		var progression = 1.0 - (time_left / time_total)
 		task_progression.text = "%s %%" % int(progression * 100)
+	
+	var mood_str: String = ""
+	if mood > 70:
+		mood_str = ":D"
+	elif mood > 30:
+		mood_str = ":/"
+	else:
+		mood_str = ">:("
+	mood_label.text = mood_str
+	
 
 
 func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
@@ -30,14 +42,20 @@ func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3,
 			Events.dragon_clicked.emit(self)
 
 
-func handle_new_item(item):
+func handle_new_item(item, carrier: Robot):
 	if item is Task:
-		start_task(item as Task)
+		start_task(item as Task, carrier)
 	if item is Prop:
 		process_prop(item as Prop)
 
 
-func start_task(task: Task) -> void:
+func start_task(task: Task, carrier: Robot) -> void:
+	var r = randi_range(-30, 50)  # todo tweak values
+	if r > mood:  # lower mood -> higher probability of eating
+		# eat carrier
+		carrier.die()
+		return
+	
 	# todo: what if dragon is already working on task?
 	#	current: discard current, start new
 	#	alt: task queue
@@ -65,9 +83,17 @@ func _on_task_timer_timeout() -> void:
 
 
 func process_prop(prop: Prop):
-	print("processing prop ", prop.mood_boost)
+	mood += prop.mood_boost
+	mood = clamp(mood, 0, 100)
+	prop.queue_free()
 
 
 func leave() -> void:
 	dragon_leaving.emit(self)
 	queue_free()
+
+
+func _on_mood_timer_timeout() -> void:
+	mood -= 10
+	if mood < 0:
+		leave()
