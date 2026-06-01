@@ -20,6 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="RobotShopPanel" parent="SafeZone" unique_id=991358060 instance=ExtResource("2_w40ab")]
 layout_mode = 0
@@ -92,3 +93,6 @@ text = "Props"
 flat = true
 
 [node name="UIHoverComponent" parent="B_OpenPropShop" unique_id=1553231245 instance=ExtResource("4_0qix8")]
+
+[connection signal="pressed" from="B_CameraRotateLeft" to="." method="_on_b_camera_rotate_left_pressed"]
+[connection signal="pressed" from="B_CameraRotateRight" to="." method="_on_b_camera_rotate_right_pressed"]

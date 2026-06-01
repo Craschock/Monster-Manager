@@ -10,7 +10,7 @@
 
 [node name="GameWorld" type="Node3D" unique_id=460750166]
 
-[node name="Final_Blockout" parent="." unique_id=225144046 instance=ExtResource("1_ydnw8")]
+[node name="Final_Blockout" parent="." unique_id=676116090 instance=ExtResource("1_ydnw8")]
 
 [node name="North Wing" type="Node3D" parent="." unique_id=591001351]
 

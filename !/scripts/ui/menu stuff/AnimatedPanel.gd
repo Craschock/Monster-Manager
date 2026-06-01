@@ -52,3 +52,24 @@ func close_panel() -> void:
 		active_tween.chain().tween_property(bg_progress, "value", 0.0, 0.3).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 		
 	active_tween.chain().tween_callback(hide)
+
+
+# todo these function should probably be elsewhere
+func _on_b_buy_robot_pressed() -> void:
+	Events.robot_bought.emit()
+
+
+func _on_b_speed_increase_pressed() -> void:
+	Events.speed_increase_bought.emit()
+
+
+func _on_b_capacity_increase_pressed() -> void:
+	Events.capacity_increase_bought.emit()
+
+
+func _on_coffe_pressed() -> void:
+	Events.coffe_bought.emit()
+
+
+func _on_cake_pressed() -> void:
+	Events.cake_bought.emit()

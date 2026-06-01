@@ -35,3 +35,13 @@ func toggle_panel(panel_to_toggle: Control) -> void:
 	# Open the requested panel
 	panel_to_toggle.open_panel()
 	current_open_panel = panel_to_toggle
+
+
+func _on_b_camera_rotate_left_pressed() -> void:
+	Input.action_press("rotate_anticlockwise")
+	Input.action_release("rotate_anticlockwise")
+
+
+func _on_b_camera_rotate_right_pressed() -> void:
+	Input.action_press("rotate_clockwise")
+	Input.action_release("rotate_clockwise")

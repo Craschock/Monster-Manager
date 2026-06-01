@@ -33,18 +33,18 @@ offset_top = 300.0
 offset_right = 750.0
 offset_bottom = 794.0
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=625681143]
+[node name="Coffe" type="Button" parent="VBoxContainer" unique_id=625681143]
 layout_mode = 2
 theme = ExtResource("1_1kym2")
 theme_override_font_sizes/font_size = 110
-text = "Placeholder"
+text = "Coffe"
 flat = true
 
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1534728741]
+[node name="Cake" type="Button" parent="VBoxContainer" unique_id=1534728741]
 layout_mode = 2
 theme = ExtResource("1_1kym2")
 theme_override_font_sizes/font_size = 110
-text = "Placeholder"
+text = "Cake"
 flat = true
 
 [node name="Button3" type="Button" parent="VBoxContainer" unique_id=723935107]
@@ -73,3 +73,6 @@ offset_top = 185.00002
 offset_right = -539.99994
 offset_bottom = 225.00002
 scale = Vector2(13.381, 0.16)
+
+[connection signal="pressed" from="VBoxContainer/Coffe" to="." method="_on_coffe_pressed"]
+[connection signal="pressed" from="VBoxContainer/Cake" to="." method="_on_cake_pressed"]

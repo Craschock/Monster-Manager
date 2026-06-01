@@ -84,3 +84,7 @@ offset_top = 185.00002
 offset_right = 96.0
 offset_bottom = 225.00002
 scale = Vector2(14.960003, 0.16000003)
+
+[connection signal="pressed" from="VBoxContainer/B_BuyRobot" to="." method="_on_b_buy_robot_pressed"]
+[connection signal="pressed" from="VBoxContainer/B_SpeedIncrease" to="." method="_on_b_speed_increase_pressed"]
+[connection signal="pressed" from="VBoxContainer/B_CapacityIncrease" to="." method="_on_b_capacity_increase_pressed"]

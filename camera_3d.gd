@@ -46,7 +46,6 @@ func _process(delta: float) -> void:
 	
 	previous_mouse_position = current_mouse_position
 	
-	
 	# rotating
 	if elapsed >= 1.0:
 		if Input.is_action_just_pressed("rotate_clockwise"):
@@ -65,12 +64,3 @@ func _process(delta: float) -> void:
 		elapsed = clampf(elapsed, 0.0, 1.0)
 	
 	rotation.y = lerp_angle(source_rotation, target_rotation, elapsed)
-
-
-func _on_rotate_clockwise_pressed() -> void:
-	Input.action_press("rotate_clockwise")
-	Input.action_release("rotate_clockwise")
-
-func _on_rotate_anti_clockwise_pressed() -> void:
-	Input.action_press("rotate_anticlockwise")
-	Input.action_release("rotate_anticlockwise")

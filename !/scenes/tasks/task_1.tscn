@@ -11,8 +11,8 @@ material = SubResource("StandardMaterial3D_qfakh")
 [sub_resource type="BoxShape3D" id="BoxShape3D_e57xv"]
 
 [node name="Task1" type="RigidBody3D" unique_id=2059198681]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 4
+collision_mask = 5
 script = ExtResource("1_0frix")
 metadata/_custom_type_script = "uid://k7r6ydg8utbw"
 

@@ -94,6 +94,6 @@ func leave() -> void:
 
 
 func _on_mood_timer_timeout() -> void:
-	mood -= 10
+	mood -= 2
 	if mood < 0:
 		leave()
