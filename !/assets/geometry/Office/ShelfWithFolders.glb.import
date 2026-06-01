@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cxclf36sr2il3"
-path="res://.godot/imported/DeskLamp.glb-97d695ce51818b0c9fb309f4443d8b64.scn"
+uid="uid://cq4goyj6rasha"
+path="res://.godot/imported/ShelfWithFolders.glb-d96cae6bbebd019cef76113e7d3fd1e8.scn"
 
 [deps]
 
-source_file="res://!/assets/Office/DeskLamp.glb"
-dest_files=["res://.godot/imported/DeskLamp.glb-97d695ce51818b0c9fb309f4443d8b64.scn"]
+source_file="res://!/assets/geometry/Office/ShelfWithFolders.glb"
+dest_files=["res://.godot/imported/ShelfWithFolders.glb-d96cae6bbebd019cef76113e7d3fd1e8.scn"]
 
 [params]
 

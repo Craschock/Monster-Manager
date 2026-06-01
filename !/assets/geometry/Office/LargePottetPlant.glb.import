@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://csgq0c376i6oa"
-path="res://.godot/imported/Cake.glb-4107796a6b90cc5de89f2669a6f8d80c.scn"
+uid="uid://behp1d038yoxy"
+path="res://.godot/imported/LargePottetPlant.glb-129bc359d3a3f8494d22be5e9d19d343.scn"
 
 [deps]
 
-source_file="res://!/assets/Office/Cake.glb"
-dest_files=["res://.godot/imported/Cake.glb-4107796a6b90cc5de89f2669a6f8d80c.scn"]
+source_file="res://!/assets/geometry/Office/LargePottetPlant.glb"
+dest_files=["res://.godot/imported/LargePottetPlant.glb-129bc359d3a3f8494d22be5e9d19d343.scn"]
 
 [params]
 

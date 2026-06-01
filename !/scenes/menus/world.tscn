@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cjn0jnsbyu5tn" path="res://!/scenes/shop.tscn" id="7_7kto3"]
 [ext_resource type="PackedScene" uid="uid://bk7y221frgjcy" path="res://!/scenes/task_spawner.tscn" id="8_em27n"]
 [ext_resource type="PackedScene" uid="uid://bp1kwx70ff54b" path="res://!/assets/geometry/game_world.tscn" id="8_ua7wm"]
+[ext_resource type="PackedScene" uid="uid://dfrbsvkjpiwon" path="res://!/scenes/menus/UI/main_hud.tscn" id="9_ua7wm"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_em27n"]
 vertices = PackedVector3Array(-29.5, 0.5, -13.5, -29.5, 0.5, 25.5, 29.5, 0.5, 25.5, 29.5, 0.5, -13.5)
@@ -16,7 +17,6 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 [node name="World" type="Node3D" unique_id=387539890]
 
 [node name="GameWorld" parent="." unique_id=460750166 instance=ExtResource("8_ua7wm")]
-visible = false
 
 [node name="Camera3D" parent="." unique_id=1442915904 instance=ExtResource("2_ifcfv")]
 transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 15, 19)
@@ -66,6 +66,8 @@ use_collision = true
 collision_layer = 3
 collision_mask = 3
 size = Vector3(60, 1, 40)
+
+[node name="MainHUD" parent="." unique_id=1019886624 instance=ExtResource("9_ua7wm")]
 
 [connection signal="pressed" from="UI/RotateAntiClockwise" to="Camera3D" method="_on_rotate_anti_clockwise_pressed"]
 [connection signal="pressed" from="UI/RotateClockwise" to="Camera3D" method="_on_rotate_clockwise_pressed"]

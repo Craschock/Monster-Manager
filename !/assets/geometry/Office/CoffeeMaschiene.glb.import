@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bgk41mux4i6ms"
-path="res://.godot/imported/RoundConferenceTable.glb-ba6145ae8b36ce76c6db46c5fa670f8b.scn"
+uid="uid://dsjbedcfwxmav"
+path="res://.godot/imported/CoffeeMaschiene.glb-134a7e49d8159f6ec8cf127cb82a234f.scn"
 
 [deps]
 
-source_file="res://!/assets/Office/RoundConferenceTable.glb"
-dest_files=["res://.godot/imported/RoundConferenceTable.glb-ba6145ae8b36ce76c6db46c5fa670f8b.scn"]
+source_file="res://!/assets/geometry/Office/CoffeeMaschiene.glb"
+dest_files=["res://.godot/imported/CoffeeMaschiene.glb-134a7e49d8159f6ec8cf127cb82a234f.scn"]
 
 [params]
 

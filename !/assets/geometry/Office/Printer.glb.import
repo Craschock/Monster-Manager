@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://tlcv8grx7wo"
-path="res://.godot/imported/Display.glb-e753cd021350b6d270df50c5347f329c.scn"
+uid="uid://fao0jusuo3ja"
+path="res://.godot/imported/Printer.glb-82469374162cabbe088c4b58cb61fe2f.scn"
 
 [deps]
 
-source_file="res://!/assets/Office/Display.glb"
-dest_files=["res://.godot/imported/Display.glb-e753cd021350b6d270df50c5347f329c.scn"]
+source_file="res://!/assets/geometry/Office/Printer.glb"
+dest_files=["res://.godot/imported/Printer.glb-82469374162cabbe088c4b58cb61fe2f.scn"]
 
 [params]
 

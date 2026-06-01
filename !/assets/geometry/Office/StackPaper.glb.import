@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://can4jfgawqnll"
-path="res://.godot/imported/ModernDesk.glb-4d5b296df05e3d153d82328b1f1802fb.scn"
+uid="uid://dotqpxmkskgxj"
+path="res://.godot/imported/StackPaper.glb-af106f07cd3244dacff99a648cb54082.scn"
 
 [deps]
 
-source_file="res://!/assets/Office/ModernDesk.glb"
-dest_files=["res://.godot/imported/ModernDesk.glb-4d5b296df05e3d153d82328b1f1802fb.scn"]
+source_file="res://!/assets/geometry/Office/StackPaper.glb"
+dest_files=["res://.godot/imported/StackPaper.glb-af106f07cd3244dacff99a648cb54082.scn"]
 
 [params]
 

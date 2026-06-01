@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cpbdcv60qsfl7" path="res://!/scripts/ui/buttons/B_SceneSwitcher.gd" id="1_olmj7"]
 [ext_resource type="Texture2D" uid="uid://b8lt7jd1gmeol" path="res://!/assets/Sprites/MainMenu_BG_Button-1.png" id="2_c5l3k"]
 [ext_resource type="PackedScene" uid="uid://dltaqbilikqfn" path="res://!/scenes/menus/world.tscn" id="2_clwcb"]
-[ext_resource type="Script" uid="uid://c2rq1acylus0v" path="res://!/scripts/ui/main menu/MainMenu_Animation.gd" id="2_pr7bo"]
+[ext_resource type="Script" uid="uid://c2rq1acylus0v" path="res://!/scripts/ui/menu stuff/MainMenu_Animation.gd" id="2_pr7bo"]
 [ext_resource type="Texture2D" uid="uid://c77ussetmbklr" path="res://!/assets/Sprites/MainMenu_BG.png" id="2_s26h3"]
 [ext_resource type="Script" uid="uid://bmq6xhgo4n6sq" path="res://!/scripts/ui/buttons/B_QuitGame.gd" id="3_clwcb"]
 [ext_resource type="Texture2D" uid="uid://b7c5xlbgmd1n3" path="res://!/assets/Sprites/MainMenu_BG_Button-2.png" id="3_s26h3"]

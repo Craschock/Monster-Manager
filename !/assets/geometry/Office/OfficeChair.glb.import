@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dsjbedcfwxmav"
-path="res://.godot/imported/CoffeeMaschiene.glb-f59c94ce0cecadee1472ec7583871d03.scn"
+uid="uid://c02k72q5f8300"
+path="res://.godot/imported/OfficeChair.glb-190fc30d2f6ad24a91481fcc73fc87a8.scn"
 
 [deps]
 
-source_file="res://!/assets/Office/CoffeeMaschiene.glb"
-dest_files=["res://.godot/imported/CoffeeMaschiene.glb-f59c94ce0cecadee1472ec7583871d03.scn"]
+source_file="res://!/assets/geometry/Office/OfficeChair.glb"
+dest_files=["res://.godot/imported/OfficeChair.glb-190fc30d2f6ad24a91481fcc73fc87a8.scn"]
 
 [params]
 

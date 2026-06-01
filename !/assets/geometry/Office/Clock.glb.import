@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c02k72q5f8300"
-path="res://.godot/imported/OfficeChair.glb-5cbc363a819a7d3c79bbc9094c5f3e63.scn"
+uid="uid://t7l635xllkjh"
+path="res://.godot/imported/Clock.glb-d2dd39c1012939b3bbb09d4590527f7b.scn"
 
 [deps]
 
-source_file="res://!/assets/Office/OfficeChair.glb"
-dest_files=["res://.godot/imported/OfficeChair.glb-5cbc363a819a7d3c79bbc9094c5f3e63.scn"]
+source_file="res://!/assets/geometry/Office/Clock.glb"
+dest_files=["res://.godot/imported/Clock.glb-d2dd39c1012939b3bbb09d4590527f7b.scn"]
 
 [params]
 

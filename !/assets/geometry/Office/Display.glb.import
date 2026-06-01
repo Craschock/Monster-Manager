@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c4l1gjg2513er"
-path="res://.godot/imported/Pinboard.glb-07d359b10b345c937557817b9884d7bb.scn"
+uid="uid://tlcv8grx7wo"
+path="res://.godot/imported/Display.glb-9fdb7d34cff0ec4c093d346ecb7b6d8a.scn"
 
 [deps]
 
-source_file="res://!/assets/Office/Pinboard.glb"
-dest_files=["res://.godot/imported/Pinboard.glb-07d359b10b345c937557817b9884d7bb.scn"]
+source_file="res://!/assets/geometry/Office/Display.glb"
+dest_files=["res://.godot/imported/Display.glb-9fdb7d34cff0ec4c093d346ecb7b6d8a.scn"]
 
 [params]
 

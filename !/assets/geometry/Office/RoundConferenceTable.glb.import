@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://behp1d038yoxy"
-path="res://.godot/imported/LargePottetPlant.glb-3c18a47ec19f24a9cbb57d064239f0e6.scn"
+uid="uid://bgk41mux4i6ms"
+path="res://.godot/imported/RoundConferenceTable.glb-fd7d2dbc1944cbcf32ae97660c980d73.scn"
 
 [deps]
 
-source_file="res://!/assets/Office/LargePottetPlant.glb"
-dest_files=["res://.godot/imported/LargePottetPlant.glb-3c18a47ec19f24a9cbb57d064239f0e6.scn"]
+source_file="res://!/assets/geometry/Office/RoundConferenceTable.glb"
+dest_files=["res://.godot/imported/RoundConferenceTable.glb-fd7d2dbc1944cbcf32ae97660c980d73.scn"]
 
 [params]
 

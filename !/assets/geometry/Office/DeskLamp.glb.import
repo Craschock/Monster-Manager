@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cndxbp4rgcfa4"
-path="res://.godot/imported/GlassDoor.glb-88c9d7bc77d2729b1a35a30ab96517d8.scn"
+uid="uid://cxclf36sr2il3"
+path="res://.godot/imported/DeskLamp.glb-a82583e957e3d519add9883efaac0695.scn"
 
 [deps]
 
-source_file="res://!/assets/Office/GlassDoor.glb"
-dest_files=["res://.godot/imported/GlassDoor.glb-88c9d7bc77d2729b1a35a30ab96517d8.scn"]
+source_file="res://!/assets/geometry/Office/DeskLamp.glb"
+dest_files=["res://.godot/imported/DeskLamp.glb-a82583e957e3d519add9883efaac0695.scn"]
 
 [params]
 

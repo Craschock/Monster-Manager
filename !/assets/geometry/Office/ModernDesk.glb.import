@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bx6sgble18y3v"
-path="res://.godot/imported/SmallPottetPlant.glb-356e58b17a71c60feb66257987134ca6.scn"
+uid="uid://can4jfgawqnll"
+path="res://.godot/imported/ModernDesk.glb-0029130e8d60add8e1f81fca2ea7fbe4.scn"
 
 [deps]
 
-source_file="res://!/assets/Office/SmallPottetPlant.glb"
-dest_files=["res://.godot/imported/SmallPottetPlant.glb-356e58b17a71c60feb66257987134ca6.scn"]
+source_file="res://!/assets/geometry/Office/ModernDesk.glb"
+dest_files=["res://.godot/imported/ModernDesk.glb-0029130e8d60add8e1f81fca2ea7fbe4.scn"]
 
 [params]
 

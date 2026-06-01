@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://de4rsnoxeqa7v"]
+
+[ext_resource type="Theme" uid="uid://3qoaw6d100xf" path="res://!/assets/fonts/MainUI_Theme.tres" id="1_1kym2"]
+[ext_resource type="Script" uid="uid://ccwmja2joowx3" path="res://!/scripts/ui/menu stuff/AnimatedPanel.gd" id="1_dssxs"]
+[ext_resource type="Texture2D" uid="uid://h1bo32joj6da" path="res://!/assets/Sprites/Props_BG.png" id="1_ob0h7"]
+
+[node name="PropShopPanel" type="Control" unique_id=1258121233 node_paths=PackedStringArray("bg_progress", "ui_elements")]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+script = ExtResource("1_dssxs")
+bg_progress = NodePath("TextureProgressBar")
+ui_elements = [NodePath("VBoxContainer"), NodePath("Title"), NodePath("Underline")]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1186484169]
+layout_direction = 3
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+max_value = 50.0
+fill_mode = 1
+texture_progress = ExtResource("1_ob0h7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1653081736]
+layout_direction = 3
+layout_mode = 0
+offset_left = 50.0
+offset_top = 300.0
+offset_right = 750.0
+offset_bottom = 794.0
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=625681143]
+layout_mode = 2
+theme = ExtResource("1_1kym2")
+theme_override_font_sizes/font_size = 110
+text = "Placeholder"
+flat = true
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1534728741]
+layout_mode = 2
+theme = ExtResource("1_1kym2")
+theme_override_font_sizes/font_size = 110
+text = "Placeholder"
+flat = true
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=723935107]
+layout_mode = 2
+theme = ExtResource("1_1kym2")
+theme_override_font_sizes/font_size = 110
+text = "Placeholder"
+flat = true
+
+[node name="Title" type="Label" parent="." unique_id=707253074]
+layout_direction = 3
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 654.0
+offset_bottom = 204.0
+theme = ExtResource("1_1kym2")
+theme_override_font_sizes/font_size = 128
+text = "Prop Shop "
+
+[node name="Underline" type="ColorRect" parent="." unique_id=403816510]
+layout_direction = 2
+layout_mode = 0
+offset_left = -579.99994
+offset_top = 185.00002
+offset_right = -539.99994
+offset_bottom = 225.00002
+scale = Vector2(13.381, 0.16)

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://t7l635xllkjh"
-path="res://.godot/imported/Clock.glb-a86e8548f8d01731b73ae8de01fbdb89.scn"
+uid="uid://bx6sgble18y3v"
+path="res://.godot/imported/SmallPottetPlant.glb-d94a19bebdb4e24fbeb1b8923b1be55a.scn"
 
 [deps]
 
-source_file="res://!/assets/Office/Clock.glb"
-dest_files=["res://.godot/imported/Clock.glb-a86e8548f8d01731b73ae8de01fbdb89.scn"]
+source_file="res://!/assets/geometry/Office/SmallPottetPlant.glb"
+dest_files=["res://.godot/imported/SmallPottetPlant.glb-d94a19bebdb4e24fbeb1b8923b1be55a.scn"]
 
 [params]
 

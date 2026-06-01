@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://dfrbsvkjpiwon"]
+
+[ext_resource type="PackedScene" uid="uid://de4rsnoxeqa7v" path="res://!/scenes/menus/UI/panels/prop_shop_panel.tscn" id="1_a4qt1"]
+[ext_resource type="Script" uid="uid://cui3stnjbwn5q" path="res://!/scripts/ui/menu stuff/MainHUD.gd" id="1_inoop"]
+[ext_resource type="PackedScene" uid="uid://dka6g0oy18v8l" path="res://!/scenes/menus/UI/panels/robot_shop_panel.tscn" id="2_w40ab"]
+[ext_resource type="Theme" uid="uid://3qoaw6d100xf" path="res://!/assets/fonts/MainUI_Theme.tres" id="3_w40ab"]
+[ext_resource type="PackedScene" uid="uid://bfwjodia7ynbc" path="res://!/scenes/menus/button effects/ui_hover_component.tscn" id="4_0qix8"]
+
+[node name="MainHUD" type="CanvasLayer" unique_id=1019886624 node_paths=PackedStringArray("robot_shop_panel", "prop_shop_panel", "btn_robot_shop", "btn_prop_shop")]
+script = ExtResource("1_inoop")
+robot_shop_panel = NodePath("SafeZone/RobotShopPanel")
+prop_shop_panel = NodePath("SafeZone/PropShopPanel")
+btn_robot_shop = NodePath("B_OpenRobotShop")
+btn_prop_shop = NodePath("B_OpenPropShop")
+
+[node name="SafeZone" type="Control" parent="." unique_id=105855415]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RobotShopPanel" parent="SafeZone" unique_id=991358060 instance=ExtResource("2_w40ab")]
+layout_mode = 0
+
+[node name="PropShopPanel" parent="SafeZone" unique_id=1258121233 instance=ExtResource("1_a4qt1")]
+layout_mode = 1
+
+[node name="SubMenuButtons" type="HBoxContainer" parent="." unique_id=568108564]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -360.0
+offset_top = -162.0
+offset_right = 360.00073
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="B_CameraRotateLeft" type="Button" parent="." unique_id=577360534]
+offset_left = 841.0
+offset_top = 910.0
+offset_right = 958.0
+offset_bottom = 1090.0
+pivot_offset = Vector2(62, 105)
+theme = ExtResource("3_w40ab")
+text = "⟲"
+flat = true
+
+[node name="UIHoverComponent" parent="B_CameraRotateLeft" unique_id=1283412738 instance=ExtResource("4_0qix8")]
+tilt_angle_degrees = -360.0
+animation_duration = 0.67
+
+[node name="B_CameraRotateRight" type="Button" parent="." unique_id=263758222]
+offset_left = 962.0
+offset_top = 910.0
+offset_right = 1079.0
+offset_bottom = 1090.0
+pivot_offset = Vector2(56, 105)
+theme = ExtResource("3_w40ab")
+text = "⟳"
+flat = true
+
+[node name="UIHoverComponent" parent="B_CameraRotateRight" unique_id=1464930398 instance=ExtResource("4_0qix8")]
+tilt_angle_degrees = 360.0
+animation_duration = 0.67
+
+[node name="B_OpenRobotShop" type="Button" parent="." unique_id=139114031]
+offset_left = 432.0
+offset_top = 920.0
+offset_right = 820.0
+offset_bottom = 1100.0
+pivot_offset = Vector2(194, 90)
+theme = ExtResource("3_w40ab")
+text = "Robots"
+flat = true
+
+[node name="UIHoverComponent" parent="B_OpenRobotShop" unique_id=542984459 instance=ExtResource("4_0qix8")]
+tilt_angle_degrees = -5.0
+
+[node name="B_OpenPropShop" type="Button" parent="." unique_id=818130385]
+offset_left = 1108.0
+offset_top = 920.0
+offset_right = 1436.0
+offset_bottom = 1100.0
+pivot_offset = Vector2(164, 90)
+theme = ExtResource("3_w40ab")
+text = "Props"
+flat = true
+
+[node name="UIHoverComponent" parent="B_OpenPropShop" unique_id=1553231245 instance=ExtResource("4_0qix8")]

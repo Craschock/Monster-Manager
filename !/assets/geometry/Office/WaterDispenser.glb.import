@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bti6uyc2u0op3"
-path="res://.godot/imported/DesktopPC.glb-a063b0b25012440f400e4fedffde7599.scn"
+uid="uid://1wtgut5owxei"
+path="res://.godot/imported/WaterDispenser.glb-0b6efb02c8afcc291926f3b5863534d9.scn"
 
 [deps]
 
-source_file="res://!/assets/Office/DesktopPC.glb"
-dest_files=["res://.godot/imported/DesktopPC.glb-a063b0b25012440f400e4fedffde7599.scn"]
+source_file="res://!/assets/geometry/Office/WaterDispenser.glb"
+dest_files=["res://.godot/imported/WaterDispenser.glb-0b6efb02c8afcc291926f3b5863534d9.scn"]
 
 [params]
 
