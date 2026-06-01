@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://cjn0jnsbyu5tn" path="res://!/scenes/shop.tscn" id="7_7kto3"]
 [ext_resource type="PackedScene" uid="uid://bk7y221frgjcy" path="res://!/scenes/task_spawner.tscn" id="8_em27n"]
 [ext_resource type="PackedScene" uid="uid://bp1kwx70ff54b" path="res://!/assets/geometry/game_world.tscn" id="8_ua7wm"]
-[ext_resource type="PackedScene" uid="uid://dfrbsvkjpiwon" path="res://!/scenes/menus/UI/main_hud.tscn" id="9_ua7wm"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_em27n"]
 vertices = PackedVector3Array(-29.5, 0.5, -13.5, -29.5, 0.5, 25.5, 29.5, 0.5, 25.5, 29.5, 0.5, -13.5)
@@ -66,8 +65,6 @@ use_collision = true
 collision_layer = 3
 collision_mask = 3
 size = Vector3(60, 1, 40)
-
-[node name="MainHUD" parent="." unique_id=1019886624 instance=ExtResource("9_ua7wm")]
 
 [connection signal="pressed" from="UI/RotateAntiClockwise" to="Camera3D" method="_on_rotate_anti_clockwise_pressed"]
 [connection signal="pressed" from="UI/RotateClockwise" to="Camera3D" method="_on_rotate_clockwise_pressed"]
