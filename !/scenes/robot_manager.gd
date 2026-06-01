@@ -7,7 +7,6 @@ class_name RobotManager
 const RobotScn = preload("res://!/scenes/entities/robot/robot.tscn")
 
 var robots: Array[Robot] = []
-
 var selected_robot: Robot = null
 
 var robots_speed: int = 5
@@ -22,6 +21,7 @@ func _ready() -> void:
 	Events.robot_clicked.connect(on_robot_clicked)
 	Events.dragon_clicked.connect(on_dragon_clicked)
 	Events.task_clicked.connect(on_task_clicked)
+	Events.prop_clicked.connect(on_prop_clicked)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,7 +37,6 @@ func create_new_robot() -> void:
 	robot.max_load = robots_capacity
 	add_child(robot)
 	robots.append(robot)
-	
 
 
 func increase_speed() -> void:
@@ -50,6 +49,7 @@ func increase_capacity() -> void:
 	robots_capacity += 1
 	for robot in robots:
 		robot.max_load = robots_capacity
+
 
 func on_robot_clicked(clicked_robot: Robot) -> void:
 	if selected_robot:
@@ -64,11 +64,17 @@ func on_robot_clicked(clicked_robot: Robot) -> void:
 		selected_robot = clicked_robot
 
 
+# todo merge into single handler?
 func on_dragon_clicked(dragon: Dragon) -> void:
 	if selected_robot:
-		selected_robot.set_target_position(dragon.position)
+		selected_robot.set_target(dragon)
 
 
 func on_task_clicked(task: Task) -> void:
 	if selected_robot:
-		selected_robot.set_target_position(task.position)
+		selected_robot.set_target(task)
+
+
+func on_prop_clicked(prop: Prop) -> void:
+	if selected_robot:
+		selected_robot.set_target(prop)

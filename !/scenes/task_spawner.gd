@@ -13,7 +13,7 @@ const TYPE_TO_SCN: Dictionary[Task.Type, PackedScene] = {
 const CAPACITY = 3
 
 var type_to_sp: Dictionary[Task.Type, Area3D]
-var tasks: Dictionary[Task.Type, Array]
+var task_counts: Dictionary[Task.Type, int]
 
 func _ready() -> void:
 	var spawn_point1: Area3D = $Task1SpawnPoint
@@ -24,11 +24,13 @@ func _ready() -> void:
 		Task.Type.TYPE2 : spawn_point2,
 		Task.Type.TYPE3 : spawn_point3,
 	}
-	tasks = {
-		Task.Type.TYPE1 : [],
-		Task.Type.TYPE2 : [],
-		Task.Type.TYPE3 : [],
+	task_counts = {
+		Task.Type.TYPE1 : 0,
+		Task.Type.TYPE2 : 0,
+		Task.Type.TYPE3 : 0,
 	}
+	
+	Events.item_picked_up.connect(on_item_picked_up)
 
 
 func _on_new_task_timer_timeout() -> void:
@@ -38,7 +40,7 @@ func _on_new_task_timer_timeout() -> void:
 func create_new_task() -> void:
 	# pick random type
 	var type = Task.Type.values().pick_random()
-	if tasks[type].size() == CAPACITY:
+	if task_counts[type] >= CAPACITY:
 		return
 	
 	var scn = TYPE_TO_SCN[type]
@@ -46,26 +48,11 @@ func create_new_task() -> void:
 	var spawn_point = type_to_sp[type]
 	task.position = spawn_point.position
 	add_child(task)
-	
-	tasks[type].push_back(task)
+	task_counts[type] += 1
 
 
-func _on_spawn_point_body_entered(body: Node3D, type: Task.Type) -> void:
-	if body is Robot:
-		var robot = body as Robot
-		if !tasks[type].is_empty() and !robot.full():
-			var task: Task = tasks[type].pop_back()
-			task.carrier = robot
-			robot.add_load()
-
-
-func _on_task_1_spawn_point_body_entered(body: Node3D) -> void:
-	_on_spawn_point_body_entered(body, Task.Type.TYPE1)
-
-
-func _on_task_2_spawn_point_body_entered(body: Node3D) -> void:
-	_on_spawn_point_body_entered(body, Task.Type.TYPE2)
-
-
-func _on_task_3_spawn_point_body_entered(body: Node3D) -> void:
-	_on_spawn_point_body_entered(body, Task.Type.TYPE3)
+func on_item_picked_up(item):
+	if item is Task:
+		var task = item as Task
+		var type = task.type
+		task_counts[type] -= 1

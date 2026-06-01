@@ -2,20 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dcyavjoaabyes" path="res://!/scenes/entities/dragon/dragon.gd" id="1_3mxua"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_j67v6"]
-size = Vector3(4, 4, 5)
-
-[node name="Dragon" type="Node3D" unique_id=2073827000]
+[node name="Dragon" type="StaticBody3D" unique_id=909527641]
 script = ExtResource("1_3mxua")
-
-[node name="Area3D" type="Area3D" parent="." unique_id=1570793688]
-collision_layer = 3
-collision_mask = 3
-input_ray_pickable = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=465683418]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-shape = SubResource("BoxShape3D_j67v6")
 
 [node name="TaskPrograssion" type="Label3D" parent="." unique_id=1903675422]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
@@ -27,5 +15,4 @@ font_size = 128
 [node name="TaskTimer" type="Timer" parent="." unique_id=1667709277]
 one_shot = true
 
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="TaskTimer" to="." method="_on_task_timer_timeout"]

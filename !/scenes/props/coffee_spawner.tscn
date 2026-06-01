@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b2htt72g3o4a7"]
+
+[ext_resource type="Script" uid="uid://bkh16nhie24cy" path="res://!/scenes/props/coffee_spawner.gd" id="1_7tajd"]
+[ext_resource type="PackedScene" uid="uid://d36ctb5pun6p5" path="res://!/scenes/prefabs/coffe_machine.tscn" id="2_7tajd"]
+
+[node name="CoffeSpawner" type="Node3D" unique_id=1160063897]
+script = ExtResource("1_7tajd")
+metadata/_custom_type_script = "uid://2k463554ydml"
+
+[node name="Timer" type="Timer" parent="." unique_id=753965900]
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1698958172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 1.2)
+
+[node name="CoffeMachine" parent="." unique_id=843045165 instance=ExtResource("2_7tajd")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

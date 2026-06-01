@@ -24,31 +24,30 @@ func _process(_delta: float) -> void:
 		task_progression.text = "%s %%" % int(progression * 100)
 
 
-func _on_model_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
+func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed:
 			Events.dragon_clicked.emit(self)
 
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body is Task:
-		handle_new_task(body as Task)
-
-
-func handle_new_task(task: Task) -> void:
-	if current_task == null:
-		var carrier = task.carrier
-		task.carrier = null
-		carrier.remove_load()
-		start_task(task)
+func handle_new_item(item):
+	if item is Task:
+		start_task(item as Task)
+	if item is Prop:
+		process_prop(item as Prop)
 
 
 func start_task(task: Task) -> void:
+	# todo: what if dragon is already working on task?
+	#	current: discard current, start new
+	#	alt: task queue
+	#	alt: task is left at robot
 	current_task = task
 	var type = task.type
 	var time = time_coefficients[type] * task.time_to_complete
 	task_timer.start(time)
 	task_progression.visible = true
+	task.input_ray_pickable = false
 
 
 func _on_task_timer_timeout() -> void:
@@ -63,7 +62,10 @@ func _on_task_timer_timeout() -> void:
 	completed_tasks += 1
 	if completed_tasks == max_tasks:
 		leave()
-	
+
+
+func process_prop(prop: Prop):
+	print("processing prop ", prop.mood_boost)
 
 
 func leave() -> void:

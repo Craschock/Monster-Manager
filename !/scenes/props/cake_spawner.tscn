@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b8kmcile3jlbf"]
+
+[ext_resource type="Script" uid="uid://b456ddo5gsy26" path="res://!/scenes/props/cake_spawner.gd" id="1_se3kl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_se3kl"]
+albedo_color = Color(0.4390491, 0.43904912, 0.43904912, 1)
+
+[node name="CakeSpawner" type="Node3D" unique_id=1160063897]
+script = ExtResource("1_se3kl")
+metadata/_custom_type_script = "uid://2k463554ydml"
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=741117969]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+use_collision = true
+collision_layer = 3
+collision_mask = 3
+size = Vector3(1, 0.2, 1)
+material = SubResource("StandardMaterial3D_se3kl")
+
+[node name="Timer" type="Timer" parent="." unique_id=753965900]
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1698958172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

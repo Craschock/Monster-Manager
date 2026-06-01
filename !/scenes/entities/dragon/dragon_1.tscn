@@ -16,14 +16,12 @@ height = 4.0
 [node name="Dragon1" unique_id=2073827000 instance=ExtResource("1_us712")]
 script = ExtResource("2_us712")
 
-[node name="Model" type="StaticBody3D" parent="." index="0" unique_id=310333919]
-
-[node name="Mesh" type="MeshInstance3D" parent="Model" index="0" unique_id=2098191570]
+[node name="Mesh" type="MeshInstance3D" parent="." index="2" unique_id=2098191570]
 transform = Transform3D(1.993571, 0, 0, 0, -8.714176e-08, 1.993571, 0, -1.993571, -8.714176e-08, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_us712")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model" index="1" unique_id=1216150441]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="3" unique_id=1216150441]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_uxq61")
 
-[connection signal="input_event" from="Model" to="." method="_on_model_input_event"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -36,3 +36,13 @@ func _on_speed_increase_pressed() -> void:
 func _on_capacity_increase_pressed() -> void:
 	# todo currency check
 	Events.capacity_increase_bought.emit()
+
+
+func _on_cake_pressed() -> void:
+	# todo currency check
+	Events.cake_bought.emit()
+
+
+func _on_coffee_pressed() -> void:
+	# todo currency check
+	Events.coffe_bought.emit()

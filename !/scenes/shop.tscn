@@ -52,6 +52,32 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 50
 text = "Capacity ++"
 
+[node name="Cake" type="Button" parent="UI" unique_id=237032413]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 89.0
+offset_top = -211.0
+offset_right = 552.0
+offset_bottom = -79.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Cake"
+
+[node name="Coffee" type="Button" parent="UI" unique_id=1732294484]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 89.0
+offset_top = -397.0
+offset_right = 552.0
+offset_bottom = -265.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Coffee"
+
 [connection signal="pressed" from="UI/BuyRobot" to="." method="_on_buy_robot_pressed"]
 [connection signal="pressed" from="UI/SpeedIncrease" to="." method="_on_speed_increase_pressed"]
 [connection signal="pressed" from="UI/CapacityIncrease" to="." method="_on_capacity_increase_pressed"]
+[connection signal="pressed" from="UI/Cake" to="." method="_on_cake_pressed"]
+[connection signal="pressed" from="UI/Coffee" to="." method="_on_coffee_pressed"]
