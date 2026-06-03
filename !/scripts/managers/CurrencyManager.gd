@@ -1,8 +1,5 @@
 extends Node
 
-# Signal to UI elements when money changes TODO
-signal currency_changed(new_amount: int)
-
 const STARTING_BALANCE: int = 500
 const MIN_BALANCE: int = 0
 
@@ -11,15 +8,14 @@ const MIN_BALANCE: int = 0
 
 func _ready() -> void:
 	# Broadcast initial balance on startup
-	currency_changed.emit(current_currency)
+	Events.currency_changed.emit(current_currency)
 
 # Function for everyone to add currency to player
 func add_currency(amount: int) -> void:
 	if amount <= 0:
 		return
-		
 	current_currency += amount
-	currency_changed.emit(current_currency)
+	Events.currency_changed.emit(current_currency)
 
 # Function for everyone to spend currency
 # Returns true if purchase was successful, false if too broke
@@ -29,7 +25,7 @@ func spend_currency(amount: int) -> bool:
 		
 	if current_currency >= amount:
 		current_currency -= amount
-		currency_changed.emit(current_currency)
+		Events.currency_changed.emit(current_currency)
 		return true
 		
 	# purchase failed (not enough currency)

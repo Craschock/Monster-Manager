@@ -1,83 +1,54 @@
 [gd_scene format=3 uid="uid://cjn0jnsbyu5tn"]
 
 [ext_resource type="Script" uid="uid://cp5vpir4lid7v" path="res://!/scenes/shop.gd" id="1_pxcqy"]
+[ext_resource type="PackedScene" uid="uid://dka6g0oy18v8l" path="res://!/scenes/menus/UI/panels/robot_shop_panel.tscn" id="2_26v2e"]
+[ext_resource type="Script" uid="uid://daqnj7t7ppcjt" path="res://!/scenes/shop_ui.gd" id="2_g566e"]
+[ext_resource type="PackedScene" uid="uid://de4rsnoxeqa7v" path="res://!/scenes/menus/UI/panels/prop_shop_panel.tscn" id="3_g566e"]
+[ext_resource type="Theme" uid="uid://3qoaw6d100xf" path="res://!/assets/fonts/MainUI_Theme.tres" id="5_j5jc4"]
+[ext_resource type="PackedScene" uid="uid://bfwjodia7ynbc" path="res://!/scenes/menus/button effects/ui_hover_component.tscn" id="6_vonwm"]
 
 [node name="Shop" type="Node" unique_id=1139307655]
 script = ExtResource("1_pxcqy")
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=72119047]
+[node name="ShopUI" type="CanvasLayer" parent="." unique_id=72119047]
+script = ExtResource("2_g566e")
 
-[node name="BuyRobot" type="Button" parent="UI" unique_id=415500220]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -541.0
-offset_top = -211.0
-offset_right = -78.0
-offset_bottom = -79.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_font_sizes/font_size = 50
-text = "Buy New Robot"
+[node name="RobotShopPanel" parent="ShopUI" unique_id=991358060 instance=ExtResource("2_26v2e")]
 
-[node name="SpeedIncrease" type="Button" parent="UI" unique_id=485579935]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -541.0
-offset_top = -397.0
-offset_right = -78.0
-offset_bottom = -265.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_font_sizes/font_size = 50
-text = "Speed ++"
+[node name="PropShopPanel" parent="ShopUI" unique_id=1258121233 instance=ExtResource("3_g566e")]
 
-[node name="CapacityIncrease" type="Button" parent="UI" unique_id=887789633]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -541.0
-offset_top = -591.0
-offset_right = -78.0
-offset_bottom = -459.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_font_sizes/font_size = 50
-text = "Capacity ++"
+[node name="B_OpenRobotShop" type="Button" parent="ShopUI" unique_id=1093588013]
+offset_left = 432.0
+offset_top = 920.0
+offset_right = 820.0
+offset_bottom = 1100.0
+pivot_offset = Vector2(194, 90)
+theme = ExtResource("5_j5jc4")
+text = "Robots"
+flat = true
 
-[node name="Cake" type="Button" parent="UI" unique_id=237032413]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 89.0
-offset_top = -211.0
-offset_right = 552.0
-offset_bottom = -79.0
-grow_vertical = 0
-theme_override_font_sizes/font_size = 50
-text = "Cake"
+[node name="UIHoverComponent" parent="ShopUI/B_OpenRobotShop" unique_id=542984459 instance=ExtResource("6_vonwm")]
+tilt_angle_degrees = -5.0
 
-[node name="Coffee" type="Button" parent="UI" unique_id=1732294484]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 89.0
-offset_top = -397.0
-offset_right = 552.0
-offset_bottom = -265.0
-grow_vertical = 0
-theme_override_font_sizes/font_size = 50
-text = "Coffee"
+[node name="B_OpenPropShop" type="Button" parent="ShopUI" unique_id=543776420]
+offset_left = 1108.0
+offset_top = 920.0
+offset_right = 1436.0
+offset_bottom = 1100.0
+pivot_offset = Vector2(164, 90)
+theme = ExtResource("5_j5jc4")
+text = "Props"
+flat = true
 
-[connection signal="pressed" from="UI/BuyRobot" to="." method="_on_buy_robot_pressed"]
-[connection signal="pressed" from="UI/SpeedIncrease" to="." method="_on_speed_increase_pressed"]
-[connection signal="pressed" from="UI/CapacityIncrease" to="." method="_on_capacity_increase_pressed"]
-[connection signal="pressed" from="UI/Cake" to="." method="_on_cake_pressed"]
-[connection signal="pressed" from="UI/Coffee" to="." method="_on_coffee_pressed"]
+[node name="UIHoverComponent" parent="ShopUI/B_OpenPropShop" unique_id=1367748535 instance=ExtResource("6_vonwm")]
+
+[connection signal="pressed" from="ShopUI/RobotShopPanel/VBoxContainer/B_BuyRobot" to="." method="_on_shop_button_pressed" flags=18]
+[connection signal="pressed" from="ShopUI/RobotShopPanel/VBoxContainer/B_SpeedIncrease" to="." method="_on_shop_button_pressed" flags=18]
+[connection signal="pressed" from="ShopUI/RobotShopPanel/VBoxContainer/B_CapacityIncrease" to="." method="_on_shop_button_pressed" flags=18]
+[connection signal="pressed" from="ShopUI/PropShopPanel/VBoxContainer/B_Coffe" to="." method="_on_shop_button_pressed" flags=18]
+[connection signal="pressed" from="ShopUI/PropShopPanel/VBoxContainer/B_Cake" to="." method="_on_shop_button_pressed" flags=18]
+[connection signal="pressed" from="ShopUI/B_OpenRobotShop" to="ShopUI" method="_on_b_open_robot_shop_pressed"]
+[connection signal="pressed" from="ShopUI/B_OpenPropShop" to="ShopUI" method="_on_b_open_prop_shop_pressed"]
+
+[editable path="ShopUI/RobotShopPanel"]
+[editable path="ShopUI/PropShopPanel"]

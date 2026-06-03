@@ -52,7 +52,7 @@ func handle_new_item(item, carrier: Robot):
 func start_task(task: Task, carrier: Robot) -> void:
 	var r = randi_range(-30, 50)  # todo tweak values
 	if r > mood:  # lower mood -> higher probability of eating
-		# eat carrier
+		# eat carrier (todo: show to player)
 		carrier.die()
 		return
 	
@@ -72,8 +72,7 @@ func _on_task_timer_timeout() -> void:
 	var type = current_task.type
 	var reward = reward_coefficients[type] * current_task.reward
 	# todo show to player
-	# todo increase currency
-	print("Receiving reward ", reward)
+	CurrencyManager.add_currency(reward)
 	task_progression.visible = false
 	current_task.queue_free()
 	current_task = null

@@ -1,40 +1,15 @@
 extends CanvasLayer
+
 class_name MainHUD
 
-
-# Exüporting stuff for testing purposes
-@export_category("UI Panels")
-@export var robot_shop_panel: AnimatedPanel
-@export var prop_shop_panel: AnimatedPanel
-
-@export_category("Navigation Buttons")
-@export var btn_robot_shop: Button
-@export var btn_prop_shop: Button
-
-# What is currently open
-var current_open_panel: Control = null
+@onready var currency_label: Label = $L_CurrentCurrency
 
 func _ready() -> void:
-	# Connect buttons
-	if btn_robot_shop:
-		btn_robot_shop.pressed.connect(func(): toggle_panel(robot_shop_panel))
-	if btn_prop_shop:
-		btn_prop_shop.pressed.connect(func(): toggle_panel(prop_shop_panel))
-
-func toggle_panel(panel_to_toggle: Control) -> void:
-	# If clicking the button for the panel that is already open, just close it
-	if current_open_panel == panel_to_toggle:
-		panel_to_toggle.close_panel()
-		current_open_panel = null
-		return
-		
-	# If another panel is open, hide it first
-	if current_open_panel != null:
-		current_open_panel.close_panel()
-		
-	# Open the requested panel
-	panel_to_toggle.open_panel()
-	current_open_panel = panel_to_toggle
+	print("connecting")
+	Events.currency_changed.connect(_on_currency_changed)
+	# bcs currency manager loads before this ready function is called
+	# not a clean solution tho :(
+	_on_currency_changed(CurrencyManager.STARTING_BALANCE)
 
 
 func _on_b_camera_rotate_left_pressed() -> void:
@@ -45,3 +20,12 @@ func _on_b_camera_rotate_left_pressed() -> void:
 func _on_b_camera_rotate_right_pressed() -> void:
 	Input.action_press("rotate_clockwise")
 	Input.action_release("rotate_clockwise")
+
+
+func _on_currency_changed(new_currency: int) -> void:
+	currency_label.text = str(new_currency)
+
+
+# todo remove, only for testing purposes
+func _on_add_money_pressed() -> void:
+	CurrencyManager.add_currency(100)

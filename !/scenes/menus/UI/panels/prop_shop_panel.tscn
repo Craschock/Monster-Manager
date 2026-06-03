@@ -12,6 +12,7 @@ anchor_right = 1.0
 offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
+mouse_filter = 1
 script = ExtResource("1_dssxs")
 bg_progress = NodePath("TextureProgressBar")
 ui_elements = [NodePath("VBoxContainer"), NodePath("Title"), NodePath("Underline")]
@@ -33,15 +34,16 @@ offset_top = 300.0
 offset_right = 750.0
 offset_bottom = 794.0
 
-[node name="Coffe" type="Button" parent="VBoxContainer" unique_id=625681143]
+[node name="B_Coffe" type="Button" parent="VBoxContainer" unique_id=625681143]
 layout_mode = 2
 theme = ExtResource("1_1kym2")
 theme_override_font_sizes/font_size = 110
 text = "Coffe"
 flat = true
 
-[node name="Cake" type="Button" parent="VBoxContainer" unique_id=1534728741]
+[node name="B_Cake" type="Button" parent="VBoxContainer" unique_id=1534728741]
 layout_mode = 2
+mouse_filter = 1
 theme = ExtResource("1_1kym2")
 theme_override_font_sizes/font_size = 110
 text = "Cake"
@@ -73,6 +75,3 @@ offset_top = 185.00002
 offset_right = -539.99994
 offset_bottom = 225.00002
 scale = Vector2(13.381, 0.16)
-
-[connection signal="pressed" from="VBoxContainer/Coffe" to="." method="_on_coffe_pressed"]
-[connection signal="pressed" from="VBoxContainer/Cake" to="." method="_on_cake_pressed"]
