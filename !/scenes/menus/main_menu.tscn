@@ -34,7 +34,8 @@ texture = ExtResource("2_s26h3")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-value = 14.0
+max_value = 60.0
+step = 0.1
 fill_mode = 1
 texture_progress = ExtResource("8_bffc6")
 
@@ -42,12 +43,15 @@ texture_progress = ExtResource("8_bffc6")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+max_value = 50.0
+step = 0.1
 texture_progress = ExtResource("2_c5l3k")
 
 [node name="TPB_Right" type="TextureProgressBar" parent="." unique_id=259591817]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+step = 0.1
 fill_mode = 1
 texture_progress = ExtResource("3_s26h3")
 

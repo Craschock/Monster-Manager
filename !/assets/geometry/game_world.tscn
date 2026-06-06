@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bp1kwx70ff54b"]
 
-[ext_resource type="PackedScene" uid="uid://ca6t2a01gxbjo" path="res://!/assets/geometry/Final_Blockout.glb" id="1_ydnw8"]
+[ext_resource type="PackedScene" uid="uid://c0tkg2l5lsc72" path="res://!/assets/geometry/Final_Blockout.glb" id="1_ydnw8"]
 [ext_resource type="PackedScene" uid="uid://c4l1gjg2513er" path="res://!/assets/geometry/Office/Pinboard.glb" id="2_cxyjg"]
 [ext_resource type="PackedScene" uid="uid://c02k72q5f8300" path="res://!/assets/geometry/Office/OfficeChair.glb" id="3_jad7t"]
 [ext_resource type="PackedScene" uid="uid://can4jfgawqnll" path="res://!/assets/geometry/Office/ModernDesk.glb" id="4_fnmgx"]
@@ -9,8 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://csgq0c376i6oa" path="res://!/assets/geometry/Office/Cake.glb" id="7_bv7fw"]
 
 [node name="GameWorld" type="Node3D" unique_id=460750166]
-
-[node name="Final_Blockout" parent="." unique_id=676116090 instance=ExtResource("1_ydnw8")]
 
 [node name="North Wing" type="Node3D" parent="." unique_id=591001351]
 
@@ -266,3 +264,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11770195, 0.054831743, -0.
 
 [node name="Cake" parent="." unique_id=485521658 instance=ExtResource("7_bv7fw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4025891, 1.4237213, 2.8187017)
+
+[node name="Final_Blockout" parent="." unique_id=1706056970 instance=ExtResource("1_ydnw8")]

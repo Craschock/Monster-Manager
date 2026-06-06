@@ -4,6 +4,22 @@ class_name Dragon
 
 signal dragon_leaving(dragon: Dragon)
 
+enum AnimState { SLEEP, DESTROYSITL, DESTROYSITR, DRAGONSBREATH, DRINKING_COFFE, STAMPING, TAKEPHONE, WORK, WALK }
+
+const ANIM_STRINGS = {
+	AnimState.SLEEP: "Sleep",
+	AnimState.DESTROYSITL: "DestroySitL",
+	AnimState.DESTROYSITR: "DestroySitR",
+	AnimState.DRAGONSBREATH: "DragonsBreath_001",
+	AnimState.DRINKING_COFFE: "Drinking Coffe Sit",
+	AnimState.STAMPING: "Stamping",
+	AnimState.TAKEPHONE: "TakePhone",
+	AnimState.WORK: "Work",
+	AnimState.WALK: "Walk"
+}
+
+@export var anim_player: AnimationPlayer
+
 var current_task: Task = null
 var time_coefficients: Dictionary[Task.Type, float]
 var reward_coefficients: Dictionary[Task.Type, float]
@@ -16,6 +32,15 @@ var mood: int = 100
 @onready var mood_timer: Timer = $MoodTimer
 @onready var mood_label: Label3D = $MoodLabel
 
+# Initial idle anim
+func _ready() -> void:
+	play_anim(AnimState.SLEEP)
+	
+
+# For playing animations
+func play_anim(state: AnimState) -> void:
+	if anim_player:
+		anim_player.play(ANIM_STRINGS[state])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -52,8 +77,12 @@ func handle_new_item(item, carrier: Robot):
 func start_task(task: Task, carrier: Robot) -> void:
 	var r = randi_range(-30, 50)  # todo tweak values
 	if r > mood:  # lower mood -> higher probability of eating
-		# eat carrier (todo: show to player)
+		# eat carrier (todo: show to player) (dragon animation added)
+		play_anim(AnimState.DRAGONSBREATH)
 		carrier.die()
+		# Queue up next animation cause it gets stuck in this one ig..
+		if anim_player:
+			anim_player.queue(ANIM_STRINGS[AnimState.SLEEP])
 		return
 	
 	# todo: what if dragon is already working on task?
@@ -66,6 +95,9 @@ func start_task(task: Task, carrier: Robot) -> void:
 	task_timer.start(time)
 	task_progression.visible = true
 	task.input_ray_pickable = false
+	
+	# todo: add other animations for different work types 
+	play_anim(AnimState.WORK)
 
 
 func _on_task_timer_timeout() -> void:
@@ -79,6 +111,9 @@ func _on_task_timer_timeout() -> void:
 	completed_tasks += 1
 	if completed_tasks == max_tasks:
 		leave()
+	else: 
+		# Go to sleep animation cuz of animation freeze
+		play_anim(AnimState.SLEEP)
 
 
 func process_prop(prop: Prop):
@@ -89,6 +124,7 @@ func process_prop(prop: Prop):
 
 func leave() -> void:
 	dragon_leaving.emit(self)
+	# todo: add walking animation state for 5 seconds. With a dissapearing shader?
 	queue_free()
 
 

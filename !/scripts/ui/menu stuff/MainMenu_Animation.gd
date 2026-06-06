@@ -10,7 +10,7 @@ const BUTTON_FADE_DURATION: float = 0.8
 const BUTTON_START_PERCENT: float = 0.75 # 
 
 # ignore, its for the animations
-const MAX_PROGRESS_VALUE: float = 100.0
+const MAX_PROGRESS_VALUE: float = 55.0
 const MIN_PROGRESS_VALUE: float = 0.0
 const VISIBLE_ALPHA: float = 1.0
 const HIDDEN_ALPHA: float = 0.0

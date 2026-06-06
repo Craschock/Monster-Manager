@@ -41,6 +41,7 @@ func _on_new_dragon_timer_timeout() -> void:
 		var dragon_scn = DRAGON_SCNS.pick_random()
 		var dragon: Dragon = dragon_scn.instantiate()
 		dragon.position = spawn_point.position
+		dragon.rotation.y = spawn_point.get_facing_angle() # Apply rotation from facing direction
 		dragon.dragon_leaving.connect(_on_dragon_leaving)
 		add_child(dragon)
 		

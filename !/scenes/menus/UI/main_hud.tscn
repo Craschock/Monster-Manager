@@ -25,8 +25,8 @@ text = "⟲"
 flat = true
 
 [node name="UIHoverComponent" parent="B_CameraRotateLeft" unique_id=1283412738 instance=ExtResource("4_0qix8")]
-tilt_angle_degrees = -360.0
-animation_duration = 0.67
+tilt_angle_degrees = -45.0
+animation_duration = 0.314
 
 [node name="B_CameraRotateRight" type="Button" parent="." unique_id=263758222]
 anchors_preset = 7
@@ -45,8 +45,8 @@ text = "⟳"
 flat = true
 
 [node name="UIHoverComponent" parent="B_CameraRotateRight" unique_id=1464930398 instance=ExtResource("4_0qix8")]
-tilt_angle_degrees = 360.0
-animation_duration = 0.67
+tilt_angle_degrees = 45.0
+animation_duration = 0.314
 
 [node name="L_CurrentCurrency" type="Label" parent="." unique_id=970134108]
 anchors_preset = 2
