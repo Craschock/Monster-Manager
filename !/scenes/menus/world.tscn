@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dfrbsvkjpiwon" path="res://!/scenes/menus/UI/main_hud.tscn" id="2_3rdx2"]
 [ext_resource type="PackedScene" uid="uid://dj74vh1w1x4gh" path="res://camera_3d.tscn" id="2_ifcfv"]
-[ext_resource type="PackedScene" uid="uid://cjn0jnsbyu5tn" path="res://!/scenes/shop.tscn" id="3_77yao"]
+[ext_resource type="PackedScene" uid="uid://cjn0jnsbyu5tn" path="res://!/scenes/shop/shop.tscn" id="3_77yao"]
 [ext_resource type="PackedScene" uid="uid://chdlf20qdrj2l" path="res://!/scenes/dragon_spawner/dragon_spawner.tscn" id="5_eox87"]
 [ext_resource type="PackedScene" uid="uid://mtucxswpq4n5" path="res://!/scenes/dragon_spawner/spawn_point.tscn" id="6_3c6ts"]
 [ext_resource type="PackedScene" uid="uid://csvsuqeoivur0" path="res://!/scenes/robot_manager.tscn" id="6_7kto3"]

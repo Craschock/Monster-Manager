@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bvwg54d4idyss"]
+
+[ext_resource type="Script" uid="uid://dab5tonhbimvi" path="res://!/scenes/shop/buy_robot.gd" id="1_537yt"]
+
+[node name="BuyRobot" type="Node" unique_id=663162847]
+script = ExtResource("1_537yt")
+metadata/_custom_type_script = "uid://bfevbgslbly8l"

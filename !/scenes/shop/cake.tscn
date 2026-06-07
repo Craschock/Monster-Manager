@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://qj1f7m32k0eu"]
+
+[ext_resource type="Script" uid="uid://ct68vbdpwbwl5" path="res://!/scenes/shop/cake.gd" id="1_cb7i4"]
+
+[node name="Cake" type="Node" unique_id=1643265340]
+script = ExtResource("1_cb7i4")
+metadata/_custom_type_script = "uid://bfevbgslbly8l"

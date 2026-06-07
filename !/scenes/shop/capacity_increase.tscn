@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://pg5auvswcgg8"]
+
+[ext_resource type="Script" uid="uid://bnrec8eastyco" path="res://!/scenes/shop/capacity_increase.gd" id="1_t150u"]
+
+[node name="CapacityIncrease" type="Node" unique_id=1866071953]
+script = ExtResource("1_t150u")
+metadata/_custom_type_script = "uid://bfevbgslbly8l"

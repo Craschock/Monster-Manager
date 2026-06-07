@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cmnwj3o6c5krh"]
+
+[ext_resource type="Script" uid="uid://ccrt8w36xvmeh" path="res://!/scenes/shop/coffe.gd" id="1_wnrtd"]
+
+[node name="Coffe" type="Node" unique_id=2047435443]
+script = ExtResource("1_wnrtd")
+metadata/_custom_type_script = "uid://bfevbgslbly8l"
