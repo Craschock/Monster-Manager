@@ -30,7 +30,9 @@ var mood: int = 100
 @onready var task_timer: Timer = $TaskTimer
 @onready var task_progression: Label3D = $TaskPrograssion
 @onready var mood_timer: Timer = $MoodTimer
-@onready var mood_label: Label3D = $MoodLabel
+@onready var sprite_mood1: Sprite3D = $Moods/Mood_1
+@onready var sprite_mood2: Sprite3D = $Moods/Mood_2
+@onready var sprite_mood3: Sprite3D = $Moods/Mood_3
 
 # Initial idle anim
 func _ready() -> void:
@@ -50,16 +52,23 @@ func _process(_delta: float) -> void:
 		var progression = 1.0 - (time_left / time_total)
 		task_progression.text = "%s %%" % int(progression * 100)
 	
-	var mood_str: String = ""
-	if mood > 70:
-		mood_str = ":D"
-	elif mood > 30:
-		mood_str = ":/"
-	else:
-		mood_str = ">:("
-	mood_label.text = mood_str
+	handle_mood()
 	
 
+func handle_mood() -> void:
+	if mood > 70:
+		sprite_mood1.visible = true
+		sprite_mood2.visible = false
+		sprite_mood3.visible = false
+	elif mood > 30:
+		sprite_mood1.visible = false
+		sprite_mood2.visible = true
+		sprite_mood3.visible = false
+	else:
+		sprite_mood1.visible = false
+		sprite_mood2.visible = false
+		sprite_mood3.visible = true
+	
 
 func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:

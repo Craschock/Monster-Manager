@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://bryhnk4j43rug"]
 
 [ext_resource type="Script" uid="uid://dcyavjoaabyes" path="res://!/scenes/entities/dragon/dragon.gd" id="1_3mxua"]
+[ext_resource type="Texture2D" uid="uid://dt77x8sbd0chn" path="res://!/assets/Sprites/MoodIcon_1.png" id="2_0de0d"]
+[ext_resource type="Texture2D" uid="uid://kdgqfcowtfd2" path="res://!/assets/Sprites/MoodIcon_2.png" id="3_2nc3u"]
+[ext_resource type="Texture2D" uid="uid://75f1kv7li1lx" path="res://!/assets/Sprites/MoodIcon_3.png" id="4_xx7ub"]
 
 [node name="Dragon" type="StaticBody3D" unique_id=909527641]
 script = ExtResource("1_3mxua")
@@ -12,11 +15,23 @@ billboard = 1
 text = "42 %"
 font_size = 128
 
-[node name="MoodLabel" type="Label3D" parent="." unique_id=38490231]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
+[node name="Moods" type="Node3D" parent="." unique_id=16423573]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 3.5, 0)
+
+[node name="Mood_1" type="Sprite3D" parent="Moods" unique_id=72533365]
+visible = false
 billboard = 1
-text = ":D"
-font_size = 128
+texture = ExtResource("2_0de0d")
+
+[node name="Mood_2" type="Sprite3D" parent="Moods" unique_id=448454307]
+visible = false
+billboard = 1
+texture = ExtResource("3_2nc3u")
+
+[node name="Mood_3" type="Sprite3D" parent="Moods" unique_id=1264808321]
+visible = false
+billboard = 1
+texture = ExtResource("4_xx7ub")
 
 [node name="TaskTimer" type="Timer" parent="." unique_id=1667709277]
 one_shot = true
