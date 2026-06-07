@@ -26,7 +26,9 @@ var carried_items: Array[Node3D] = []
 
 func _process(_delta: float) -> void:
 	for item in carried_items:
-		item.global_position = global_position + Vector3(0.0, 3.0, 0.0)
+		var vec = Vector3.MODEL_FRONT.rotated(Vector3.UP, mesh.rotation.y)
+		item.global_position = global_position + vec
+		
 
 
 func _physics_process(_delta: float) -> void:
