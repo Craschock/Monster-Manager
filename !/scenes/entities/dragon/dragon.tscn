@@ -2,18 +2,91 @@
 
 [ext_resource type="Script" uid="uid://dcyavjoaabyes" path="res://!/scenes/entities/dragon/dragon.gd" id="1_3mxua"]
 [ext_resource type="Texture2D" uid="uid://dt77x8sbd0chn" path="res://!/assets/Sprites/MoodIcon_1.png" id="2_0de0d"]
+[ext_resource type="Texture2D" uid="uid://1f6p7w7vy1iq" path="res://!/assets/Sprites/Progression_Bar_Frame.png" id="2_2nc3u"]
 [ext_resource type="Texture2D" uid="uid://kdgqfcowtfd2" path="res://!/assets/Sprites/MoodIcon_2.png" id="3_2nc3u"]
+[ext_resource type="Texture2D" uid="uid://blm2xhg7r6oq3" path="res://!/assets/Sprites/Progression_Bar_Fill_TYPE1.png" id="3_xx7ub"]
+[ext_resource type="Texture2D" uid="uid://c1ml2fu7s0y35" path="res://!/assets/Sprites/Progression_Bar_Fill_TYPE2.png" id="4_a7il3"]
 [ext_resource type="Texture2D" uid="uid://75f1kv7li1lx" path="res://!/assets/Sprites/MoodIcon_3.png" id="4_xx7ub"]
+[ext_resource type="Texture2D" uid="uid://qeonploupurm" path="res://!/assets/Sprites/Progression_Bar_Fill_TYPE3.png" id="5_hx27j"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_a7il3"]
+viewport_path = NodePath("TaskProgressionFrame/SubViewport")
 
 [node name="Dragon" type="StaticBody3D" unique_id=909527641]
 script = ExtResource("1_3mxua")
 
-[node name="TaskPrograssion" type="Label3D" parent="." unique_id=1903675422]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-visible = false
+[node name="TaskProgressionFrame" type="Sprite3D" parent="." unique_id=1870133230]
+transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, 0, 5, 0)
 billboard = 1
-text = "42 %"
-font_size = 128
+texture = SubResource("ViewportTexture_a7il3")
+
+[node name="SubViewport" type="SubViewport" parent="TaskProgressionFrame" unique_id=1639761491]
+transparent_bg = true
+size = Vector2i(600, 120)
+render_target_update_mode = 4
+
+[node name="TaskType1" type="Control" parent="TaskProgressionFrame/SubViewport" unique_id=604210276]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Task1_Fill" type="TextureProgressBar" parent="TaskProgressionFrame/SubViewport/TaskType1" unique_id=2111763204]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 120.0
+step = 0.1
+texture_over = ExtResource("2_2nc3u")
+texture_progress = ExtResource("3_xx7ub")
+texture_progress_offset = Vector2(125, 12)
+
+[node name="Task1_Icon" type="TextureRect" parent="TaskProgressionFrame/SubViewport/TaskType1" unique_id=1066151034]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TaskType2" type="Control" parent="TaskProgressionFrame/SubViewport" unique_id=1778199301]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Task2_Fill" type="TextureProgressBar" parent="TaskProgressionFrame/SubViewport/TaskType2" unique_id=1530113096]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 120.0
+step = 0.1
+texture_over = ExtResource("2_2nc3u")
+texture_progress = ExtResource("4_a7il3")
+texture_progress_offset = Vector2(125, 12)
+
+[node name="Task2_Icon" type="TextureRect" parent="TaskProgressionFrame/SubViewport/TaskType2" unique_id=1150590037]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TaskType3" type="Control" parent="TaskProgressionFrame/SubViewport" unique_id=1128818274]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Task3_Fill" type="TextureProgressBar" parent="TaskProgressionFrame/SubViewport/TaskType3" unique_id=2102766392]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 120.0
+step = 0.1
+texture_over = ExtResource("2_2nc3u")
+texture_progress = ExtResource("5_hx27j")
+texture_progress_offset = Vector2(125, 12)
+
+[node name="Task3_Icon" type="TextureRect" parent="TaskProgressionFrame/SubViewport/TaskType3" unique_id=195763182]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Moods" type="Node3D" parent="." unique_id=16423573]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 3.5, 0)

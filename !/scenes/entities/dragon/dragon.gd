@@ -18,6 +18,10 @@ const ANIM_STRINGS = {
 	AnimState.WALK: "Walk"
 }
 
+const ICON_MOOD1 = preload("res://!/assets/Sprites/MoodIcon_1.png")
+const ICON_MOOD2 = preload("res://!/assets/Sprites/MoodIcon_2.png")
+const ICON_MOOD3 = preload("res://!/assets/Sprites/MoodIcon_3.png")
+
 @export var anim_player: AnimationPlayer
 
 var current_task: Task = null
@@ -28,11 +32,17 @@ var max_tasks: int = 3
 var mood: int = 100
 
 @onready var task_timer: Timer = $TaskTimer
-@onready var task_progression: Label3D = $TaskPrograssion
-@onready var mood_timer: Timer = $MoodTimer
-@onready var sprite_mood1: Sprite3D = $Moods/Mood_1
-@onready var sprite_mood2: Sprite3D = $Moods/Mood_2
-@onready var sprite_mood3: Sprite3D = $Moods/Mood_3
+@onready var task_progression: Sprite3D = $TaskProgressionFrame
+@onready var task_bars: Array[TextureProgressBar] = [
+	$TaskProgressionFrame/SubViewport/TaskType1/Task1_Fill,
+	$TaskProgressionFrame/SubViewport/TaskType2/Task2_Fill,
+	$TaskProgressionFrame/SubViewport/TaskType3/Task3_Fill
+]
+@onready var mood_sprites: Array[Sprite3D] = [
+	$Moods/Mood_1,
+	$Moods/Mood_2,
+	$Moods/Mood_3
+]
 
 # Initial idle anim
 func _ready() -> void:
@@ -46,35 +56,53 @@ func play_anim(state: AnimState) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if current_task:
-		var time_left = task_timer.time_left
-		var time_total = task_timer.wait_time
-		var progression = 1.0 - (time_left / time_total)
-		task_progression.text = "%s %%" % int(progression * 100)
+	handle_task_display()
 	
-	handle_mood()
+	handle_mood_display()
 	
 
-func handle_mood() -> void:
-	if mood > 70:
-		sprite_mood1.visible = true
-		sprite_mood2.visible = false
-		sprite_mood3.visible = false
-	elif mood > 30:
-		sprite_mood1.visible = false
-		sprite_mood2.visible = true
-		sprite_mood3.visible = false
-	else:
-		sprite_mood1.visible = false
-		sprite_mood2.visible = false
-		sprite_mood3.visible = true
+func handle_task_display() -> void:
+	if current_task == null:
+		# Hide all barys
+		for bar in task_bars:
+			bar.visible = false
+		return	
 	
+	var type = current_task.type
+	var time_left = task_timer.time_left
+	var time_total = task_timer.wait_time
+	var percentage = (1.0 - (time_left / time_total)) * 100.0
+	var active_index = type
+	
+	for i in range(task_bars.size()):
+		if i == active_index:
+			task_bars[i].visible = true
+			task_bars[i].value = percentage
+		else:
+			task_bars[i].visible = false
+
+func handle_mood_display() -> void:
+	if current_task != null:
+		for sprite in mood_sprites:
+			sprite.visible = false
+		return
+	
+	var active_index: int
+	if mood > 70:
+		active_index = 0
+	elif mood > 30:
+		active_index = 1
+	else:
+		active_index = 2
+		
+	for i in range(mood_sprites.size()):
+		mood_sprites[i].visible = (i == active_index)
 
 func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed:
 			Events.dragon_clicked.emit(self)
-
+	
 
 func handle_new_item(item, carrier: Robot):
 	if item is Task:
