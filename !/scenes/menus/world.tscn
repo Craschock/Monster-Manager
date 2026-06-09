@@ -19,7 +19,8 @@ agent_radius = 1.2
 [node name="World" type="Node3D" unique_id=387539890]
 
 [node name="Camera3D" parent="." unique_id=1442915904 instance=ExtResource("2_ifcfv")]
-transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 15, 19)
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 10, 19)
+fov = 70.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=571358143]
 transform = Transform3D(0.6358419, 0.6638356, -0.3937351, 0.17433403, 0.3734286, 0.9111304, 0.75187266, -0.6479764, 0.12171243, 0, 8, 0)
