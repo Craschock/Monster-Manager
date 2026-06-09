@@ -1,29 +1,26 @@
 [gd_scene format=3 uid="uid://bhpixdps0ctky"]
 
 [ext_resource type="PackedScene" uid="uid://bryhnk4j43rug" path="res://!/scenes/entities/dragon/dragon.tscn" id="1_us712"]
-[ext_resource type="Script" uid="uid://0rp5hme020xr" path="res://!/scenes/entities/dragon/dragon_1.gd" id="2_us712"]
 [ext_resource type="PackedScene" uid="uid://dlppagsxob2el" path="res://!/assets/geometry/dragons/Dragon One.glb" id="3_uxq61"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_uxq61"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_us712"]
 viewport_path = NodePath("TaskProgressionFrame/SubViewport")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uxq61"]
 radius = 1.0
 height = 4.0
 
-[node name="Dragon1" unique_id=2073827000 node_paths=PackedStringArray("anim_player") instance=ExtResource("1_us712")]
-script = ExtResource("2_us712")
-anim_player = NodePath("Mesh/Dragon One/AnimationPlayer")
+[node name="Dragon1" unique_id=2073827000 instance=ExtResource("1_us712")]
 
 [node name="TaskProgressionFrame" parent="." index="0" unique_id=1870133230]
-texture = SubResource("ViewportTexture_uxq61")
+texture = SubResource("ViewportTexture_us712")
 
 [node name="Mesh" type="MeshInstance3D" parent="." index="2" unique_id=2098191570]
 transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, 0, 0, 0)
 
 [node name="Dragon One" parent="Mesh" index="0" unique_id=223328022 instance=ExtResource("3_uxq61")]
 
-[node name="Skeleton3D" parent="Mesh/Dragon One/metarig" parent_id_path=PackedInt32Array(223328022, 966587366) index="1" unique_id=139418875]
+[node name="Skeleton3D" parent="Mesh/Dragon One/metarig" parent_id_path=PackedInt32Array(223328022, 954788167) index="1" unique_id=1106133268]
 bones/1/rotation = Quaternion(0.9941512, 2.6410104e-08, -1.7880282e-08, -0.107997894)
 bones/2/rotation = Quaternion(0.057070825, 5.9829844e-08, 1.0605703e-09, 0.9983701)
 bones/3/rotation = Quaternion(0.079794474, 3.6860863e-09, 1.0727032e-08, 0.9968114)
@@ -68,7 +65,7 @@ bones/66/rotation = Quaternion(-0.8974527, 0.12650058, -0.052733507, 0.4192797)
 bones/67/rotation = Quaternion(0.75129926, -0.20454378, 0.12207553, 0.61547446)
 bones/68/rotation = Quaternion(0.64344275, -0.02887966, -0.03427152, 0.7641812)
 
-[node name="AnimationPlayer" parent="Mesh/Dragon One" index="1" unique_id=1152753530]
+[node name="AnimationPlayer" parent="Mesh/Dragon One" index="1" unique_id=1560115678]
 autoplay = &"Sleep"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="3" unique_id=1216150441]

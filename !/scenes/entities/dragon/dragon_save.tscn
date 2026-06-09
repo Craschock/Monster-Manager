@@ -1,0 +1,196 @@
+[gd_scene format=3 uid="uid://pgh5qw0a0jc1"]
+
+[ext_resource type="PackedScene" uid="uid://bryhnk4j43rug" path="res://!/scenes/entities/dragon/dragon.tscn" id="1_rdoli"]
+[ext_resource type="Script" path="res://!/scenes/entities/dragon/dragon_1.gd" id="2_453s8"]
+[ext_resource type="PackedScene" uid="uid://dlppagsxob2el" path="res://!/assets/geometry/dragons/Dragon One.glb" id="3_4ruh1"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_uxq61"]
+viewport_path = NodePath("TaskProgressionFrame/SubViewport")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uxq61"]
+radius = 1.0
+height = 4.0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uxq61"]
+animation = &"Calling"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mmyrw"]
+animation = &"DestroySitL"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bj4iq"]
+animation = &"DestroySitR"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hxpn5"]
+animation = &"DragonsBreath_001"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p0r8w"]
+animation = &"Drinking Coffee Sit"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_amxv5"]
+animation = &"Sleep"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lddad"]
+animation = &"Stamping"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lit38"]
+animation = &"TakePhone"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_txa26"]
+animation = &"Walk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sd3ry"]
+animation = &"Work"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uxq61"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_amxv5"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mmyrw"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bj4iq"]
+xfade_time = 0.25
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hxpn5"]
+xfade_time = 0.25
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p0r8w"]
+xfade_time = 0.25
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lddad"]
+xfade_time = 0.25
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lit38"]
+xfade_time = 0.25
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_txa26"]
+xfade_time = 0.25
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sd3ry"]
+xfade_time = 0.25
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ahq5y"]
+xfade_time = 0.25
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6p8np"]
+xfade_time = 0.25
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jk721"]
+xfade_time = 0.25
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_irmqd"]
+xfade_time = 0.25
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iwu0i"]
+xfade_time = 0.25
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3frk2"]
+xfade_time = 0.25
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fn0xp"]
+xfade_time = 0.25
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7kblo"]
+xfade_time = 0.25
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_bj4iq"]
+states/Calling/node = SubResource("AnimationNodeAnimation_uxq61")
+states/Calling/position = Vector2(709.0241, 329.0899)
+states/DestroySitL/node = SubResource("AnimationNodeAnimation_mmyrw")
+states/DestroySitL/position = Vector2(450.2, -41.578186)
+states/DestroySitR/node = SubResource("AnimationNodeAnimation_bj4iq")
+states/DestroySitR/position = Vector2(562.168, -46.326035)
+states/DragonsBreath_001/node = SubResource("AnimationNodeAnimation_hxpn5")
+states/DragonsBreath_001/position = Vector2(843.77795, -42.507526)
+"states/Drinking Coffee Sit/node" = SubResource("AnimationNodeAnimation_p0r8w")
+"states/Drinking Coffee Sit/position" = Vector2(358.6304, 212.59999)
+states/End/position = Vector2(1139.2001, 102.05053)
+states/Sleep/node = SubResource("AnimationNodeAnimation_amxv5")
+states/Sleep/position = Vector2(668.3862, 103.14768)
+states/Stamping/node = SubResource("AnimationNodeAnimation_lddad")
+states/Stamping/position = Vector2(561.80096, 251.63463)
+states/Start/position = Vector2(203.2, 99.840004)
+states/TakePhone/node = SubResource("AnimationNodeAnimation_lit38")
+states/TakePhone/position = Vector2(617.73285, 329.8823)
+states/Walk/node = SubResource("AnimationNodeAnimation_txa26")
+states/Walk/position = Vector2(1017.0992, 104.281105)
+states/Work/node = SubResource("AnimationNodeAnimation_sd3ry")
+states/Work/position = Vector2(760.8904, 251.96129)
+transitions = ["Start", "Sleep", SubResource("AnimationNodeStateMachineTransition_uxq61"), "TakePhone", "Calling", SubResource("AnimationNodeStateMachineTransition_amxv5"), "Walk", "End", SubResource("AnimationNodeStateMachineTransition_mmyrw"), "Sleep", "Drinking Coffee Sit", SubResource("AnimationNodeStateMachineTransition_bj4iq"), "Drinking Coffee Sit", "Sleep", SubResource("AnimationNodeStateMachineTransition_hxpn5"), "Sleep", "Stamping", SubResource("AnimationNodeStateMachineTransition_p0r8w"), "Stamping", "Sleep", SubResource("AnimationNodeStateMachineTransition_lddad"), "Sleep", "TakePhone", SubResource("AnimationNodeStateMachineTransition_lit38"), "Calling", "Sleep", SubResource("AnimationNodeStateMachineTransition_txa26"), "Sleep", "Work", SubResource("AnimationNodeStateMachineTransition_sd3ry"), "Work", "Sleep", SubResource("AnimationNodeStateMachineTransition_ahq5y"), "Sleep", "Walk", SubResource("AnimationNodeStateMachineTransition_6p8np"), "DestroySitL", "Sleep", SubResource("AnimationNodeStateMachineTransition_jk721"), "Sleep", "DestroySitL", SubResource("AnimationNodeStateMachineTransition_irmqd"), "DestroySitR", "Sleep", SubResource("AnimationNodeStateMachineTransition_iwu0i"), "Sleep", "DestroySitR", SubResource("AnimationNodeStateMachineTransition_3frk2"), "DragonsBreath_001", "Sleep", SubResource("AnimationNodeStateMachineTransition_fn0xp"), "Sleep", "DragonsBreath_001", SubResource("AnimationNodeStateMachineTransition_7kblo")]
+graph_offset = Vector2(139, -108)
+
+[node name="Dragon1" unique_id=2073827000 node_paths=PackedStringArray("anim_player", "anim_tree") instance=ExtResource("1_rdoli")]
+script = ExtResource("2_453s8")
+anim_player = NodePath("Mesh/Dragon One/AnimationPlayer")
+anim_tree = NodePath("AnimationTree")
+
+[node name="TaskProgressionFrame" parent="." index="0" unique_id=1870133230]
+texture = SubResource("ViewportTexture_uxq61")
+
+[node name="Mesh" type="MeshInstance3D" parent="." index="2" unique_id=2098191570]
+transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, 0, 0, 0)
+
+[node name="Dragon One" parent="Mesh" index="0" unique_id=852248410 instance=ExtResource("3_4ruh1")]
+
+[node name="Skeleton3D" parent="Mesh/Dragon One/metarig" parent_id_path=PackedInt32Array(852248410, 271016568) index="1" unique_id=1622020171]
+bones/1/rotation = Quaternion(0.9941512, 2.6410104e-08, -1.7880282e-08, -0.107997894)
+bones/2/rotation = Quaternion(0.057070825, 5.9829844e-08, 1.0605703e-09, 0.9983701)
+bones/3/rotation = Quaternion(0.079794474, 3.6860863e-09, 1.0727032e-08, 0.9968114)
+bones/4/rotation = Quaternion(0.070696376, 7.944957e-08, 4.0644785e-08, 0.99749786)
+bones/5/rotation = Quaternion(0.28229412, -1.3092502e-08, 1.8039744e-08, 0.959328)
+bones/7/rotation = Quaternion(-0.1719875, 0.15569556, -0.14535125, 0.9617964)
+bones/9/rotation = Quaternion(0.53126717, 0.3337532, -0.056519676, 0.7766398)
+bones/10/rotation = Quaternion(0.6566959, 8.3801346e-08, 3.4418935e-07, 0.7541555)
+bones/12/rotation = Quaternion(-0.39773634, 4.2617625e-08, -2.1685322e-09, 0.9174998)
+bones/13/rotation = Quaternion(0.5645178, -0.4258166, 0.5645177, -0.42581654)
+bones/15/rotation = Quaternion(0.1742125, 0.59674007, 0.7802252, -0.06928164)
+bones/16/position = Vector3(-0.13903755, 1.2330513, -1.1869377)
+bones/16/rotation = Quaternion(-0.33341256, 0.18941277, -0.003700261, 0.9235504)
+bones/17/rotation = Quaternion(0.76565975, -0.27023926, -0.37553704, 0.44688687)
+bones/18/rotation = Quaternion(0.173495, 0.009681908, 0.024027336, 0.98449403)
+bones/19/rotation = Quaternion(0.49361783, 0.007608513, 0.013415868, 0.8695422)
+bones/20/rotation = Quaternion(-0.1742128, 0.59674, 0.78022516, 0.0692819)
+bones/21/position = Vector3(0.13903724, 1.2330524, -1.1869377)
+bones/21/rotation = Quaternion(-0.3300966, -0.18958649, 0.003751085, 0.92470497)
+bones/22/rotation = Quaternion(0.75811493, 0.27620733, 0.44254643, 0.3913105)
+bones/23/rotation = Quaternion(0.17349504, -0.009681757, -0.024027366, 0.98449403)
+bones/24/rotation = Quaternion(0.4936179, -0.007608548, -0.013415855, 0.8695421)
+bones/27/rotation = Quaternion(-0.7566994, -0.007543601, -0.40488374, 0.51324296)
+bones/28/rotation = Quaternion(0.59258634, 0.1648558, -0.1888685, 0.7655016)
+bones/32/rotation = Quaternion(-0.48826328, -0.12881847, -0.6972297, 0.5087981)
+bones/36/rotation = Quaternion(-0.7392642, -0.103583634, -0.5610964, 0.35767284)
+bones/40/rotation = Quaternion(0.7909787, -0.039618388, 0.56193316, -0.23877636)
+bones/43/rotation = Quaternion(-0.7567005, 0.007542502, 0.40488192, 0.5132429)
+bones/44/rotation = Quaternion(0.5925863, -0.16485582, 0.18886851, 0.7655016)
+bones/48/rotation = Quaternion(-0.48826337, 0.1288189, 0.6972297, 0.50879806)
+bones/52/rotation = Quaternion(-0.7392641, 0.10358377, 0.5610965, 0.35767278)
+bones/56/rotation = Quaternion(0.79097867, 0.039618507, -0.56193346, -0.23877613)
+bones/59/rotation = Quaternion(0.23093359, 0.11680016, -0.46520108, 0.84653145)
+bones/60/position = Vector3(0.05144053, 0.5292654, -0.018316526)
+bones/60/rotation = Quaternion(-0.44691956, 0.70487654, 0.46644872, -0.29298043)
+bones/61/rotation = Quaternion(-0.8974526, -0.12650044, 0.052733544, 0.41927984)
+bones/62/rotation = Quaternion(0.75129914, 0.20454384, -0.122075506, 0.6154747)
+bones/63/rotation = Quaternion(0.64344275, 0.028879559, 0.03427152, 0.7641812)
+bones/65/position = Vector3(-0.05144044, 0.5292656, -0.018316604)
+bones/65/rotation = Quaternion(0.44691965, 0.70487654, 0.46644872, 0.29298046)
+bones/66/rotation = Quaternion(-0.8974527, 0.12650058, -0.052733507, 0.4192797)
+bones/67/rotation = Quaternion(0.75129926, -0.20454378, 0.12207553, 0.61547446)
+bones/68/rotation = Quaternion(0.64344275, -0.02887966, -0.03427152, 0.7641812)
+
+[node name="AnimationPlayer" parent="Mesh/Dragon One" index="1" unique_id=111067837]
+autoplay = &"Sleep"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="3" unique_id=1216150441]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_uxq61")
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="6" unique_id=755132212]
+root_node = NodePath("../Mesh/Dragon One")
+tree_root = SubResource("AnimationNodeStateMachine_bj4iq")
+anim_player = NodePath("../Mesh/Dragon One/AnimationPlayer")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+
+[editable path="Mesh/Dragon One"]

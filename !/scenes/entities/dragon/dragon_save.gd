@@ -4,16 +4,18 @@ class_name Dragon
 
 signal dragon_leaving(dragon: Dragon)
 
-enum AnimState { SLEEP, DESTROYSITL, DESTROYSITR, DRAGONSBREATH, DRINKING_COFFE, STAMPING, TAKEPHONE, WORK, WALK }
+
+enum AnimState { SLEEP, DESTROYSITL, DESTROYSITR, DRAGONSBREATH, DRINKING_COFFE, STAMPING, TAKEPHONE, CALL, WORK,  WALK }
 
 const ANIM_STRINGS = {
 	AnimState.SLEEP: "Sleep",
 	AnimState.DESTROYSITL: "DestroySitL",
 	AnimState.DESTROYSITR: "DestroySitR",
 	AnimState.DRAGONSBREATH: "DragonsBreath_001",
-	AnimState.DRINKING_COFFE: "Drinking Coffe Sit",
+	AnimState.DRINKING_COFFE: "Drinking Coffee Sit",
 	AnimState.STAMPING: "Stamping",
 	AnimState.TAKEPHONE: "TakePhone",
+	AnimState.CALL: "Call",
 	AnimState.WORK: "Work",
 	AnimState.WALK: "Walk"
 }
@@ -23,15 +25,17 @@ const ICON_MOOD2 = preload("res://!/assets/Sprites/MoodIcon_2.png")
 const ICON_MOOD3 = preload("res://!/assets/Sprites/MoodIcon_3.png")
 
 @export var anim_player: AnimationPlayer
-@export var time_coefficients: Dictionary[Task.Type, float]
-@export var reward_coefficients: Dictionary[Task.Type, float]
+@export var anim_tree: AnimationTree
 
 var current_task: Task = null
+var time_coefficients: Dictionary[Task.Type, float]
+var reward_coefficients: Dictionary[Task.Type, float]
 var completed_tasks: int = 0
 var max_tasks: int = 3
 var mood: int = 100
 
 @onready var task_timer: Timer = $TaskTimer
+@onready var state_machine = anim_tree.get("parameters/playback") if anim_tree else null
 @onready var task_progression: Sprite3D = $TaskProgressionFrame
 @onready var task_bars: Array[TextureProgressBar] = [
 	$TaskProgressionFrame/SubViewport/TaskType1/Task1_Fill,
@@ -49,10 +53,10 @@ func _ready() -> void:
 	play_anim(AnimState.SLEEP)
 	
 
-# For playing animations
+# For playing animations^(animation tree)
 func play_anim(state: AnimState) -> void:
-	if anim_player:
-		anim_player.play(ANIM_STRINGS[state])
+	if state_machine:
+		state_machine.travel(ANIM_STRINGS[state])	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -63,7 +67,7 @@ func _process(_delta: float) -> void:
 
 func handle_task_display() -> void:
 	if current_task == null:
-		# Hide all barys
+		# Hide all bars
 		for bar in task_bars:
 			bar.visible = false
 		return	
@@ -134,6 +138,9 @@ func start_task(task: Task, carrier: Robot) -> void:
 	task.input_ray_pickable = false
 	
 	# todo: add other animations for different work types 
+	# Task1 = Stamping
+	# Task2 = Calling
+	# Task3 = Typing
 	play_anim(AnimState.WORK)
 
 
