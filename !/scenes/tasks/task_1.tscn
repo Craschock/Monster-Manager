@@ -1,12 +1,7 @@
 [gd_scene format=3 uid="uid://dhtybmvixtfh0"]
 
 [ext_resource type="Script" uid="uid://htuv1x73k6wl" path="res://!/scenes/tasks/task_1.gd" id="1_0frix"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfakh"]
-albedo_color = Color(0.8392157, 0.8509804, 0.16470589, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_e7k2r"]
-material = SubResource("StandardMaterial3D_qfakh")
+[ext_resource type="PackedScene" uid="uid://dotqpxmkskgxj" path="res://!/assets/geometry/Office/StackPaper.glb" id="2_ncvpn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e57xv"]
 
@@ -17,8 +12,16 @@ script = ExtResource("1_0frix")
 metadata/_custom_type_script = "uid://k7r6ydg8utbw"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=421335941]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-mesh = SubResource("BoxMesh_e7k2r")
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 0, 0.017413542, 0)
+
+[node name="StackPaper" parent="MeshInstance3D" unique_id=1062228962 instance=ExtResource("2_ncvpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3773784, 0)
+
+[node name="StackPaper2" parent="MeshInstance3D" unique_id=1280019681 instance=ExtResource("2_ncvpn")]
+transform = Transform3D(0.9864922, 0, -0.16380808, 0, 1, 0, 0.16380808, 0, 0.9864922, 0, -0.12718514, 0)
+
+[node name="StackPaper3" parent="MeshInstance3D" unique_id=2111322686 instance=ExtResource("2_ncvpn")]
+transform = Transform3D(0.9722435, 0, 0.2339714, 0, 1, 0, -0.2339714, 0, 0.9722435, 0, 0.11851832, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=842633644]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
