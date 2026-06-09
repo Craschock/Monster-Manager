@@ -29,6 +29,7 @@ transform = Transform3D(0.6358419, 0.6638356, -0.3937351, 0.17433403, 0.3734286,
 [node name="Shop" parent="." unique_id=1139307655 instance=ExtResource("3_77yao")]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1584947747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.030335903, -9.536743e-07, 0.0029773712)
 navigation_mesh = SubResource("NavigationMesh_em27n")
 
 [node name="GameWorld" parent="NavigationRegion3D" unique_id=460750166 instance=ExtResource("8_77yao")]
