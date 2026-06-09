@@ -12,9 +12,11 @@ const ANIM_IDLE_GRAB = "Idle&Grab"
 const ANIM_GRAB = "Grab"
 const ANIM_DEATH = "Death"
 
-@onready var anim_player: AnimationPlayer = $MeshInstance3D/Robot/AnimationPlayer 
+@onready var anim_player: AnimationPlayer = $Model/AnimationPlayer
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
-@onready var mesh: MeshInstance3D = $MeshInstance3D
+@onready var model: Node3D = $Model
+@onready var outline_nodes: Array[Node]
+@onready var selected_highlight: MeshInstance3D = $SelectedMesh
 
 var speed: int = 5
 var max_load: int = 1
@@ -24,9 +26,14 @@ var current_load: int = 0
 var target: Node3D = null
 var carried_items: Array[Node3D] = []
 
+
+func _ready() -> void:
+	outline_nodes = get_tree().get_nodes_in_group("outline")
+
+
 func _process(_delta: float) -> void:
 	for item in carried_items:
-		var vec = Vector3.MODEL_FRONT.rotated(Vector3.UP, mesh.rotation.y)
+		var vec = Vector3.MODEL_FRONT.rotated(Vector3.UP, model.rotation.y)
 		item.global_position = global_position + vec
 		
 
@@ -40,7 +47,7 @@ func _physics_process(_delta: float) -> void:
 	# Rotation Animation for the Robot
 	if velocity.length() > 0.1:
 		var target_angle = atan2(velocity.x, velocity.z)
-		mesh.rotation.y = lerp_angle(mesh.rotation.y, target_angle, ROTATION_SPEED * _delta)
+		model.rotation.y = lerp_angle(model.rotation.y, target_angle, ROTATION_SPEED * _delta)
 
 	move_and_slide()
 	update_animations()
@@ -57,17 +64,11 @@ func set_target_position(pos: Vector3):
 
 
 func select():
-	var color = Color.DARK_BLUE
-	var mat = StandardMaterial3D.new()
-	mat.albedo_color = color
-	mesh.material_override = mat
+	selected_highlight.visible = true
 
 
 func deselect():
-	var color = Color.SKY_BLUE
-	var mat = StandardMaterial3D.new()
-	mat.albedo_color = color
-	mesh.material_override = mat
+	selected_highlight.visible = false
 
 
 # todo refactor
@@ -141,3 +142,14 @@ func update_animations() -> void:
 		anim_player.play(ANIM_IDLE_GRAB)
 	else:
 		anim_player.play(ANIM_IDLE)
+
+
+func _on_mouse_entered() -> void:
+	for node in outline_nodes:
+		node.visible = true
+	
+
+
+func _on_mouse_exited() -> void:
+	for node in outline_nodes:
+		node.visible = false

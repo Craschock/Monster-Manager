@@ -23,10 +23,10 @@ const ICON_MOOD2 = preload("res://!/assets/Sprites/MoodIcon_2.png")
 const ICON_MOOD3 = preload("res://!/assets/Sprites/MoodIcon_3.png")
 
 @export var anim_player: AnimationPlayer
+@export var time_coefficients: Dictionary[Task.Type, float]
+@export var reward_coefficients: Dictionary[Task.Type, float]
 
 var current_task: Task = null
-var time_coefficients: Dictionary[Task.Type, float]
-var reward_coefficients: Dictionary[Task.Type, float]
 var completed_tasks: int = 0
 var max_tasks: int = 3
 var mood: int = 100
