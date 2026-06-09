@@ -1,6 +1,6 @@
 extends Node3D
 
-class_name Dragon
+class_name Save_Dragon
 
 signal dragon_leaving(dragon: Dragon)
 

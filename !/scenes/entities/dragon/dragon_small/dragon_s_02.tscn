@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://7rvu244ui6ca"]
+
+[ext_resource type="PackedScene" uid="uid://ql2eteuwgdea" path="res://!/scenes/entities/dragon/dragon_small/dragon_s.tscn" id="1_4grqt"]
+[ext_resource type="Texture2D" uid="uid://brmbojfi2kjqw" path="res://!/assets/geometry/dragons/Dragon skin 2k Anderes Purple.png" id="2_i2vst"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_i2vst"]
+viewport_path = NodePath("TaskProgressionFrame/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nahph"]
+albedo_texture = ExtResource("2_i2vst")
+
+[node name="Dragon_S_02" unique_id=909527641 instance=ExtResource("1_4grqt")]
+
+[node name="TaskProgressionFrame" parent="." index="0" unique_id=1870133230]
+texture = SubResource("ViewportTexture_i2vst")
+
+[node name="Body" parent="Mesh/metarig/Skeleton3D" parent_id_path=PackedInt32Array(852248410, 1622020171) index="0" unique_id=1241753132]
+surface_material_override/0 = SubResource("StandardMaterial3D_nahph")
+
+[node name="Head" parent="Mesh/metarig/Skeleton3D" parent_id_path=PackedInt32Array(852248410, 1622020171) index="1" unique_id=1353449968]
+surface_material_override/0 = SubResource("StandardMaterial3D_nahph")
+
+[node name="Plane" parent="Mesh/metarig/Skeleton3D" parent_id_path=PackedInt32Array(852248410, 1622020171) index="2" unique_id=122006554]
+surface_material_override/0 = SubResource("StandardMaterial3D_nahph")
+
+[node name="Sphere" parent="Mesh/metarig/Skeleton3D" parent_id_path=PackedInt32Array(852248410, 1622020171) index="3" unique_id=868012431]
+surface_material_override/0 = SubResource("StandardMaterial3D_nahph")
+
+[node name="Stachel8_005" parent="Mesh/metarig/Skeleton3D" parent_id_path=PackedInt32Array(852248410, 1622020171) index="4" unique_id=648072752]
+surface_material_override/0 = SubResource("StandardMaterial3D_nahph")
+
+[node name="Wing" parent="Mesh/metarig/Skeleton3D" parent_id_path=PackedInt32Array(852248410, 1622020171) index="5" unique_id=1506860947]
+surface_material_override/0 = SubResource("StandardMaterial3D_nahph")
+
+[editable path="Mesh"]
