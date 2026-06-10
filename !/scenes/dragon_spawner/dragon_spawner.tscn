@@ -3,12 +3,20 @@
 [ext_resource type="Script" uid="uid://ctffwjnmrdamc" path="res://!/scenes/dragon_spawner/dragon_spawner.gd" id="1_4bndy"]
 [ext_resource type="PackedScene" uid="uid://mtucxswpq4n5" path="res://!/scenes/dragon_spawner/spawn_point.tscn" id="2_qb125"]
 
-[node name="DragonSpawner" type="Node" unique_id=2000993081]
+[node name="DragonSpawner" type="Node" unique_id=2000993081 node_paths=PackedStringArray("Spawnpoints_S", "Spawnpoints_L")]
 script = ExtResource("1_4bndy")
+Spawnpoints_S = NodePath("Small Dragons")
+Spawnpoints_L = NodePath("Large Dragons")
 
 [node name="NewDragonTimer" type="Timer" parent="." unique_id=163237900]
 one_shot = true
 
-[node name="SpawnPoint1" parent="." unique_id=585279413 instance=ExtResource("2_qb125")]
+[node name="Small Dragons" type="Node3D" parent="." unique_id=4123632]
+
+[node name="SpawnPoint1" parent="Small Dragons" unique_id=585279413 instance=ExtResource("2_qb125")]
+
+[node name="Large Dragons" type="Node3D" parent="." unique_id=465933796]
+
+[node name="SpawnPoint1" parent="Large Dragons" unique_id=419405981 instance=ExtResource("2_qb125")]
 
 [connection signal="timeout" from="NewDragonTimer" to="." method="_on_new_dragon_timer_timeout"]
