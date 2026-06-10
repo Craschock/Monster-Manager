@@ -56,89 +56,12 @@ spawn_direction = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 20)
 spawn_direction = 0
 
-[node name="SpawnPoint5" parent="DragonSpawner/Small Dragons" parent_id_path=PackedInt32Array(2000993081, 4123632) index="4" unique_id=1228306958 instance=ExtResource("6_3c6ts")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 5)
-spawn_direction = 1
-
-[node name="SpawnPoint6" parent="DragonSpawner/Small Dragons" parent_id_path=PackedInt32Array(2000993081, 4123632) index="5" unique_id=456071395 instance=ExtResource("6_3c6ts")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, 5)
-spawn_direction = 0
-
-[node name="SpawnPoint7" parent="DragonSpawner/Small Dragons" parent_id_path=PackedInt32Array(2000993081, 4123632) index="6" unique_id=612198854 instance=ExtResource("6_3c6ts")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, -10)
-spawn_direction = 0
-
-[node name="SpawnPoint8" parent="DragonSpawner/Small Dragons" parent_id_path=PackedInt32Array(2000993081, 4123632) index="7" unique_id=1723323296 instance=ExtResource("6_3c6ts")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41, 0, -2)
-
-[node name="SpawnPoint9" parent="DragonSpawner/Small Dragons" parent_id_path=PackedInt32Array(2000993081, 4123632) index="8" unique_id=812377078 instance=ExtResource("6_3c6ts")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -29)
-spawn_direction = 3
-
-[node name="SpawnPoint10" parent="DragonSpawner/Small Dragons" parent_id_path=PackedInt32Array(2000993081, 4123632) index="9" unique_id=47105506 instance=ExtResource("6_3c6ts")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -35)
-spawn_direction = 3
-
-[node name="SpawnPoint11" parent="DragonSpawner/Small Dragons" parent_id_path=PackedInt32Array(2000993081, 4123632) index="10" unique_id=968687762 instance=ExtResource("6_3c6ts")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -20)
-
-[node name="SpawnPoint12" parent="DragonSpawner/Small Dragons" parent_id_path=PackedInt32Array(2000993081, 4123632) index="11" unique_id=2054802155 instance=ExtResource("6_3c6ts")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -20)
-
-[node name="SpawnPoint13" parent="DragonSpawner/Small Dragons" parent_id_path=PackedInt32Array(2000993081, 4123632) index="12" unique_id=67142775 instance=ExtResource("6_3c6ts")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -5)
-spawn_direction = 3
-
-[node name="SpawnPoint14" parent="DragonSpawner/Small Dragons" parent_id_path=PackedInt32Array(2000993081, 4123632) index="13" unique_id=131044027 instance=ExtResource("6_3c6ts")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, -8)
-spawn_direction = 0
-
-[node name="SpawnPoint15" parent="DragonSpawner/Small Dragons" parent_id_path=PackedInt32Array(2000993081, 4123632) index="14" unique_id=843029926 instance=ExtResource("6_3c6ts")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, 10)
-
-[node name="SpawnPoint16" parent="DragonSpawner/Small Dragons" parent_id_path=PackedInt32Array(2000993081, 4123632) index="15" unique_id=1341024030 instance=ExtResource("6_3c6ts")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 1)
-spawn_direction = 1
-
 [node name="SpawnPoint1" parent="DragonSpawner/Large Dragons" parent_id_path=PackedInt32Array(2000993081, 465933796) index="0" unique_id=419405981]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 19.5)
 spawn_direction = 1
 
 [node name="SpawnPoint2" parent="DragonSpawner/Large Dragons" parent_id_path=PackedInt32Array(2000993081, 465933796) index="1" unique_id=640936235 instance=ExtResource("6_3c6ts")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 32)
-
-[node name="SpawnPoint3" parent="DragonSpawner/Large Dragons" parent_id_path=PackedInt32Array(2000993081, 465933796) index="2" unique_id=1942603575 instance=ExtResource("6_3c6ts")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 0, 5)
-spawn_direction = 3
-
-[node name="SpawnPoint4" parent="DragonSpawner/Large Dragons" parent_id_path=PackedInt32Array(2000993081, 465933796) index="3" unique_id=1802095056 instance=ExtResource("6_3c6ts")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -1)
-spawn_direction = 1
-
-[node name="SpawnPoint5" parent="DragonSpawner/Large Dragons" parent_id_path=PackedInt32Array(2000993081, 465933796) index="4" unique_id=893445486 instance=ExtResource("6_3c6ts")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 0, -11)
-spawn_direction = 3
-
-[node name="SpawnPoint6" parent="DragonSpawner/Large Dragons" parent_id_path=PackedInt32Array(2000993081, 465933796) index="5" unique_id=462596349 instance=ExtResource("6_3c6ts")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -8)
-
-[node name="SpawnPoint7" parent="DragonSpawner/Large Dragons" parent_id_path=PackedInt32Array(2000993081, 465933796) index="6" unique_id=1478412856 instance=ExtResource("6_3c6ts")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -19)
-
-[node name="SpawnPoint8" parent="DragonSpawner/Large Dragons" parent_id_path=PackedInt32Array(2000993081, 465933796) index="7" unique_id=934066506 instance=ExtResource("6_3c6ts")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -32)
-
-[node name="SpawnPoint9" parent="DragonSpawner/Large Dragons" parent_id_path=PackedInt32Array(2000993081, 465933796) index="8" unique_id=1424468091 instance=ExtResource("6_3c6ts")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 8)
-
-[node name="SpawnPoint10" parent="DragonSpawner/Large Dragons" parent_id_path=PackedInt32Array(2000993081, 465933796) index="9" unique_id=1782082230 instance=ExtResource("6_3c6ts")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 1)
-
-[node name="SpawnPoint11" parent="DragonSpawner/Large Dragons" parent_id_path=PackedInt32Array(2000993081, 465933796) index="10" unique_id=1802003261 instance=ExtResource("6_3c6ts")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 11)
-
-[node name="SpawnPoint12" parent="DragonSpawner/Large Dragons" parent_id_path=PackedInt32Array(2000993081, 465933796) index="11" unique_id=1980383557 instance=ExtResource("6_3c6ts")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, -9)
 
 [node name="RobotManager" parent="." unique_id=732904911 instance=ExtResource("6_7kto3")]
 
