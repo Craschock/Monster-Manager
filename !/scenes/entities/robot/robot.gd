@@ -18,6 +18,7 @@ const ANIM_DEATH = "Death"
 @onready var selected_highlight: MeshInstance3D = $SelectedMesh
 @onready var clickable_component: ClickableComponent = $ClickableComponent
 
+var isAlive: bool = true
 var speed: int = 5
 var max_load: int = 1
 # refactor - this var is useless, use carried_items.size instead
@@ -26,6 +27,7 @@ var current_load: int = 0
 var target: Node3D = null
 var carried_items: Array[Node3D] = []
 
+@export var death_animation_timer: float = 10.0
 
 func _ready() -> void:
 	clickable_component.is_clickable = true
@@ -40,18 +42,24 @@ func _process(_delta: float) -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	var next_path_point := nav_agent.get_next_path_position()
-	var new_velocity := (next_path_point - global_position).normalized() * speed
-	velocity.x = new_velocity.x
-	velocity.z = new_velocity.z
+	if not isAlive:
+		velocity.x = 0.0
+		velocity.z = 0.0
+		return
+	else:
+		var next_path_point := nav_agent.get_next_path_position()
+		var new_velocity := (next_path_point - global_position).normalized() * speed
+		if isAlive:
+			velocity.x = new_velocity.x
+			velocity.z = new_velocity.z
 
-	# Rotation Animation for the Robot
-	if velocity.length() > 0.1:
-		var target_angle = atan2(velocity.x, velocity.z)
-		model.rotation.y = lerp_angle(model.rotation.y, target_angle, ROTATION_SPEED * _delta)
+		# Rotation Animation for the Robot
+		if velocity.length() > 0.1:
+			var target_angle = atan2(velocity.x, velocity.z)
+			model.rotation.y = lerp_angle(model.rotation.y, target_angle, ROTATION_SPEED * _delta)
 
-	move_and_slide()
-	update_animations()
+		move_and_slide()
+		update_animations()
 
 
 func set_target(t: Node3D):
@@ -64,7 +72,8 @@ func set_target_position(pos: Vector3):
 
 
 func select():
-	selected_highlight.visible = true
+	if isAlive:
+		selected_highlight.visible = true
 
 
 func deselect():
@@ -123,6 +132,8 @@ func handle_dragon_reached(dragon: Dragon):
 
 
 func die() -> void:
+	isAlive = false
+	deselect()
 	for item in carried_items:
 		item.queue_free()
 	Events.robot_died.emit(self)
@@ -131,11 +142,15 @@ func die() -> void:
 	anim_player.play(ANIM_DEATH)
 	await anim_player.animation_finished # To wait until animation finishes
 	
-	queue_free()
-
+	# Shrink model and then delete after timer finishes
+	var tween = create_tween()
+	tween.tween_property(model, "scale", Vector3.ZERO, death_animation_timer)
+	tween.tween_callback(queue_free)
 
 # For animation 
 func update_animations() -> void:
+	if !isAlive:
+		return
 	# Check so it won't interrupt death or grab animation
 	if anim_player.current_animation == ANIM_DEATH or anim_player.current_animation == ANIM_GRAB:
 		return
