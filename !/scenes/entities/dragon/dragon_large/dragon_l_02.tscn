@@ -24,22 +24,28 @@ reward_coefficients = Dictionary[int, float]({
 [node name="TaskProgressionFrame" parent="." index="0" unique_id=1870133230]
 texture = SubResource("ViewportTexture_v2s4o")
 
-[node name="bart" parent="Mesh/metarig/Skeleton3D" parent_id_path=PackedInt32Array(145966089, 1636031313) index="0" unique_id=1942186362]
+[node name="Skeleton3D" parent="Mesh/metarig" parent_id_path=PackedInt32Array(145966089, 689828988) index="1" unique_id=1636031313]
+bones/7/rotation = Quaternion(-0.3961186, -0.00070224085, 0.02287922, 0.917914)
+bones/20/position = Vector3(1.6040905, 0.9442109, -1.0177372)
+bones/24/position = Vector3(-1.6521871, 0.8572709, -1.0177401)
+bones/48/rotation = Quaternion(0.28122494, -0.007046799, 0.024038091, 0.9593149)
+
+[node name="bart" parent="Mesh/metarig/Skeleton3D" index="0" unique_id=1942186362]
 surface_material_override/0 = SubResource("StandardMaterial3D_2eeba")
 
-[node name="Dragon " parent="Mesh/metarig/Skeleton3D" parent_id_path=PackedInt32Array(145966089, 1636031313) index="1" unique_id=1922909397]
+[node name="Dragon " parent="Mesh/metarig/Skeleton3D" index="1" unique_id=1922909397]
 surface_material_override/0 = SubResource("StandardMaterial3D_2eeba")
 
-[node name="Eye" parent="Mesh/metarig/Skeleton3D" parent_id_path=PackedInt32Array(145966089, 1636031313) index="2" unique_id=2055527669]
+[node name="Eye" parent="Mesh/metarig/Skeleton3D" index="2" unique_id=2055527669]
 surface_material_override/0 = SubResource("StandardMaterial3D_2eeba")
 
-[node name="Hair" parent="Mesh/metarig/Skeleton3D" parent_id_path=PackedInt32Array(145966089, 1636031313) index="3" unique_id=7052821]
+[node name="Hair" parent="Mesh/metarig/Skeleton3D" index="3" unique_id=7052821]
 surface_material_override/0 = SubResource("StandardMaterial3D_2eeba")
 
-[node name="Hair Leg Back" parent="Mesh/metarig/Skeleton3D" parent_id_path=PackedInt32Array(145966089, 1636031313) index="4" unique_id=1745619147]
+[node name="Hair Leg Back" parent="Mesh/metarig/Skeleton3D" index="4" unique_id=1745619147]
 surface_material_override/0 = SubResource("StandardMaterial3D_2eeba")
 
-[node name="HairlegFront" parent="Mesh/metarig/Skeleton3D" parent_id_path=PackedInt32Array(145966089, 1636031313) index="5" unique_id=789341928]
+[node name="HairlegFront" parent="Mesh/metarig/Skeleton3D" index="5" unique_id=789341928]
 surface_material_override/0 = SubResource("StandardMaterial3D_2eeba")
 
 [editable path="Mesh"]

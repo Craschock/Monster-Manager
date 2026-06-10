@@ -10,6 +10,16 @@ viewport_path = NodePath("TaskProgressionFrame/SubViewport")
 albedo_texture = ExtResource("2_rb3x0")
 
 [node name="Dragon_S_05" unique_id=909527641 instance=ExtResource("1_g5y1m")]
+time_coefficients = Dictionary[int, float]({
+0: 2.0,
+1: 0.5,
+2: 1.0
+})
+reward_coefficients = Dictionary[int, float]({
+0: 0.5,
+1: 2.0,
+2: 1.0
+})
 
 [node name="TaskProgressionFrame" parent="." index="0" unique_id=1870133230]
 texture = SubResource("ViewportTexture_rb3x0")

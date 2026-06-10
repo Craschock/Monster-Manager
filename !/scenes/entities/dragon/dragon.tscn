@@ -13,116 +13,6 @@
 [sub_resource type="ViewportTexture" id="ViewportTexture_a7il3"]
 viewport_path = NodePath("TaskProgressionFrame/SubViewport")
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uxq61"]
-animation = &"Calling"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mmyrw"]
-animation = &"DestroySitL"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bj4iq"]
-animation = &"DestroySitR"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hxpn5"]
-animation = &"DragonsBreath_001"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p0r8w"]
-animation = &"Drinking Coffee Sit"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_amxv5"]
-animation = &"Sleep"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lddad"]
-animation = &"Stamping"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lit38"]
-animation = &"TakePhone"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_txa26"]
-animation = &"Walk"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sd3ry"]
-animation = &"Work"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uxq61"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_amxv5"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mmyrw"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bj4iq"]
-xfade_time = 0.25
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hxpn5"]
-xfade_time = 0.25
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p0r8w"]
-xfade_time = 0.25
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lddad"]
-xfade_time = 0.25
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lit38"]
-xfade_time = 0.25
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_txa26"]
-xfade_time = 0.25
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sd3ry"]
-xfade_time = 0.25
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ahq5y"]
-xfade_time = 0.25
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6p8np"]
-xfade_time = 0.25
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jk721"]
-xfade_time = 0.25
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_irmqd"]
-xfade_time = 0.25
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iwu0i"]
-xfade_time = 0.25
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3frk2"]
-xfade_time = 0.25
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fn0xp"]
-xfade_time = 0.25
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7kblo"]
-xfade_time = 0.25
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_a7il3"]
-states/Calling/node = SubResource("AnimationNodeAnimation_uxq61")
-states/Calling/position = Vector2(709.0241, 329.0899)
-states/DestroySitL/node = SubResource("AnimationNodeAnimation_mmyrw")
-states/DestroySitL/position = Vector2(450.2, -41.578186)
-states/DestroySitR/node = SubResource("AnimationNodeAnimation_bj4iq")
-states/DestroySitR/position = Vector2(562.168, -46.326035)
-states/DragonsBreath_001/node = SubResource("AnimationNodeAnimation_hxpn5")
-states/DragonsBreath_001/position = Vector2(843.77795, -42.507526)
-"states/Drinking Coffee Sit/node" = SubResource("AnimationNodeAnimation_p0r8w")
-"states/Drinking Coffee Sit/position" = Vector2(358.6304, 212.59999)
-states/End/position = Vector2(1139.2001, 102.05053)
-states/Sleep/node = SubResource("AnimationNodeAnimation_amxv5")
-states/Sleep/position = Vector2(668.3862, 103.14768)
-states/Stamping/node = SubResource("AnimationNodeAnimation_lddad")
-states/Stamping/position = Vector2(561.80096, 251.63463)
-states/Start/position = Vector2(203.2, 99.840004)
-states/TakePhone/node = SubResource("AnimationNodeAnimation_lit38")
-states/TakePhone/position = Vector2(617.73285, 329.8823)
-states/Walk/node = SubResource("AnimationNodeAnimation_txa26")
-states/Walk/position = Vector2(1017.0992, 104.281105)
-states/Work/node = SubResource("AnimationNodeAnimation_sd3ry")
-states/Work/position = Vector2(760.8904, 251.96129)
-transitions = ["Start", "Sleep", SubResource("AnimationNodeStateMachineTransition_uxq61"), "TakePhone", "Calling", SubResource("AnimationNodeStateMachineTransition_amxv5"), "Walk", "End", SubResource("AnimationNodeStateMachineTransition_mmyrw"), "Sleep", "Drinking Coffee Sit", SubResource("AnimationNodeStateMachineTransition_bj4iq"), "Drinking Coffee Sit", "Sleep", SubResource("AnimationNodeStateMachineTransition_hxpn5"), "Sleep", "Stamping", SubResource("AnimationNodeStateMachineTransition_p0r8w"), "Stamping", "Sleep", SubResource("AnimationNodeStateMachineTransition_lddad"), "Sleep", "TakePhone", SubResource("AnimationNodeStateMachineTransition_lit38"), "Calling", "Sleep", SubResource("AnimationNodeStateMachineTransition_txa26"), "Sleep", "Work", SubResource("AnimationNodeStateMachineTransition_sd3ry"), "Work", "Sleep", SubResource("AnimationNodeStateMachineTransition_ahq5y"), "Sleep", "Walk", SubResource("AnimationNodeStateMachineTransition_6p8np"), "DestroySitL", "Sleep", SubResource("AnimationNodeStateMachineTransition_jk721"), "Sleep", "DestroySitL", SubResource("AnimationNodeStateMachineTransition_irmqd"), "DestroySitR", "Sleep", SubResource("AnimationNodeStateMachineTransition_iwu0i"), "Sleep", "DestroySitR", SubResource("AnimationNodeStateMachineTransition_3frk2"), "DragonsBreath_001", "Sleep", SubResource("AnimationNodeStateMachineTransition_fn0xp"), "Sleep", "DragonsBreath_001", SubResource("AnimationNodeStateMachineTransition_7kblo")]
-graph_offset = Vector2(201, -75)
-
 [node name="Dragon" type="StaticBody3D" unique_id=909527641]
 script = ExtResource("1_3mxua")
 
@@ -224,11 +114,6 @@ one_shot = true
 autostart = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1127557731]
-
-[node name="AnimationTree" type="AnimationTree" parent="." unique_id=328426771]
-root_node = NodePath("../Mesh/Dragon One")
-tree_root = SubResource("AnimationNodeStateMachine_a7il3")
-anim_player = NodePath("../Mesh/Dragon One/AnimationPlayer")
 
 [node name="ClickableComponent" parent="." unique_id=1668081895 node_paths=PackedStringArray("collision_object") instance=ExtResource("9_hx27j")]
 collision_object = NodePath("..")
