@@ -50,7 +50,8 @@ func increase_capacity() -> void:
 	robots_capacity += 1
 	for robot in robots:
 		robot.max_load = robots_capacity
-	# todo change state
+	if selected_robot:
+		RobotState.robot_full = selected_robot.full()
 
 
 func on_robot_clicked(clicked_robot: Robot) -> void:
