@@ -148,13 +148,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 [node name="TaskSpawner" parent="." unique_id=2017946129 instance=ExtResource("8_em27n")]
 
 [node name="Task1SpawnPoint" parent="TaskSpawner" index="1" unique_id=1125616198]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.284, 0, -4.109)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.284, 0.5, -4.109)
 
 [node name="Task2SpawnPoint" parent="TaskSpawner" index="2" unique_id=816336724]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6025815, 0, 5.758938)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6025815, 0.5, 5.758938)
 
 [node name="Task3SpawnPoint" parent="TaskSpawner" index="3" unique_id=1216308898]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.903304, 1.9073486e-06, 5.929989)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.903304, 0.5, 5.929989)
 
 [node name="CakeSpawner" parent="." unique_id=1160063897 instance=ExtResource("8_ua7wm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20448112, -1.9073486e-06, 37.718437)

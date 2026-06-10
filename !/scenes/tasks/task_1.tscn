@@ -87,7 +87,7 @@ reward = 100
 metadata/_custom_type_script = "uid://k7r6ydg8utbw"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=421335941]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 0, 0.017413542, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.017413542, 0)
 
 [node name="StackPaper" parent="MeshInstance3D" unique_id=1062228962 instance=ExtResource("2_ncvpn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3773784, 0)
@@ -133,7 +133,7 @@ material_override = ExtResource("3_kp5ow")
 mesh = SubResource("ArrayMesh_0fvjl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=842633644]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("BoxShape3D_e57xv")
 
 [node name="ClickableComponent" parent="." unique_id=1668081895 node_paths=PackedStringArray("collision_object") instance=ExtResource("4_kp5ow")]

@@ -34,7 +34,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	for item in carried_items:
-		var vec = Vector3.MODEL_FRONT.rotated(Vector3.UP, model.rotation.y)
+		var vec = Vector3(0.0, 1.2, 1.2).rotated(Vector3.UP, model.rotation.y)
 		item.global_position = global_position + vec
 		
 

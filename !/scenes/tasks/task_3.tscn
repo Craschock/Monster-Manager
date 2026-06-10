@@ -146,7 +146,6 @@ type = 2
 metadata/_custom_type_script = "uid://k7r6ydg8utbw"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1088432949]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="Telefone2" parent="MeshInstance3D" unique_id=1412811056 instance=ExtResource("2_ricod")]
 transform = Transform3D(3.305, 0, 0, 0, 3.305, 0, 0, 0, 3.305, 0.5, -0.493, 1)
@@ -163,7 +162,7 @@ material_override = ExtResource("3_ay8ym")
 mesh = SubResource("ArrayMesh_nde08")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1261365777]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0050354004, 0, -0.002243042)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0050354004, 0, -0.002243042)
 shape = SubResource("BoxShape3D_4lns2")
 
 [node name="ClickableComponent" parent="." unique_id=1668081895 node_paths=PackedStringArray("collision_object") instance=ExtResource("4_dtg5r")]
