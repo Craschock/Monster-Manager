@@ -1,6 +1,6 @@
 extends Camera3D
 
-@export var speed = 15.0
+@export var speed = 20.0
 @export var angular_speed = 8.0
 
 var source_rotation
