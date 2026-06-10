@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://can4jfgawqnll" path="res://!/assets/geometry/Office/ModernDesk.glb" id="4_fnmgx"]
 [ext_resource type="PackedScene" uid="uid://dotqpxmkskgxj" path="res://!/assets/geometry/Office/StackPaper.glb" id="5_qjtop"]
 [ext_resource type="PackedScene" uid="uid://bgk41mux4i6ms" path="res://!/assets/geometry/Office/RoundConferenceTable.glb" id="6_q4ylt"]
-[ext_resource type="PackedScene" uid="uid://csgq0c376i6oa" path="res://!/assets/geometry/Office/Cake.glb" id="7_bv7fw"]
 
 [node name="GameWorld" type="Node3D" unique_id=460750166]
 
@@ -261,8 +260,5 @@ transform = Transform3D(0.96303105, 0, 0.2693905, 0, 1, 0, -0.2693905, 0, 0.9630
 
 [node name="RoundConferenceTable" parent="." unique_id=1872216285 instance=ExtResource("6_q4ylt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11770195, 0.054831743, -0.08412576)
-
-[node name="Cake" parent="." unique_id=485521658 instance=ExtResource("7_bv7fw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4025891, 1.4237213, 2.8187017)
 
 [node name="Final_Blockout" parent="." unique_id=1706056970 instance=ExtResource("1_ydnw8")]
