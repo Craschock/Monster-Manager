@@ -41,12 +41,6 @@ texture_over = ExtResource("2_2nc3u")
 texture_progress = ExtResource("3_xx7ub")
 texture_progress_offset = Vector2(125, 12)
 
-[node name="Task1_Icon" type="TextureRect" parent="TaskProgressionFrame/SubViewport/TaskType1" unique_id=1066151034]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="TaskType2" type="Control" parent="TaskProgressionFrame/SubViewport" unique_id=1778199301]
 layout_mode = 3
 anchors_preset = 0
@@ -61,12 +55,6 @@ step = 0.1
 texture_over = ExtResource("2_2nc3u")
 texture_progress = ExtResource("4_a7il3")
 texture_progress_offset = Vector2(125, 12)
-
-[node name="Task2_Icon" type="TextureRect" parent="TaskProgressionFrame/SubViewport/TaskType2" unique_id=1150590037]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="TaskType3" type="Control" parent="TaskProgressionFrame/SubViewport" unique_id=1128818274]
 layout_mode = 3
@@ -83,11 +71,35 @@ texture_over = ExtResource("2_2nc3u")
 texture_progress = ExtResource("5_hx27j")
 texture_progress_offset = Vector2(125, 12)
 
-[node name="Task3_Icon" type="TextureRect" parent="TaskProgressionFrame/SubViewport/TaskType3" unique_id=195763182]
+[node name="TaskMoods" type="Control" parent="TaskProgressionFrame/SubViewport" unique_id=1126045700]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 24.0
+offset_top = 12.0
+offset_right = 64.0
+offset_bottom = 52.0
+scale = Vector2(0.3, 0.3)
+
+[node name="Task1_Icon" type="TextureRect" parent="TaskProgressionFrame/SubViewport/TaskMoods" unique_id=1066151034]
 visible = false
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 300.0
+offset_bottom = 300.0
+texture = ExtResource("2_0de0d")
+
+[node name="Task2_Icon" type="TextureRect" parent="TaskProgressionFrame/SubViewport/TaskMoods" unique_id=1150590037]
+visible = false
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+texture = ExtResource("3_2nc3u")
+
+[node name="Task3_Icon" type="TextureRect" parent="TaskProgressionFrame/SubViewport/TaskMoods" unique_id=195763182]
+visible = false
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+texture = ExtResource("4_xx7ub")
 
 [node name="Moods" type="Node3D" parent="." unique_id=16423573]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 3.5, 0)

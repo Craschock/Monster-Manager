@@ -41,6 +41,11 @@ var mood: int = 100
 	$TaskProgressionFrame/SubViewport/TaskType2/Task2_Fill,
 	$TaskProgressionFrame/SubViewport/TaskType3/Task3_Fill
 ]
+@onready var task_bar_moods: Array[TextureRect] = [
+	$TaskProgressionFrame/SubViewport/TaskMoods/Task1_Icon,
+	$TaskProgressionFrame/SubViewport/TaskMoods/Task2_Icon,
+	$TaskProgressionFrame/SubViewport/TaskMoods/Task3_Icon
+]
 @onready var mood_sprites: Array[Sprite3D] = [
 	$Moods/Mood_1,
 	$Moods/Mood_2,
@@ -74,6 +79,8 @@ func handle_task_display() -> void:
 		# Hide all barys
 		for bar in task_bars:
 			bar.visible = false
+		for barMoods in task_bar_moods:
+			barMoods.visible = false
 		return	
 	
 	var type = current_task.type
@@ -82,12 +89,22 @@ func handle_task_display() -> void:
 	var percentage = (1.0 - (time_left / time_total)) * 100.0
 	var active_index = type
 	
+	# Display correct task bar
 	for i in range(task_bars.size()):
 		if i == active_index:
 			task_bars[i].visible = true
 			task_bars[i].value = percentage
 		else:
 			task_bars[i].visible = false
+	
+	# Display MoodIcon
+	var current_mood: int
+	if mood > 70: current_mood = 0
+	elif mood > 30: current_mood = 1
+	else: current_mood = 2
+	
+	for i in range(mood_sprites.size()):
+		task_bar_moods[i].visible = (i == current_mood)
 
 func handle_mood_display() -> void:
 	if current_task != null:
