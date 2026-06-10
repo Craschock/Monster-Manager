@@ -7,12 +7,15 @@ signal time_changed(new_time: int)
 signal robot_bought
 signal speed_increase_bought
 signal capacity_increase_bought
+signal dragon_spawner_bought
 
 signal coffe_bought
 signal cake_bought
 
 signal robot_clicked(robot: Robot)
 signal robot_died(robot: Robot)
+
+signal dragon_spawner_clicked(spawner: SpawnPoint)
 
 # todo merge into single signal?
 signal dragon_clicked(dragon: Dragon)

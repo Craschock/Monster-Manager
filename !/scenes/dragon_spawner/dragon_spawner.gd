@@ -42,21 +42,8 @@ var occupied_spawn_points: Dictionary[Dragon, SpawnPoint]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# Small Dragons
-	for child in Spawnpoints_S.get_children():
-		if child is SpawnPoint:
-			free_spawn_points_S.append(child)
-	# Large Dragons
-	for child in Spawnpoints_L.get_children():
-		if child is SpawnPoint:
-			free_spawn_points_L.append(child)
-
+	Events.dragon_spawner_bought.connect(_on_dragon_spawn_point_bought)
 	start_timer()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 
 func start_timer() -> void:
@@ -66,7 +53,6 @@ func start_timer() -> void:
 func _on_new_dragon_timer_timeout() -> void:
 	if !free_spawn_points_S.is_empty():
 		var spawn_point: SpawnPoint = free_spawn_points_S.pick_random()
-		#var dragon: Dragon = DragonScn.instantiate()
 		# todo pick random
 		# todo tweak coefficients
 		var dragon_s_scn = DRAGON_S_SCNS.pick_random()
@@ -83,7 +69,6 @@ func _on_new_dragon_timer_timeout() -> void:
 	
 	if !free_spawn_points_L.is_empty():
 		var spawn_point: SpawnPoint = free_spawn_points_L.pick_random()
-		#var dragon: Dragon = DragonScn.instantiate()
 		# todo pick random
 		# todo tweak coefficients
 		var dragon_l_scn = DRAGON_L_SCNS.pick_random()
@@ -99,6 +84,15 @@ func _on_new_dragon_timer_timeout() -> void:
 		pass
 	
 	start_timer()
+
+
+func _on_dragon_spawn_point_bought(spawn_point: SpawnPoint) -> void:
+	if spawn_point.get_parent() == Spawnpoints_S:
+		free_spawn_points_S.append(spawn_point)
+	elif spawn_point.get_parent() == Spawnpoints_L:
+		free_spawn_points_L.append(spawn_point)
+	else:
+		push_warning("Parent not found in S or L categories.")
 
 
 func _on_dragon_leaving(dragon: Dragon) -> void:

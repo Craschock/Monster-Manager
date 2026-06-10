@@ -172,6 +172,8 @@ func process_prop(prop: Prop):
 
 func leave() -> void:
 	dragon_leaving.emit(self)
+	if current_task:
+		current_task.queue_free()
 	# todo: add walking animation state for 5 seconds. With a dissapearing shader?
 	queue_free()
 

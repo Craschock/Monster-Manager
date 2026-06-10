@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://de4rsnoxeqa7v" path="res://!/scenes/menus/UI/panels/prop_shop_panel.tscn" id="3_g566e"]
 [ext_resource type="Theme" uid="uid://3qoaw6d100xf" path="res://!/assets/fonts/MainUI_Theme.tres" id="5_j5jc4"]
 [ext_resource type="PackedScene" uid="uid://bfwjodia7ynbc" path="res://!/scenes/menus/button effects/ui_hover_component.tscn" id="6_vonwm"]
+[ext_resource type="Script" uid="uid://cndxo41hm8f1i" path="res://!/scenes/shop/dragon_shop.gd" id="7_cmu52"]
+[ext_resource type="FontFile" uid="uid://1lb0n3jewv3s" path="res://!/assets/fonts/norwester.otf" id="7_to87v"]
 
 [node name="Shop" type="Node" unique_id=1139307655]
 script = ExtResource("1_pxcqy")
@@ -42,6 +44,48 @@ flat = true
 
 [node name="UIHoverComponent" parent="ShopUI/B_OpenPropShop" unique_id=1367748535 instance=ExtResource("6_vonwm")]
 
+[node name="DragonShop" type="Control" parent="ShopUI" unique_id=1529996833]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_cmu52")
+
+[node name="B_BuyDragon" type="Button" parent="ShopUI/DragonShop" unique_id=1741772488]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 412.0
+offset_top = 454.0
+offset_right = 912.0
+offset_bottom = 574.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_to87v")
+theme_override_font_sizes/font_size = 64
+text = "Buy dragon $400"
+
+[node name="B_CancleDragon" type="Button" parent="ShopUI/DragonShop" unique_id=1389007133]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1005.0
+offset_top = 454.0
+offset_right = 1242.0
+offset_bottom = 574.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_to87v")
+theme_override_font_sizes/font_size = 64
+text = "Cancle"
+
 [connection signal="pressed" from="ShopUI/RobotShopPanel/VBoxContainer/B_BuyRobot" to="." method="_on_shop_button_pressed" flags=18]
 [connection signal="pressed" from="ShopUI/RobotShopPanel/VBoxContainer/B_SpeedIncrease" to="." method="_on_shop_button_pressed" flags=18]
 [connection signal="pressed" from="ShopUI/RobotShopPanel/VBoxContainer/B_CapacityIncrease" to="." method="_on_shop_button_pressed" flags=18]
@@ -49,6 +93,8 @@ flat = true
 [connection signal="pressed" from="ShopUI/PropShopPanel/VBoxContainer/B_Cake" to="." method="_on_shop_button_pressed" flags=18]
 [connection signal="pressed" from="ShopUI/B_OpenRobotShop" to="ShopUI" method="_on_b_open_robot_shop_pressed"]
 [connection signal="pressed" from="ShopUI/B_OpenPropShop" to="ShopUI" method="_on_b_open_prop_shop_pressed"]
+[connection signal="pressed" from="ShopUI/DragonShop/B_BuyDragon" to="ShopUI/DragonShop" method="_on_b_buy_dragon_pressed"]
+[connection signal="pressed" from="ShopUI/DragonShop/B_CancleDragon" to="ShopUI/DragonShop" method="_on_b_cancle_dragon_pressed"]
 
 [editable path="ShopUI/RobotShopPanel"]
 [editable path="ShopUI/PropShopPanel"]
