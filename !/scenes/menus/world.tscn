@@ -148,7 +148,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 [node name="TaskSpawner" parent="." unique_id=2017946129 instance=ExtResource("8_em27n")]
 
 [node name="Task1SpawnPoint" parent="TaskSpawner" index="1" unique_id=1125616198]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2843685, -1.2658386, -4.1085873)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.284, 0, -4.109)
 
 [node name="Task2SpawnPoint" parent="TaskSpawner" index="2" unique_id=816336724]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6025815, 0, 5.758938)
