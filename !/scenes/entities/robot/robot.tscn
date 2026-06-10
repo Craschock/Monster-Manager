@@ -6676,7 +6676,7 @@ albedo_color = Color(0.22875601, 0.5772584, 0.72318304, 1)
 material = SubResource("StandardMaterial3D_ylp3b")
 top_radius = 0.8
 bottom_radius = 0.8
-height = 0.001
+height = 0.01
 
 [node name="Robot" type="CharacterBody3D" unique_id=1959342297]
 collision_layer = 2
@@ -6976,8 +6976,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 shape = SubResource("BoxShape3D_p4hhg")
 
 [node name="SelectedMesh" type="MeshInstance3D" parent="." unique_id=1609515744]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 mesh = SubResource("CylinderMesh_ylp3b")
 
 [node name="ClickableComponent" parent="." unique_id=1668081895 node_paths=PackedStringArray("collision_object") instance=ExtResource("4_e572k")]
