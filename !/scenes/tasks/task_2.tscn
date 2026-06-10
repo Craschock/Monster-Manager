@@ -1,14 +1,6 @@
 [gd_scene format=3 uid="uid://dvvgbt1ol0eec"]
 
-[ext_resource type="Script" uid="uid://k7r6ydg8utbw" path="res://!/scenes/tasks/task.gd" id="1_gg0t5"]
-[ext_resource type="Material" uid="uid://bfiumxuqwwrdm" path="res://!/materials/outline_mat.tres" id="2_gg0t5"]
-[ext_resource type="PackedScene" uid="uid://n6geaww5k580" path="res://!/scenes/components/clickable_component.tscn" id="3_43h63"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n5wh5"]
-albedo_color = Color(0.68895775, 0.3559866, 0.7625805, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_3ln4y"]
-material = SubResource("StandardMaterial3D_n5wh5")
+[ext_resource type="PackedScene" uid="uid://bywkerpgshqxs" path="res://!/assets/geometry/Office/Stamp.glb" id="2_nexf3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4lns2"]
 size = Vector3(1.074646, 1, 0.59939575)
@@ -16,10 +8,6 @@ size = Vector3(1.074646, 1, 0.59939575)
 [node name="Task2" type="RigidBody3D" unique_id=957677068]
 collision_layer = 4
 collision_mask = 5
-script = ExtResource("1_gg0t5")
-time_to_complete = 10
-reward = 200
-type = 1
 metadata/_custom_type_script = "uid://k7r6ydg8utbw"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1088432949]
@@ -28,15 +16,8 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 [node name="Stamp2" parent="MeshInstance3D" unique_id=130496083 instance=ExtResource("2_nexf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 
-[node name="MeshInstance3D_outline" type="MeshInstance3D" parent="MeshInstance3D" unique_id=2015793855]
-material_override = ExtResource("2_gg0t5")
-mesh = SubResource("BoxMesh_3ln4y")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1261365777]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.00065612793, 0, 0.004020691)
 shape = SubResource("BoxShape3D_4lns2")
-
-[node name="ClickableComponent" parent="." unique_id=1668081895 node_paths=PackedStringArray("collision_object") instance=ExtResource("3_43h63")]
-collision_object = NodePath("..")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

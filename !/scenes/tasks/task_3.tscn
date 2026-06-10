@@ -1,14 +1,6 @@
 [gd_scene format=3 uid="uid://cpil7n2lbxsiw"]
 
-[ext_resource type="Script" uid="uid://k7r6ydg8utbw" path="res://!/scenes/tasks/task.gd" id="1_ay8ym"]
-[ext_resource type="Material" uid="uid://bfiumxuqwwrdm" path="res://!/materials/outline_mat.tres" id="2_ay8ym"]
-[ext_resource type="PackedScene" uid="uid://n6geaww5k580" path="res://!/scenes/components/clickable_component.tscn" id="3_dtg5r"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n5wh5"]
-albedo_color = Color(0.21568628, 1, 0.5254902, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_3ln4y"]
-material = SubResource("StandardMaterial3D_n5wh5")
+[ext_resource type="PackedScene" uid="uid://dp0s3mnehuwiw" path="res://!/assets/geometry/Office/Telefone.glb" id="2_ricod"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4lns2"]
 size = Vector3(0.7720947, 1, 0.62786865)
@@ -16,10 +8,6 @@ size = Vector3(0.7720947, 1, 0.62786865)
 [node name="Task3" type="RigidBody3D" unique_id=957677068]
 collision_layer = 4
 collision_mask = 5
-script = ExtResource("1_ay8ym")
-time_to_complete = 15
-reward = 300
-type = 2
 metadata/_custom_type_script = "uid://k7r6ydg8utbw"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1088432949]
@@ -28,15 +16,8 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 [node name="Telefone2" parent="MeshInstance3D" unique_id=1412811056 instance=ExtResource("2_ricod")]
 transform = Transform3D(3.305, 0, 0, 0, 3.305, 0, 0, 0, 3.305, 0.5, -0.493, 1)
 
-[node name="MeshInstance3D_outline" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1244695750]
-material_override = ExtResource("2_ay8ym")
-mesh = SubResource("BoxMesh_3ln4y")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1261365777]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0050354004, 0, -0.002243042)
 shape = SubResource("BoxShape3D_4lns2")
-
-[node name="ClickableComponent" parent="." unique_id=1668081895 node_paths=PackedStringArray("collision_object") instance=ExtResource("3_dtg5r")]
-collision_object = NodePath("..")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
