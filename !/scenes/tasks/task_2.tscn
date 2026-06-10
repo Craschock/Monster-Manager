@@ -95,6 +95,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 
 [node name="Stamp_outline" type="MeshInstance3D" parent="MeshInstance3D/Stamp2/Stamp" parent_id_path=PackedInt32Array(130496083, 1821144883) index="0" unique_id=1943870557 groups=["outline"]]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+visible = false
 material_override = ExtResource("3_gg0t5")
 mesh = SubResource("ArrayMesh_q7a2b")
 

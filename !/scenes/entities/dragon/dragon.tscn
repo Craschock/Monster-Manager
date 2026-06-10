@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c1ml2fu7s0y35" path="res://!/assets/Sprites/Progression_Bar_Fill_TYPE2.png" id="4_a7il3"]
 [ext_resource type="Texture2D" uid="uid://75f1kv7li1lx" path="res://!/assets/Sprites/MoodIcon_3.png" id="4_xx7ub"]
 [ext_resource type="Texture2D" uid="uid://qeonploupurm" path="res://!/assets/Sprites/Progression_Bar_Fill_TYPE3.png" id="5_hx27j"]
+[ext_resource type="PackedScene" uid="uid://n6geaww5k580" path="res://!/scenes/components/clickable_component.tscn" id="9_hx27j"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_a7il3"]
 viewport_path = NodePath("TaskProgressionFrame/SubViewport")
@@ -228,6 +229,9 @@ autostart = true
 root_node = NodePath("../Mesh/Dragon One")
 tree_root = SubResource("AnimationNodeStateMachine_a7il3")
 anim_player = NodePath("../Mesh/Dragon One/AnimationPlayer")
+
+[node name="ClickableComponent" parent="." unique_id=1668081895 node_paths=PackedStringArray("collision_object") instance=ExtResource("9_hx27j")]
+collision_object = NodePath("..")
 
 [connection signal="timeout" from="TaskTimer" to="." method="_on_task_timer_timeout"]
 [connection signal="timeout" from="MoodTimer" to="." method="_on_mood_timer_timeout"]

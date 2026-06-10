@@ -22,7 +22,7 @@ shape = SubResource("CapsuleShape3D_jsroc")
 [node name="Mesh" parent="." index="6" unique_id=852248410 instance=ExtResource("2_of2gw")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
 
-[node name="Skeleton3D" parent="Mesh/metarig" parent_id_path=PackedInt32Array(852248410, 271016568) index="1" unique_id=1622020171]
+[node name="Skeleton3D" parent="Mesh/metarig" parent_id_path=PackedInt32Array(852248410, 1671213614) index="1" unique_id=244236357]
 bones/1/rotation = Quaternion(0.9941512, 2.6410104e-08, -1.7880282e-08, -0.107997894)
 bones/2/rotation = Quaternion(0.057070825, 5.9829844e-08, 1.0605703e-09, 0.9983701)
 bones/3/rotation = Quaternion(0.079794474, 3.6860863e-09, 1.0727032e-08, 0.9968114)
