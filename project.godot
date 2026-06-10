@@ -21,6 +21,7 @@ UIManager="*uid://ol5hmo4n3hby"
 CurrencyManager="*uid://dln3a2vwxvky"
 SaveManager="*uid://cygxm84inis1j"
 Events="*uid://mn8l7gb01rex"
+RobotState="*uid://dee0av14d653w"
 
 [display]
 

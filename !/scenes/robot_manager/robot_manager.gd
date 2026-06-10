@@ -26,11 +26,6 @@ func _ready() -> void:
 	Events.robot_died.connect(remove_robot)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func create_new_robot() -> void:
 	print("creating new robot")
 	var robot: Robot = RobotScn.instantiate()
@@ -55,9 +50,11 @@ func increase_capacity() -> void:
 	robots_capacity += 1
 	for robot in robots:
 		robot.max_load = robots_capacity
+	# todo change state
 
 
 func on_robot_clicked(clicked_robot: Robot) -> void:
+	# update state
 	if selected_robot:
 		selected_robot.deselect()
 		if selected_robot == clicked_robot:
@@ -68,6 +65,14 @@ func on_robot_clicked(clicked_robot: Robot) -> void:
 	else:
 		clicked_robot.select()
 		selected_robot = clicked_robot
+	
+	# update state
+	if selected_robot:
+		RobotState.robot_is_selected = true
+		RobotState.robot_full = selected_robot.full()
+		RobotState.robot_empty = selected_robot.empty()
+	else:
+		RobotState.robot_is_selected = false
 
 
 # todo merge into single handler?

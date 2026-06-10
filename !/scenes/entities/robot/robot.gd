@@ -15,8 +15,8 @@ const ANIM_DEATH = "Death"
 @onready var anim_player: AnimationPlayer = $Model/AnimationPlayer
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var model: Node3D = $Model
-@onready var outline_nodes: Array[Node]
 @onready var selected_highlight: MeshInstance3D = $SelectedMesh
+@onready var clickable_component: ClickableComponent = $ClickableComponent
 
 var speed: int = 5
 var max_load: int = 1
@@ -28,7 +28,8 @@ var carried_items: Array[Node3D] = []
 
 
 func _ready() -> void:
-	outline_nodes = get_tree().get_nodes_in_group("outline")
+	clickable_component.is_clickable = true
+	clickable_component.on_click_callback = _on_click
 
 
 func _process(_delta: float) -> void:
@@ -71,26 +72,26 @@ func deselect():
 	selected_highlight.visible = false
 
 
-# todo refactor
-func add_load() -> void:
-	if current_load < max_load:
-		current_load += 1
-
-
-func remove_load() -> void:
-	if current_load > 0:
-		current_load -= 1
-
-
 func full() -> bool:
 	return current_load >= max_load
 
 
-func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
-	if event is InputEventMouseButton:
-		if event.pressed:
-			print("Robot sclicked")
-			Events.robot_clicked.emit(self)
+func empty() -> bool:
+	return current_load == 0
+
+
+func add_load() -> void:
+	if full():
+		return
+	current_load += 1
+	RobotState.robot_full = full()
+
+
+func remove_load() -> void:
+	if empty():
+		return
+	current_load -= 1
+	RobotState.robot_empty = empty()
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
@@ -100,6 +101,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			handle_item_reached(body)
 		if body is Dragon:
 			handle_dragon_reached(body as Dragon)
+
 
 func handle_item_reached(item):
 	if !full():
@@ -144,12 +146,5 @@ func update_animations() -> void:
 		anim_player.play(ANIM_IDLE)
 
 
-func _on_mouse_entered() -> void:
-	for node in outline_nodes:
-		node.visible = true
-	
-
-
-func _on_mouse_exited() -> void:
-	for node in outline_nodes:
-		node.visible = false
+func _on_click() -> void:
+	Events.robot_clicked.emit(self)

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cjn0jnsbyu5tn" path="res://!/scenes/shop/shop.tscn" id="3_77yao"]
 [ext_resource type="PackedScene" uid="uid://chdlf20qdrj2l" path="res://!/scenes/dragon_spawner/dragon_spawner.tscn" id="5_eox87"]
 [ext_resource type="PackedScene" uid="uid://mtucxswpq4n5" path="res://!/scenes/dragon_spawner/spawn_point.tscn" id="6_3c6ts"]
-[ext_resource type="PackedScene" uid="uid://csvsuqeoivur0" path="res://!/scenes/robot_manager.tscn" id="6_7kto3"]
+[ext_resource type="PackedScene" uid="uid://csvsuqeoivur0" path="res://!/scenes/robot_manager/robot_manager.tscn" id="6_7kto3"]
 [ext_resource type="PackedScene" uid="uid://bp1kwx70ff54b" path="res://!/assets/geometry/game_world.tscn" id="8_77yao"]
 [ext_resource type="PackedScene" uid="uid://bk7y221frgjcy" path="res://!/scenes/task_spawner.tscn" id="8_em27n"]
 [ext_resource type="PackedScene" uid="uid://b8kmcile3jlbf" path="res://!/scenes/props/cake_spawner.tscn" id="8_ua7wm"]

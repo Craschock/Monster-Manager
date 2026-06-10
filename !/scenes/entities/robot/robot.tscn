@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cevhys0hle3jy" path="res://!/scenes/entities/robot/robot.gd" id="1_p4hhg"]
 [ext_resource type="Texture2D" uid="uid://dxenu4jncc4dx" path="res://!/assets/geometry/robots/Robot_Robot.png" id="4_1ix6e"]
 [ext_resource type="Material" uid="uid://bfiumxuqwwrdm" path="res://!/materials/outline_mat.tres" id="4_3o1xh"]
+[ext_resource type="PackedScene" uid="uid://n6geaww5k580" path="res://!/scenes/components/clickable_component.tscn" id="4_e572k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwkml"]
 resource_name = "Material.001"
@@ -6979,6 +6980,9 @@ shape = SubResource("BoxShape3D_p4hhg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
 visible = false
 mesh = SubResource("CylinderMesh_ylp3b")
+
+[node name="ClickableComponent" parent="." unique_id=1668081895 node_paths=PackedStringArray("collision_object") instance=ExtResource("4_e572k")]
+collision_object = NodePath("..")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
