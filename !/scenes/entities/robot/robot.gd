@@ -85,12 +85,14 @@ func add_load() -> void:
 		return
 	current_load += 1
 	RobotState.robot_full = full()
+	RobotState.robot_empty = empty()
 
 
 func remove_load() -> void:
 	if empty():
 		return
 	current_load -= 1
+	RobotState.robot_full = full()
 	RobotState.robot_empty = empty()
 
 

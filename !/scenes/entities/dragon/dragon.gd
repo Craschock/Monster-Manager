@@ -46,10 +46,14 @@ var mood: int = 100
 	$Moods/Mood_2,
 	$Moods/Mood_3
 ]
+@onready var clickable_component: ClickableComponent = $ClickableComponent
 
 # Initial idle anim
 func _ready() -> void:
 	play_anim(AnimState.SLEEP)
+	_set_clickability()
+	clickable_component.on_click_callback = _on_click
+	RobotState.robot_state_changed.connect(_set_clickability)
 	
 
 # For playing animations
@@ -101,11 +105,15 @@ func handle_mood_display() -> void:
 	for i in range(mood_sprites.size()):
 		mood_sprites[i].visible = (i == active_index)
 
-func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
-	if event is InputEventMouseButton:
-		if event.pressed:
-			Events.dragon_clicked.emit(self)
-	
+
+func _set_clickability() -> void:
+	var is_clickable = RobotState.robot_is_selected and !RobotState.robot_empty
+	clickable_component.is_clickable = is_clickable
+
+
+func _on_click() -> void:
+	Events.dragon_clicked.emit(self)
+
 
 func handle_new_item(item, carrier: Robot):
 	if item is Task:
