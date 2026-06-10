@@ -60,7 +60,6 @@ func set_target(t: Node3D):
 
 
 func set_target_position(pos: Vector3):
-	print("navigating to %s..." % pos)
 	nav_agent.target_position = pos
 
 
