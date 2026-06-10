@@ -59,6 +59,7 @@ func _ready() -> void:
 # For playing animations
 func play_anim(state: AnimState) -> void:
 	if state_machine:
+		print("Changing animation")
 		state_machine.travel(ANIM_STRINGS[state])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -129,8 +130,7 @@ func start_task(task: Task, carrier: Robot) -> void:
 		play_anim(AnimState.DRAGONSBREATH)
 		carrier.die()
 		# Queue up next animation cause it gets stuck in this one ig..
-		if anim_player:
-			anim_player.queue(ANIM_STRINGS[AnimState.SLEEP])
+		play_anim(AnimState.SLEEP)
 		return
 	
 	# todo: what if dragon is already working on task?

@@ -418,20 +418,20 @@ anim_player = NodePath("Mesh/AnimationPlayer")
 anim_tree = NodePath("AnimationTree")
 
 [node name="TaskProgressionFrame" parent="." index="0" unique_id=1870133230]
-transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, 0, 7.834, 0)
+transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, -4, 3.73, 0)
 texture = SubResource("ViewportTexture_3d7q6")
 
 [node name="Moods" parent="." index="1" unique_id=16423573]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3, 3.73, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4, 3.73, 0)
 
 [node name="CollisionShape3D" parent="." index="4" unique_id=1127557731]
-transform = Transform3D(-1.3113416e-07, -3, 0, 3, -1.3113416e-07, 0, 0, 0, 3, 2.67, 2, 0)
+transform = Transform3D(-1.3113416e-07, -3, 0, 3, -1.3113416e-07, 0, 0, 0, 3, 0, 2, 0)
 shape = SubResource("CapsuleShape3D_p7wqx")
 
-[node name="Mesh" parent="." index="6" unique_id=145966089 instance=ExtResource("2_p7wqx")]
-transform = Transform3D(-1.5517543e-08, 0, -0.355, 0, 0.355, 0, 0.355, 0, -1.5517543e-08, -1, 0, 0)
+[node name="Mesh" parent="." index="6" unique_id=1099762263 instance=ExtResource("2_p7wqx")]
+transform = Transform3D(-1.5517543e-08, 0, -0.355, 0, 0.355, 0, 0.355, 0, -1.5517543e-08, -4, 0, 0)
 
-[node name="Skeleton3D" parent="Mesh/metarig" parent_id_path=PackedInt32Array(145966089, 689828988) index="1" unique_id=1636031313]
+[node name="Skeleton3D" parent="Mesh/metarig" parent_id_path=PackedInt32Array(1099762263, 1267960652) index="1" unique_id=2103842811]
 bones/0/position = Vector3(-0.036538098, 5.4368663, -8.6531725)
 bones/0/rotation = Quaternion(-0.3315043, -0.0059369854, -0.016894797, 0.94328374)
 bones/3/rotation = Quaternion(0.33606133, -3.2732086e-07, 5.1315214e-07, 0.9418401)
@@ -444,13 +444,13 @@ bones/9/rotation = Quaternion(-0.0010613129, 7.700253e-09, -8.786723e-09, 0.9999
 bones/10/rotation = Quaternion(0.41948947, 9.051492e-08, 1.7106004e-07, 0.9077602)
 bones/11/rotation = Quaternion(0.55685544, 1.5107327e-06, 1.2928518e-06, 0.83060956)
 bones/12/rotation = Quaternion(0.4810648, -0.016958553, -0.025924621, 0.87613755)
-bones/14/rotation = Quaternion(-0.14215568, -0.009383869, -0.07199202, 0.9871783)
+bones/14/rotation = Quaternion(-0.18677285, -0.012638688, -0.07149246, 0.9797169)
 bones/18/rotation = Quaternion(-0.46898514, 0.73909247, -0.4364681, -0.208065)
-bones/20/position = Vector3(1.5829421, 1.1163092, -1.0610979)
-bones/20/rotation = Quaternion(-0.025329098, -0.11834593, 0.024587203, 0.9923448)
-bones/21/position = Vector3(-0.026761662, 2.4307694, -0.0021798133)
-bones/21/rotation = Quaternion(-0.039156795, 0.957829, -0.28219947, -0.037334394)
-bones/22/rotation = Quaternion(-0.02194863, -0.64598554, -0.22495356, 0.7291207)
+bones/20/position = Vector3(1.5829945, 1.1143465, -1.0737027)
+bones/20/rotation = Quaternion(0.75498664, -0.07306877, -0.0758672, 0.647225)
+bones/21/position = Vector3(-0.010353014, 2.3857908, 0.02436799)
+bones/21/rotation = Quaternion(0.19712304, 0.6761473, -0.19115938, -0.68368524)
+bones/22/rotation = Quaternion(0.18456933, -0.6915564, -0.01538563, 0.6981743)
 bones/24/position = Vector3(-1.6424125, 1.1111815, -1.0960268)
 bones/24/rotation = Quaternion(0.8016683, 0.0040999614, 0.09378409, 0.5903522)
 bones/25/position = Vector3(0.02685182, 2.43172, -0.0020442419)
@@ -474,64 +474,64 @@ bones/42/position = Vector3(-0.036538064, 5.4368668, -8.6531725)
 bones/42/rotation = Quaternion(0.9488239, 1.410627e-16, -7.233049e-17, 0.31580544)
 bones/43/rotation = Quaternion(0.022240924, 1.19179795e-07, 2.6513176e-09, 0.99975264)
 bones/44/rotation = Quaternion(0.40268698, -1.3322674e-15, 9.600803e-08, 0.91533774)
-bones/45/rotation = Quaternion(0.22852726, 2.5424104e-14, 5.4485128e-08, 0.9735375)
-bones/46/rotation = Quaternion(0.23845272, 5.773159e-15, 5.6851558e-08, 0.97115415)
-bones/47/rotation = Quaternion(0.40140107, 0.36730093, 0.31372353, 0.7781676)
-bones/48/rotation = Quaternion(0.20556425, -0.12612614, -0.26042697, 0.9348869)
-bones/49/rotation = Quaternion(-0.040399157, -0.2953204, -0.18375783, 0.9366894)
-bones/50/rotation = Quaternion(0.027335977, -0.34136283, -0.14975719, 0.92752194)
-bones/51/rotation = Quaternion(-0.28093305, -0.6219917, 0.17112185, 0.7105775)
-bones/52/rotation = Quaternion(-0.29738137, -0.061764434, 0.0063746106, 0.9527376)
-bones/53/rotation = Quaternion(-0.2424542, 0.28279227, -0.008238062, 0.92799604)
+bones/45/rotation = Quaternion(0.19352151, 0.011837398, -0.05276823, 0.9796044)
+bones/46/rotation = Quaternion(0.3970025, 0.017696187, -0.0038668378, 0.91763884)
+bones/47/rotation = Quaternion(0.22893612, 0.41099408, 0.24951847, 0.8464117)
+bones/48/rotation = Quaternion(0.20556422, -0.12612614, -0.26042703, 0.93488675)
+bones/49/rotation = Quaternion(-0.004648729, -0.382077, -0.10333115, 0.9183236)
+bones/50/rotation = Quaternion(-0.04226109, -0.15925106, -0.052576188, 0.98493093)
+bones/51/rotation = Quaternion(-0.24155705, -0.65154934, 0.11943211, 0.7091331)
+bones/52/rotation = Quaternion(-0.29738134, -0.06176445, 0.0063746106, 0.9527376)
+bones/53/rotation = Quaternion(-0.24245423, 0.2827923, -0.008238055, 0.92799604)
 
-[node name="bart" type="MeshInstance3D" parent="Mesh/metarig/Skeleton3D/bart" parent_id_path=PackedInt32Array(145966089, 1942186362) index="0" unique_id=2060356170 groups=["outline"]]
+[node name="bart" type="MeshInstance3D" parent="Mesh/metarig/Skeleton3D/bart" parent_id_path=PackedInt32Array(1099762263, 595786651) index="0" unique_id=2060356170 groups=["outline"]]
 visible = false
 mesh = SubResource("ArrayMesh_l8hut")
 skin = SubResource("Skin_q7trd")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("4_3d7q6")
 
-[node name="Dragon " type="MeshInstance3D" parent="Mesh/metarig/Skeleton3D/Dragon " parent_id_path=PackedInt32Array(145966089, 1922909397) index="0" unique_id=1739243029 groups=["outline"]]
+[node name="Dragon " type="MeshInstance3D" parent="Mesh/metarig/Skeleton3D/Dragon " parent_id_path=PackedInt32Array(1099762263, 1346131356) index="0" unique_id=1739243029 groups=["outline"]]
 visible = false
 mesh = SubResource("ArrayMesh_psj32")
 skin = SubResource("Skin_q7trd")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("4_3d7q6")
 
-[node name="Eye" type="MeshInstance3D" parent="Mesh/metarig/Skeleton3D/Eye" parent_id_path=PackedInt32Array(145966089, 2055527669) index="0" unique_id=288168376 groups=["outline"]]
+[node name="Eye" type="MeshInstance3D" parent="Mesh/metarig/Skeleton3D/Eye" parent_id_path=PackedInt32Array(1099762263, 1349719901) index="0" unique_id=288168376 groups=["outline"]]
 visible = false
 mesh = SubResource("ArrayMesh_x23gv")
 skin = SubResource("Skin_q7trd")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("4_3d7q6")
 
-[node name="Hair" type="MeshInstance3D" parent="Mesh/metarig/Skeleton3D/Hair" parent_id_path=PackedInt32Array(145966089, 7052821) index="0" unique_id=626750368 groups=["outline"]]
+[node name="Hair" type="MeshInstance3D" parent="Mesh/metarig/Skeleton3D/Hair" parent_id_path=PackedInt32Array(1099762263, 1360066204) index="0" unique_id=626750368 groups=["outline"]]
 visible = false
 mesh = SubResource("ArrayMesh_8k6s5")
 skin = SubResource("Skin_q7trd")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("4_3d7q6")
 
-[node name="Hair Leg Back" type="MeshInstance3D" parent="Mesh/metarig/Skeleton3D/Hair Leg Back" parent_id_path=PackedInt32Array(145966089, 1745619147) index="0" unique_id=1750037390 groups=["outline"]]
+[node name="Hair Leg Back" type="MeshInstance3D" parent="Mesh/metarig/Skeleton3D/Hair Leg Back" parent_id_path=PackedInt32Array(1099762263, 1299315592) index="0" unique_id=1750037390 groups=["outline"]]
 visible = false
 mesh = SubResource("ArrayMesh_k1c60")
 skin = SubResource("Skin_q7trd")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("4_3d7q6")
 
-[node name="HairlegFront" type="MeshInstance3D" parent="Mesh/metarig/Skeleton3D/HairlegFront" parent_id_path=PackedInt32Array(145966089, 789341928) index="0" unique_id=1800169886 groups=["outline"]]
+[node name="HairlegFront" type="MeshInstance3D" parent="Mesh/metarig/Skeleton3D/HairlegFront" parent_id_path=PackedInt32Array(1099762263, 1741169173) index="0" unique_id=1800169886 groups=["outline"]]
 visible = false
 mesh = SubResource("ArrayMesh_qe5ir")
 skin = SubResource("Skin_q7trd")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("4_3d7q6")
 
-[node name="AnimationPlayer" parent="Mesh" index="1" unique_id=917558391]
+[node name="AnimationPlayer" parent="Mesh" index="1" unique_id=1383458398]
 autoplay = &"Sleep"
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="7" unique_id=581663781]
-root_node = NodePath("../Mesh/Dragon One")
+root_node = NodePath("../Mesh")
 tree_root = SubResource("AnimationNodeStateMachine_aimb4")
-anim_player = NodePath("../Mesh/Dragon One/AnimationPlayer")
+anim_player = NodePath("../Mesh/AnimationPlayer")
 
 [editable path="Mesh"]
