@@ -24,10 +24,10 @@ func _ready() -> void:
 	Events.prop_clicked.connect(on_prop_clicked)
 	
 	Events.robot_died.connect(remove_robot)
+	create_new_robot()
 
 
 func create_new_robot() -> void:
-	print("creating new robot")
 	var robot: Robot = RobotScn.instantiate()
 	robot.position = spawn_point.position
 	robot.speed = robots_speed

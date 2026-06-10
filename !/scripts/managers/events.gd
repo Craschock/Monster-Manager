@@ -2,6 +2,7 @@ extends Node
 
 @warning_ignore_start("unused_signal")
 signal currency_changed(new_amount: int)
+signal time_changed(new_time: int)
 
 signal robot_bought
 signal speed_increase_bought

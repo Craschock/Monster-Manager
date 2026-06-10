@@ -152,11 +152,13 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 transform = Transform3D(3.305, 0, 0, 0, 3.305, 0, 0, 0, 3.305, 0.5, -0.493, 1)
 
 [node name="Telefone Base_outline" type="MeshInstance3D" parent="MeshInstance3D/Telefone2/Telefone Base" parent_id_path=PackedInt32Array(1412811056, 1650437160) index="0" unique_id=309633736 groups=["outline"]]
+visible = false
 material_override = ExtResource("3_ay8ym")
 mesh = SubResource("ArrayMesh_uioa1")
 
 [node name="Telefone_outline" type="MeshInstance3D" parent="MeshInstance3D/Telefone2/Telefone" parent_id_path=PackedInt32Array(1412811056, 169006714) index="0" unique_id=268666026 groups=["outline"]]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+visible = false
 material_override = ExtResource("3_ay8ym")
 mesh = SubResource("ArrayMesh_nde08")
 
