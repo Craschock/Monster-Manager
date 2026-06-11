@@ -9,12 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://75f1kv7li1lx" path="res://!/assets/Sprites/MoodIcon_3.png" id="4_xx7ub"]
 [ext_resource type="Texture2D" uid="uid://qeonploupurm" path="res://!/assets/Sprites/Progression_Bar_Fill_TYPE3.png" id="5_hx27j"]
 [ext_resource type="PackedScene" uid="uid://n6geaww5k580" path="res://!/scenes/components/clickable_component.tscn" id="9_hx27j"]
+[ext_resource type="FontFile" uid="uid://1lb0n3jewv3s" path="res://!/assets/fonts/norwester.otf" id="10_sx1pk"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_a7il3"]
 viewport_path = NodePath("TaskProgressionFrame/SubViewport")
 
 [node name="Dragon" type="StaticBody3D" unique_id=909527641]
 script = ExtResource("1_3mxua")
+money_target_scale = Vector3(3, 3, 3)
 
 [node name="TaskProgressionFrame" type="Sprite3D" parent="." unique_id=1870133230]
 transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, 0, 5, 0)
@@ -133,6 +135,16 @@ autostart = true
 
 [node name="ClickableComponent" parent="." unique_id=1668081895 node_paths=PackedStringArray("collision_object") instance=ExtResource("9_hx27j")]
 collision_object = NodePath("..")
+
+[node name="MoneyDisplay" type="Label3D" parent="." unique_id=1990768351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4941974, 0)
+visible = false
+billboard = 1
+modulate = Color(0, 0.654902, 0, 1)
+text = "$$$"
+font = ExtResource("10_sx1pk")
+font_size = 64
+outline_size = 32
 
 [connection signal="timeout" from="TaskTimer" to="." method="_on_task_timer_timeout"]
 [connection signal="timeout" from="MoodTimer" to="." method="_on_mood_timer_timeout"]

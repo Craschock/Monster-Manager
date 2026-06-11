@@ -37,6 +37,12 @@ const ICON_MOOD3 = preload("res://!/assets/Sprites/MoodIcon_3.png")
 ## Distance moved per second in the -X direction
 @export var walk_speed: float = 2.0
 
+@export_category("Money Display Settings")
+## The final scale the money text will animate to
+@export var money_target_scale: Vector3 = Vector3(1.0, 1.0, 1.0)
+## How long the pop-up animation takes
+@export var money_anim_duration: float = 0.5
+
 var is_leaving: bool = false
 var current_task: Task = null
 var completed_tasks: int = 0
@@ -44,6 +50,7 @@ var max_tasks: int = 3
 var mood: int = 100
 var dragon_meshes: Array[GeometryInstance3D] = []
 
+@onready var money_display: Label3D = $MoneyDisplay
 @onready var task_timer: Timer = $TaskTimer
 @onready var mood_timer: Timer = $MoodTimer
 @onready var state_machine = anim_tree.get("parameters/playback") if anim_tree else null
@@ -108,6 +115,12 @@ func handle_task_display() -> void:
 	var time_total = task_timer.wait_time
 	var percentage = (1.0 - (time_left / time_total)) * 100.0
 	var active_index = type
+	
+	for i in task_bars:
+		var bar = task_bars[i]
+		bar.visible = false
+	for barMoods in task_bar_moods:
+		barMoods.visible = false
 	
 	# Display correct task bar
 	var coef = reward_coefficients[type]
@@ -203,6 +216,10 @@ func _on_task_timer_timeout() -> void:
 	var reward = reward_coefficients[type] * current_task.reward
 	# todo show to player
 	CurrencyManager.add_currency(reward)
+	
+	money_display.text = "+$" + str(reward)
+	handle_money_display()
+	
 	task_progression.visible = false
 	current_task.queue_free()
 	current_task = null
@@ -269,3 +286,15 @@ func fade_meshes(start_val: float, end_val: float, duration: float) -> void:
 	for mesh in dragon_meshes:
 		mesh.transparency = start_val
 		tween.tween_property(mesh, "transparency", end_val, duration)
+
+func handle_money_display() -> void:
+	if not money_display:
+		return
+
+	money_display.scale = Vector3.ZERO
+	money_display.visible = true
+	
+	var tween = create_tween()
+	tween.tween_property(money_display, "scale", money_target_scale, money_anim_duration).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.tween_interval(1.0) 
+	tween.tween_callback(func(): money_display.visible = false)
