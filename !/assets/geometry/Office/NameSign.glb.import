@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bywkerpgshqxs"
-path="res://.godot/imported/Stamp.glb-8566d31245099427fec4ea7564ba97ba.scn"
+uid="uid://bmt0ropdm1lhi"
+path="res://.godot/imported/NameSign.glb-ca84e4d3f33ee9851a8386c6e93c4f5a.scn"
 
 [deps]
 
-source_file="res://!/assets/geometry/Office/Stamp.glb"
-dest_files=["res://.godot/imported/Stamp.glb-8566d31245099427fec4ea7564ba97ba.scn"]
+source_file="res://!/assets/geometry/Office/NameSign.glb"
+dest_files=["res://.godot/imported/NameSign.glb-ca84e4d3f33ee9851a8386c6e93c4f5a.scn"]
 
 [params]
 
@@ -17,7 +17,7 @@ nodes/root_type=""
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
-nodes/root_scale=0.2
+nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
