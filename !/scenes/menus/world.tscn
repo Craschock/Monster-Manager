@@ -61,9 +61,18 @@ spawn_direction = 0
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 8, 0.1, 19.5)
 spawn_direction = 3
 
+[node name="MeshInstance3D" parent="DragonSpawner/Large Dragons/SpawnPoint1" index="0" unique_id=1761086901]
+transform = Transform3D(1.3217053, 0, 0, 0, 0.56993526, 0, 0, 0, 0.73216534, 0, 1, 0)
+
 [node name="SpawnPoint2" parent="DragonSpawner/Large Dragons" parent_id_path=PackedInt32Array(2000993081, 465933796) index="1" unique_id=640936235 instance=ExtResource("6_3c6ts")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7, 0.1, 32)
 spawn_direction = 0
+
+[node name="MeshInstance3D" parent="DragonSpawner/Large Dragons/SpawnPoint2" index="0" unique_id=1761086901]
+transform = Transform3D(0.6629312, 0, 0, 0, 0.63814545, 0, 0, 0, 1.3352542, 0, 1, 0)
+
+[node name="CollisionShape3D" parent="DragonSpawner/Large Dragons/SpawnPoint2" index="1" unique_id=1478008188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.73351115, -0.0021362305)
 
 [node name="RobotManager" parent="." unique_id=732904911 instance=ExtResource("6_7kto3")]
 
@@ -91,5 +100,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.052845, 0, -6.03719)
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8.534499, 0, 0)
 
 [editable path="DragonSpawner"]
+[editable path="DragonSpawner/Large Dragons/SpawnPoint1"]
+[editable path="DragonSpawner/Large Dragons/SpawnPoint2"]
 [editable path="RobotManager"]
 [editable path="TaskSpawner"]

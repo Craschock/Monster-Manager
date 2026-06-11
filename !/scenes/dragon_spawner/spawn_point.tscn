@@ -12,7 +12,7 @@ material = SubResource("StandardMaterial3D_8qj6x")
 size = Vector3(5.5, 3, 5.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1v07b"]
-size = Vector3(5.380615, 3.0187135, 5.4713135)
+size = Vector3(3.6972656, 2.4430542, 7.1367188)
 
 [node name="SpawnPoint" type="StaticBody3D" unique_id=1146827166]
 collision_layer = 4
