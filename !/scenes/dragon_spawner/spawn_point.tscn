@@ -9,10 +9,10 @@ albedo_color = Color(1, 0.19215687, 0.15686275, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_8qj6x"]
 material = SubResource("StandardMaterial3D_8qj6x")
-size = Vector3(2, 0.01, 2)
+size = Vector3(5.5, 3, 5.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1v07b"]
-size = Vector3(2, 0.1, 2)
+size = Vector3(5.380615, 3.0187135, 5.4713135)
 
 [node name="SpawnPoint" type="StaticBody3D" unique_id=1146827166]
 collision_layer = 4
@@ -20,15 +20,18 @@ collision_mask = 0
 script = ExtResource("1_5ancg")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1761086901]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transparency = 0.7
 mesh = SubResource("BoxMesh_8qj6x")
 
 [node name="MeshInstance3D_outline" type="MeshInstance3D" parent="MeshInstance3D" unique_id=398792819 groups=["outline"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.038300037, 0)
 visible = false
 material_override = ExtResource("2_6pdtl")
 mesh = SubResource("BoxMesh_8qj6x")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1478008188]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00173, -0.0021362305)
 shape = SubResource("BoxShape3D_1v07b")
 
 [node name="ClickableComponent" parent="." unique_id=1668081895 node_paths=PackedStringArray("collision_object") instance=ExtResource("2_8qj6x")]
