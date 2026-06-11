@@ -126,6 +126,7 @@ texture = ExtResource("4_xx7ub")
 one_shot = true
 
 [node name="MoodTimer" type="Timer" parent="." unique_id=1767204129]
+wait_time = 3.0
 autostart = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1127557731]
