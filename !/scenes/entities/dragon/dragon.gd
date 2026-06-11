@@ -192,6 +192,8 @@ func start_task(task: Task, carrier: Robot) -> void:
 	#	current: discard current, start new
 	#	alt: task queue
 	#	alt: task is left at robot
+	if current_task:
+		current_task.queue_free()
 	current_task = task
 	var type = task.type
 	var time = time_coefficients[type] * task.time_to_complete
