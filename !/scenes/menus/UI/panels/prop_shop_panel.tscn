@@ -50,11 +50,11 @@ theme_override_font_sizes/font_size = 110
 text = "Cake"
 flat = true
 
-[node name="Button3" type="Button" parent="VBoxContainer" unique_id=723935107]
+[node name="B_Water" type="Button" parent="VBoxContainer" unique_id=723935107]
 layout_mode = 2
 theme = ExtResource("1_1kym2")
 theme_override_font_sizes/font_size = 110
-text = "Placeholder"
+text = "Water"
 flat = true
 
 [node name="Title" type="Label" parent="." unique_id=707253074]

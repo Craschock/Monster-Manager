@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dvjy7xx3i2pxk"]
+
+[ext_resource type="Script" uid="uid://nnyfcbhpwa78" path="res://!/scenes/shop/water.gd" id="1_naqwr"]
+
+[node name="Water" type="Node" unique_id=639573632]
+script = ExtResource("1_naqwr")
+metadata/_custom_type_script = "uid://bfevbgslbly8l"

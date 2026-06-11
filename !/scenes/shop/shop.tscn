@@ -122,6 +122,7 @@ tilt_angle_degrees = -5.0
 [connection signal="pressed" from="ShopUI/RobotShopPanel/VBoxContainer/B_CapacityIncrease" to="." method="_on_shop_button_pressed" flags=18]
 [connection signal="pressed" from="ShopUI/PropShopPanel/VBoxContainer/B_Coffe" to="." method="_on_shop_button_pressed" flags=18]
 [connection signal="pressed" from="ShopUI/PropShopPanel/VBoxContainer/B_Cake" to="." method="_on_shop_button_pressed" flags=18]
+[connection signal="pressed" from="ShopUI/PropShopPanel/VBoxContainer/B_Water" to="." method="_on_shop_button_pressed" flags=18]
 [connection signal="pressed" from="ShopUI/B_OpenRobotShop" to="ShopUI" method="_on_b_open_robot_shop_pressed"]
 [connection signal="pressed" from="ShopUI/B_OpenPropShop" to="ShopUI" method="_on_b_open_prop_shop_pressed"]
 [connection signal="pressed" from="ShopUI/DragonShop/B_BuyDragon" to="ShopUI/DragonShop" method="_on_b_buy_dragon_pressed"]

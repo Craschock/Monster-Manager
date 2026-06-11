@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dnlqlkuydrkcp"]
+
+[ext_resource type="PackedScene" uid="uid://brjcmu0m2ry8t" path="res://!/assets/geometry/Office/Water.glb" id="1_3ooj7"]
+
+[node name="Water2" unique_id=21663846 instance=ExtResource("1_3ooj7")]
