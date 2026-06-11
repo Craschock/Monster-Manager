@@ -52,12 +52,12 @@ animation_duration = 0.314
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 50.0
+offset_left = 120.0
 offset_top = -180.0
-offset_right = 250.0
+offset_right = 320.0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("4_inoop")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 96
 text = "100"
 vertical_alignment = 1
 
@@ -67,14 +67,32 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -167.0
-offset_top = -154.0
-offset_right = -67.0
-offset_bottom = -54.0
+offset_left = -1876.0
+offset_top = -153.0
+offset_right = -1776.0
+offset_bottom = -29.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_font_sizes/font_size = 64
+theme = ExtResource("3_w40ab")
+theme_override_font_sizes/font_size = 96
 text = "$"
+flat = true
+
+[node name="L_Time" type="Label" parent="." unique_id=1498311812]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -236.0
+offset_top = -153.0
+offset_right = -45.0
+offset_bottom = -21.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_inoop")
+theme_override_font_sizes/font_size = 96
+text = "2:34"
 
 [connection signal="pressed" from="B_CameraRotateLeft" to="." method="_on_b_camera_rotate_left_pressed"]
 [connection signal="pressed" from="B_CameraRotateRight" to="." method="_on_b_camera_rotate_right_pressed"]

@@ -29,13 +29,22 @@ enum MenuState {
 @export var background_sprites: Array[TextureProgressBar]
 @export var menu_buttons: Array[Button]
 
+@export_category("Automated Timers")
+@export var title_timer: Timer
+@export var menu_timer: Timer
+
 var current_state: MenuState = MenuState.WAITING_FIRST_CLICK
 
 func _ready() -> void:
+	if title_timer:
+		title_timer.timeout.connect(reveal_title)
+	if menu_timer:
+		menu_timer.timeout.connect(reveal_menu)
+	
 	if title_sprite:
 		title_sprite.value = MIN_PROGRESS_VALUE
 		title_sprite.modulate.a = VISIBLE_ALPHA 
-		
+			
 	for bg in background_sprites:
 		if bg:
 			bg.value = MIN_PROGRESS_VALUE
@@ -46,13 +55,13 @@ func _ready() -> void:
 			btn.modulate.a = HIDDEN_ALPHA
 			btn.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
-func _input(event: InputEvent) -> void:
-	if (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed) or event.is_action_pressed("ui_accept"):
-		match current_state:
-			MenuState.WAITING_FIRST_CLICK:
-				reveal_title()
-			MenuState.WAITING_SECOND_CLICK:
-				reveal_menu()
+#func _input(event: InputEvent) -> void:
+	#if (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed) or event.is_action_pressed("ui_accept"):
+		#match current_state:
+			#MenuState.WAITING_FIRST_CLICK:
+				#reveal_title()
+			#MenuState.WAITING_SECOND_CLICK:
+				#reveal_menu()
 
 func reveal_title() -> void:
 	current_state = MenuState.TITLE_ANIMATING
@@ -61,7 +70,11 @@ func reveal_title() -> void:
 	if title_sprite:
 		tween.tween_property(title_sprite, "value", MAX_PROGRESS_VALUE, TITLE_ANIM_DURATION)
 		
-	tween.tween_callback(func(): current_state = MenuState.WAITING_SECOND_CLICK)
+	tween.tween_callback(func(): 
+		current_state = MenuState.WAITING_SECOND_CLICK
+		if menu_timer:
+			menu_timer.start()
+		)
 
 func reveal_menu() -> void:
 	current_state = MenuState.FINISHING_SEQUENCE

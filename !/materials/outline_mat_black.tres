@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" format=3 uid="uid://bfiumxuqwwrdm"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dg134nrfc68rw"]
 
 [sub_resource type="Shader" id="Shader_cbnar"]
 code = "shader_type spatial;
@@ -20,5 +20,5 @@ void fragment() {
 [resource]
 render_priority = 0
 shader = SubResource("Shader_cbnar")
-shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_color = Color(0, 0, 0, 1)
 shader_parameter/outline_width = 0.050000002375

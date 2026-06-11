@@ -4,16 +4,17 @@ class_name Dragon
 
 signal dragon_leaving(dragon: Dragon)
 
-enum AnimState { SLEEP, DESTROYSITL, DESTROYSITR, DRAGONSBREATH, DRINKING_COFFE, STAMPING, TAKEPHONE, WORK, WALK }
+enum AnimState { SLEEP, DESTROYSITL, DESTROYSITR, DRAGONSBREATH, DRINKING_COFFE, STAMPING, TAKEPHONE, CALL, WORK, WALK }
 
 const ANIM_STRINGS = {
 	AnimState.SLEEP: "Sleep",
 	AnimState.DESTROYSITL: "DestroySitL",
 	AnimState.DESTROYSITR: "DestroySitR",
 	AnimState.DRAGONSBREATH: "DragonsBreath_001",
-	AnimState.DRINKING_COFFE: "Drinking Coffe Sit",
+	AnimState.DRINKING_COFFE: "Drinking Coffee Sit",
 	AnimState.STAMPING: "Stamping",
 	AnimState.TAKEPHONE: "TakePhone",
+	AnimState.CALL: "Call",
 	AnimState.WORK: "Work",
 	AnimState.WALK: "Walk"
 }
@@ -23,6 +24,7 @@ const ICON_MOOD2 = preload("res://!/assets/Sprites/MoodIcon_2.png")
 const ICON_MOOD3 = preload("res://!/assets/Sprites/MoodIcon_3.png")
 
 @export var anim_player: AnimationPlayer
+@export var anim_tree: AnimationTree
 @export var time_coefficients: Dictionary[Task.Type, float]
 @export var reward_coefficients: Dictionary[Task.Type, float]
 
@@ -32,27 +34,38 @@ var max_tasks: int = 3
 var mood: int = 100
 
 @onready var task_timer: Timer = $TaskTimer
+@onready var state_machine = anim_tree.get("parameters/playback") if anim_tree else null
 @onready var task_progression: Sprite3D = $TaskProgressionFrame
 @onready var task_bars: Array[TextureProgressBar] = [
 	$TaskProgressionFrame/SubViewport/TaskType1/Task1_Fill,
 	$TaskProgressionFrame/SubViewport/TaskType2/Task2_Fill,
 	$TaskProgressionFrame/SubViewport/TaskType3/Task3_Fill
 ]
+@onready var task_bar_moods: Array[TextureRect] = [
+	$TaskProgressionFrame/SubViewport/TaskMoods/Task1_Icon,
+	$TaskProgressionFrame/SubViewport/TaskMoods/Task2_Icon,
+	$TaskProgressionFrame/SubViewport/TaskMoods/Task3_Icon
+]
 @onready var mood_sprites: Array[Sprite3D] = [
 	$Moods/Mood_1,
 	$Moods/Mood_2,
 	$Moods/Mood_3
 ]
+@onready var clickable_component: ClickableComponent = $ClickableComponent
 
 # Initial idle anim
 func _ready() -> void:
 	play_anim(AnimState.SLEEP)
+	_set_clickability()
+	clickable_component.on_click_callback = _on_click
+	RobotState.robot_state_changed.connect(_set_clickability)
 	
 
 # For playing animations
 func play_anim(state: AnimState) -> void:
-	if anim_player:
-		anim_player.play(ANIM_STRINGS[state])
+	if state_machine:
+		print("Changing animation")
+		state_machine.travel(ANIM_STRINGS[state])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -66,6 +79,8 @@ func handle_task_display() -> void:
 		# Hide all barys
 		for bar in task_bars:
 			bar.visible = false
+		for barMoods in task_bar_moods:
+			barMoods.visible = false
 		return	
 	
 	var type = current_task.type
@@ -74,12 +89,22 @@ func handle_task_display() -> void:
 	var percentage = (1.0 - (time_left / time_total)) * 100.0
 	var active_index = type
 	
+	# Display correct task bar
 	for i in range(task_bars.size()):
 		if i == active_index:
 			task_bars[i].visible = true
 			task_bars[i].value = percentage
 		else:
 			task_bars[i].visible = false
+	
+	# Display MoodIcon
+	var current_mood: int
+	if mood > 70: current_mood = 0
+	elif mood > 30: current_mood = 1
+	else: current_mood = 2
+	
+	for i in range(mood_sprites.size()):
+		task_bar_moods[i].visible = (i == current_mood)
 
 func handle_mood_display() -> void:
 	if current_task != null:
@@ -98,11 +123,15 @@ func handle_mood_display() -> void:
 	for i in range(mood_sprites.size()):
 		mood_sprites[i].visible = (i == active_index)
 
-func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
-	if event is InputEventMouseButton:
-		if event.pressed:
-			Events.dragon_clicked.emit(self)
-	
+
+func _set_clickability() -> void:
+	var is_clickable = RobotState.robot_is_selected and !RobotState.robot_empty
+	clickable_component.is_clickable = is_clickable
+
+
+func _on_click() -> void:
+	Events.dragon_clicked.emit(self)
+
 
 func handle_new_item(item, carrier: Robot):
 	if item is Task:
@@ -118,8 +147,7 @@ func start_task(task: Task, carrier: Robot) -> void:
 		play_anim(AnimState.DRAGONSBREATH)
 		carrier.die()
 		# Queue up next animation cause it gets stuck in this one ig..
-		if anim_player:
-			anim_player.queue(ANIM_STRINGS[AnimState.SLEEP])
+		play_anim(AnimState.SLEEP)
 		return
 	
 	# todo: what if dragon is already working on task?
@@ -161,6 +189,8 @@ func process_prop(prop: Prop):
 
 func leave() -> void:
 	dragon_leaving.emit(self)
+	if current_task:
+		current_task.queue_free()
 	# todo: add walking animation state for 5 seconds. With a dissapearing shader?
 	queue_free()
 

@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://djvgusi7ijs0p"]
+
+[ext_resource type="PackedScene" uid="uid://bs762hhepi7s2" path="res://!/scenes/entities/dragon/dragon_large/dragon_l.tscn" id="1_w4gaq"]
+[ext_resource type="Texture2D" uid="uid://cgpnwsfai0hqi" path="res://!/assets/geometry/dragons/SecondDrakeViolette.png" id="2_4w4ds"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4w4ds"]
+viewport_path = NodePath("TaskProgressionFrame/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5gani"]
+albedo_texture = ExtResource("2_4w4ds")
+
+[node name="Dragon_L_03" unique_id=909527641 instance=ExtResource("1_w4gaq")]
+time_coefficients = Dictionary[int, float]({
+0: 1.0,
+1: 0.5,
+2: 2.0
+})
+reward_coefficients = Dictionary[int, float]({
+0: 1.0,
+1: 0.5,
+2: 2.0
+})
+
+[node name="TaskProgressionFrame" parent="." index="0" unique_id=1870133230]
+texture = SubResource("ViewportTexture_4w4ds")
+
+[node name="Skeleton3D" parent="Mesh/metarig" parent_id_path=PackedInt32Array(145966089, 689828988) index="1" unique_id=1636031313]
+bones/7/rotation = Quaternion(-0.39609775, -0.004136078, 0.014921175, 0.9180778)
+bones/20/position = Vector3(1.5910203, 0.9438619, -1.0177372)
+bones/24/position = Vector3(-1.6391177, 0.85761976, -1.0177401)
+bones/48/rotation = Quaternion(0.2813085, -0.0016303251, 0.0055614067, 0.9595999)
+
+[node name="bart" parent="Mesh/metarig/Skeleton3D" index="0" unique_id=1942186362]
+surface_material_override/0 = SubResource("StandardMaterial3D_5gani")
+
+[node name="Dragon " parent="Mesh/metarig/Skeleton3D" index="1" unique_id=1922909397]
+surface_material_override/0 = SubResource("StandardMaterial3D_5gani")
+
+[node name="Eye" parent="Mesh/metarig/Skeleton3D" index="2" unique_id=2055527669]
+surface_material_override/0 = SubResource("StandardMaterial3D_5gani")
+
+[node name="Hair" parent="Mesh/metarig/Skeleton3D" index="3" unique_id=7052821]
+surface_material_override/0 = SubResource("StandardMaterial3D_5gani")
+
+[node name="Hair Leg Back" parent="Mesh/metarig/Skeleton3D" index="4" unique_id=1745619147]
+surface_material_override/0 = SubResource("StandardMaterial3D_5gani")
+
+[node name="HairlegFront" parent="Mesh/metarig/Skeleton3D" index="5" unique_id=789341928]
+surface_material_override/0 = SubResource("StandardMaterial3D_5gani")
+
+[editable path="Mesh"]

@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://de4rsnoxeqa7v" path="res://!/scenes/menus/UI/panels/prop_shop_panel.tscn" id="3_g566e"]
 [ext_resource type="Theme" uid="uid://3qoaw6d100xf" path="res://!/assets/fonts/MainUI_Theme.tres" id="5_j5jc4"]
 [ext_resource type="PackedScene" uid="uid://bfwjodia7ynbc" path="res://!/scenes/menus/button effects/ui_hover_component.tscn" id="6_vonwm"]
+[ext_resource type="Script" uid="uid://cndxo41hm8f1i" path="res://!/scenes/shop/dragon_shop.gd" id="7_cmu52"]
+[ext_resource type="FontFile" uid="uid://1lb0n3jewv3s" path="res://!/assets/fonts/norwester.otf" id="7_to87v"]
+[ext_resource type="Texture2D" uid="uid://c1ml2fu7s0y35" path="res://!/assets/Sprites/Progression_Bar_Fill_TYPE2.png" id="8_jsb8m"]
 
 [node name="Shop" type="Node" unique_id=1139307655]
 script = ExtResource("1_pxcqy")
@@ -42,6 +45,78 @@ flat = true
 
 [node name="UIHoverComponent" parent="ShopUI/B_OpenPropShop" unique_id=1367748535 instance=ExtResource("6_vonwm")]
 
+[node name="DragonShop" type="Control" parent="ShopUI" unique_id=1529996833]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_cmu52")
+
+[node name="BG_Button1" type="TextureRect" parent="ShopUI/DragonShop" unique_id=829512817]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 478.99997
+offset_right = 654.0
+offset_bottom = 577.0
+scale = Vector2(1.7999994, 1.131421)
+texture = ExtResource("8_jsb8m")
+
+[node name="BG_Button2" type="TextureRect" parent="ShopUI/DragonShop" unique_id=453790587]
+layout_mode = 0
+offset_left = 778.0
+offset_top = 729.99994
+offset_right = 1225.0001
+offset_bottom = 827.99994
+rotation = -3.1415927
+scale = Vector2(0.87999696, 1.131421)
+texture = ExtResource("8_jsb8m")
+
+[node name="B_BuyDragon" type="Button" parent="ShopUI/DragonShop" unique_id=1741772488]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 245.0
+offset_top = 452.0
+offset_right = 942.0
+offset_bottom = 576.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(348.5, 62)
+theme = ExtResource("5_j5jc4")
+theme_override_fonts/font = ExtResource("7_to87v")
+theme_override_font_sizes/font_size = 96
+text = "Buy dragon $400"
+flat = true
+
+[node name="UIHoverComponent" parent="ShopUI/DragonShop/B_BuyDragon" unique_id=236018741 instance=ExtResource("6_vonwm")]
+
+[node name="B_CancleDragon" type="Button" parent="ShopUI/DragonShop" unique_id=1389007133]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 422.5
+offset_top = 590.0
+offset_right = 722.5
+offset_bottom = 714.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(150, 62)
+theme = ExtResource("5_j5jc4")
+theme_override_fonts/font = ExtResource("7_to87v")
+theme_override_font_sizes/font_size = 96
+text = "Cancel"
+flat = true
+
+[node name="UIHoverComponent" parent="ShopUI/DragonShop/B_CancleDragon" unique_id=347105908 instance=ExtResource("6_vonwm")]
+tilt_angle_degrees = -5.0
+
 [connection signal="pressed" from="ShopUI/RobotShopPanel/VBoxContainer/B_BuyRobot" to="." method="_on_shop_button_pressed" flags=18]
 [connection signal="pressed" from="ShopUI/RobotShopPanel/VBoxContainer/B_SpeedIncrease" to="." method="_on_shop_button_pressed" flags=18]
 [connection signal="pressed" from="ShopUI/RobotShopPanel/VBoxContainer/B_CapacityIncrease" to="." method="_on_shop_button_pressed" flags=18]
@@ -49,6 +124,8 @@ flat = true
 [connection signal="pressed" from="ShopUI/PropShopPanel/VBoxContainer/B_Cake" to="." method="_on_shop_button_pressed" flags=18]
 [connection signal="pressed" from="ShopUI/B_OpenRobotShop" to="ShopUI" method="_on_b_open_robot_shop_pressed"]
 [connection signal="pressed" from="ShopUI/B_OpenPropShop" to="ShopUI" method="_on_b_open_prop_shop_pressed"]
+[connection signal="pressed" from="ShopUI/DragonShop/B_BuyDragon" to="ShopUI/DragonShop" method="_on_b_buy_dragon_pressed"]
+[connection signal="pressed" from="ShopUI/DragonShop/B_CancleDragon" to="ShopUI/DragonShop" method="_on_b_cancle_dragon_pressed"]
 
 [editable path="ShopUI/RobotShopPanel"]
 [editable path="ShopUI/PropShopPanel"]

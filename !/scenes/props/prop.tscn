@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://4m0v1ruxnjqd"]
 
 [ext_resource type="Script" uid="uid://cm2lbqd1ncpsx" path="res://!/scenes/props/prop.gd" id="1_jmw6a"]
+[ext_resource type="PackedScene" uid="uid://n6geaww5k580" path="res://!/scenes/components/clickable_component.tscn" id="2_1dao0"]
 
 [node name="Prop" type="RigidBody3D" unique_id=288975551]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_jmw6a")
+
+[node name="ClickableComponent" parent="." unique_id=1668081895 node_paths=PackedStringArray("collision_object") instance=ExtResource("2_1dao0")]
+collision_object = NodePath("..")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

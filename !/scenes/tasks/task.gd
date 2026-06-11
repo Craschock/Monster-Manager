@@ -3,16 +3,25 @@ extends RigidBody3D
 class_name Task
 
 @onready var mesh: MeshInstance3D = $MeshInstance3D
+@onready var clickable_component: ClickableComponent = $ClickableComponent
 
 enum Type {TYPE1, TYPE2, TYPE3}
 
-var time_to_complete: int
-var reward: int
-var type: Type
+@export var time_to_complete: int
+@export var reward: int
+@export var type: Type
 
 
-func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
-	if event is InputEventMouseButton:
-		if event.pressed:
-			print("Task clicked")
-			Events.task_clicked.emit(self)
+func _ready() -> void:
+	_set_clickable()
+	clickable_component.on_click_callback = _on_click
+	RobotState.robot_state_changed.connect(_set_clickable)
+
+
+func _on_click() -> void:
+	Events.task_clicked.emit(self)
+
+
+func _set_clickable() -> void:
+	var is_clickable = RobotState.robot_is_selected and !RobotState.robot_full
+	clickable_component.is_clickable = is_clickable

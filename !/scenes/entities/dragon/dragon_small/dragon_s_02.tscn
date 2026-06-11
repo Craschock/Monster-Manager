@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://7rvu244ui6ca"]
+
+[ext_resource type="PackedScene" uid="uid://ql2eteuwgdea" path="res://!/scenes/entities/dragon/dragon_small/dragon_s.tscn" id="1_4grqt"]
+[ext_resource type="Texture2D" uid="uid://brmbojfi2kjqw" path="res://!/assets/geometry/dragons/Dragon skin 2k Anderes Purple.png" id="2_i2vst"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_i2vst"]
+viewport_path = NodePath("TaskProgressionFrame/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nahph"]
+albedo_texture = ExtResource("2_i2vst")
+
+[node name="Dragon_S_02" unique_id=909527641 instance=ExtResource("1_4grqt")]
+time_coefficients = Dictionary[int, float]({
+0: 0.5,
+1: 2.0,
+2: 1.0
+})
+reward_coefficients = Dictionary[int, float]({
+0: 2.0,
+1: 0.5,
+2: 1.0
+})
+
+[node name="TaskProgressionFrame" parent="." index="0" unique_id=1870133230]
+texture = SubResource("ViewportTexture_i2vst")
+
+[node name="Skeleton3D" parent="Mesh/metarig" parent_id_path=PackedInt32Array(852248410, 271016568) index="1" unique_id=1622020171]
+bones/1/rotation = Quaternion(0.9999726, 2.8075196e-08, -1.5132136e-08, -0.0074177207)
+bones/2/rotation = Quaternion(0.08378749, 5.98368e-08, -5.420999e-10, 0.99648374)
+bones/3/rotation = Quaternion(0.16533084, 4.596069e-09, 1.0369791e-08, 0.9862382)
+bones/4/rotation = Quaternion(0.19457741, 8.3899224e-08, 3.041633e-08, 0.9808872)
+bones/9/rotation = Quaternion(0.55994385, 3.5184723e-07, -3.1179516e-07, 0.8285305)
+bones/16/position = Vector3(-0.3103289, 1.1987828, -0.90978485)
+bones/16/rotation = Quaternion(0.33275837, 0.37350726, 0.19214633, 0.84430087)
+bones/17/rotation = Quaternion(0.46413508, -0.20530796, 0.054388963, 0.85992384)
+bones/18/rotation = Quaternion(0.45884505, 0.021898339, -0.06449866, 0.88590163)
+bones/19/rotation = Quaternion(-0.13032687, -0.0066426257, 0.019339342, 0.9912603)
+bones/21/position = Vector3(0.17777164, 1.0641117, -1.0480123)
+bones/22/rotation = Quaternion(0.13079818, 0.010670346, 0.15899847, 0.978518)
+bones/23/rotation = Quaternion(0.14920923, -0.008338483, -0.024126444, 0.98847616)
+bones/24/rotation = Quaternion(-0.11123078, 0.0017243819, -0.01533072, 0.99367493)
+bones/27/rotation = Quaternion(-0.7498564, -0.041632116, -0.41158423, 0.5163144)
+bones/28/rotation = Quaternion(-0.010065695, -0.04649045, 0.20042388, 0.97855383)
+bones/32/rotation = Quaternion(-0.210439, 0.12964728, -0.4049206, 0.8803104)
+bones/36/rotation = Quaternion(-0.49351496, -0.015946187, -0.30682832, 0.8136616)
+bones/40/rotation = Quaternion(0.76632655, -0.0571054, 0.43105048, -0.4729462)
+bones/43/rotation = Quaternion(-0.7498574, 0.041631, 0.41158238, 0.5163145)
+bones/44/rotation = Quaternion(-0.010065665, 0.046490263, -0.2004239, 0.97855395)
+bones/48/rotation = Quaternion(-0.2104392, -0.129647, 0.40492052, 0.8803104)
+bones/52/rotation = Quaternion(-0.49351504, 0.015946303, 0.30682823, 0.8136615)
+bones/56/rotation = Quaternion(0.76632655, 0.057105444, -0.4310506, -0.47294614)
+
+[node name="Body" parent="Mesh/metarig/Skeleton3D" index="0" unique_id=1241753132]
+surface_material_override/0 = SubResource("StandardMaterial3D_nahph")
+
+[node name="Head" parent="Mesh/metarig/Skeleton3D" index="1" unique_id=1353449968]
+surface_material_override/0 = SubResource("StandardMaterial3D_nahph")
+
+[node name="Plane" parent="Mesh/metarig/Skeleton3D" index="2" unique_id=122006554]
+surface_material_override/0 = SubResource("StandardMaterial3D_nahph")
+
+[node name="Sphere" parent="Mesh/metarig/Skeleton3D" index="3" unique_id=868012431]
+surface_material_override/0 = SubResource("StandardMaterial3D_nahph")
+
+[node name="Stachel8_005" parent="Mesh/metarig/Skeleton3D" index="4" unique_id=648072752]
+surface_material_override/0 = SubResource("StandardMaterial3D_nahph")
+
+[node name="Wing" parent="Mesh/metarig/Skeleton3D" index="5" unique_id=1506860947]
+surface_material_override/0 = SubResource("StandardMaterial3D_nahph")
+
+[editable path="Mesh"]

@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bs75qgk2eu44c"]
+
+[ext_resource type="PackedScene" uid="uid://ql2eteuwgdea" path="res://!/scenes/entities/dragon/dragon_small/dragon_s.tscn" id="1_xueey"]
+[ext_resource type="Texture2D" uid="uid://ck5xulgk6d8lv" path="res://!/assets/geometry/dragons/Dragon skin 2k LightBlue.png" id="2_4jih3"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4jih3"]
+viewport_path = NodePath("TaskProgressionFrame/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_75fow"]
+albedo_texture = ExtResource("2_4jih3")
+
+[node name="Dragon_S_04" unique_id=909527641 instance=ExtResource("1_xueey")]
+time_coefficients = Dictionary[int, float]({
+0: 0.5,
+1: 1.0,
+2: 2.0
+})
+reward_coefficients = Dictionary[int, float]({
+0: 2.0,
+1: 1.0,
+2: 0.5
+})
+
+[node name="TaskProgressionFrame" parent="." index="0" unique_id=1870133230]
+texture = SubResource("ViewportTexture_4jih3")
+
+[node name="Body" parent="Mesh/metarig/Skeleton3D" parent_id_path=PackedInt32Array(852248410, 1622020171) index="0" unique_id=1241753132]
+surface_material_override/0 = SubResource("StandardMaterial3D_75fow")
+
+[node name="Head" parent="Mesh/metarig/Skeleton3D" parent_id_path=PackedInt32Array(852248410, 1622020171) index="1" unique_id=1353449968]
+surface_material_override/0 = SubResource("StandardMaterial3D_75fow")
+
+[node name="Plane" parent="Mesh/metarig/Skeleton3D" parent_id_path=PackedInt32Array(852248410, 1622020171) index="2" unique_id=122006554]
+surface_material_override/0 = SubResource("StandardMaterial3D_75fow")
+
+[node name="Sphere" parent="Mesh/metarig/Skeleton3D" parent_id_path=PackedInt32Array(852248410, 1622020171) index="3" unique_id=868012431]
+surface_material_override/0 = SubResource("StandardMaterial3D_75fow")
+
+[node name="Stachel8_005" parent="Mesh/metarig/Skeleton3D" parent_id_path=PackedInt32Array(852248410, 1622020171) index="4" unique_id=648072752]
+surface_material_override/0 = SubResource("StandardMaterial3D_75fow")
+
+[node name="Wing" parent="Mesh/metarig/Skeleton3D" parent_id_path=PackedInt32Array(852248410, 1622020171) index="5" unique_id=1506860947]
+surface_material_override/0 = SubResource("StandardMaterial3D_75fow")
+
+[editable path="Mesh"]

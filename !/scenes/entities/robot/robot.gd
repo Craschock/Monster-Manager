@@ -15,9 +15,10 @@ const ANIM_DEATH = "Death"
 @onready var anim_player: AnimationPlayer = $Model/AnimationPlayer
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var model: Node3D = $Model
-@onready var outline_nodes: Array[Node]
 @onready var selected_highlight: MeshInstance3D = $SelectedMesh
+@onready var clickable_component: ClickableComponent = $ClickableComponent
 
+var isAlive: bool = true
 var speed: int = 5
 var max_load: int = 1
 # refactor - this var is useless, use carried_items.size instead
@@ -26,31 +27,39 @@ var current_load: int = 0
 var target: Node3D = null
 var carried_items: Array[Node3D] = []
 
+@export var death_animation_timer: float = 10.0
 
 func _ready() -> void:
-	outline_nodes = get_tree().get_nodes_in_group("outline")
+	clickable_component.is_clickable = true
+	clickable_component.on_click_callback = _on_click
 
 
 func _process(_delta: float) -> void:
 	for item in carried_items:
-		var vec = Vector3.MODEL_FRONT.rotated(Vector3.UP, model.rotation.y)
+		var vec = Vector3(0.0, 1.2, 1.2).rotated(Vector3.UP, model.rotation.y)
 		item.global_position = global_position + vec
 		
 
 
 func _physics_process(_delta: float) -> void:
-	var next_path_point := nav_agent.get_next_path_position()
-	var new_velocity := (next_path_point - global_position).normalized() * speed
-	velocity.x = new_velocity.x
-	velocity.z = new_velocity.z
+	if not isAlive:
+		velocity.x = 0.0
+		velocity.z = 0.0
+		return
+	else:
+		var next_path_point := nav_agent.get_next_path_position()
+		var new_velocity := (next_path_point - global_position).normalized() * speed
+		if isAlive:
+			velocity.x = new_velocity.x
+			velocity.z = new_velocity.z
 
-	# Rotation Animation for the Robot
-	if velocity.length() > 0.1:
-		var target_angle = atan2(velocity.x, velocity.z)
-		model.rotation.y = lerp_angle(model.rotation.y, target_angle, ROTATION_SPEED * _delta)
+		# Rotation Animation for the Robot
+		if velocity.length() > 0.1:
+			var target_angle = atan2(velocity.x, velocity.z)
+			model.rotation.y = lerp_angle(model.rotation.y, target_angle, ROTATION_SPEED * _delta)
 
-	move_and_slide()
-	update_animations()
+		move_and_slide()
+		update_animations()
 
 
 func set_target(t: Node3D):
@@ -59,38 +68,40 @@ func set_target(t: Node3D):
 
 
 func set_target_position(pos: Vector3):
-	print("navigating to %s..." % pos)
 	nav_agent.target_position = pos
 
 
 func select():
-	selected_highlight.visible = true
+	if isAlive:
+		selected_highlight.visible = true
 
 
 func deselect():
 	selected_highlight.visible = false
 
 
-# todo refactor
-func add_load() -> void:
-	if current_load < max_load:
-		current_load += 1
-
-
-func remove_load() -> void:
-	if current_load > 0:
-		current_load -= 1
-
-
 func full() -> bool:
 	return current_load >= max_load
 
 
-func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
-	if event is InputEventMouseButton:
-		if event.pressed:
-			print("Robot sclicked")
-			Events.robot_clicked.emit(self)
+func empty() -> bool:
+	return current_load == 0
+
+
+func add_load() -> void:
+	if full():
+		return
+	current_load += 1
+	RobotState.robot_full = full()
+	RobotState.robot_empty = empty()
+
+
+func remove_load() -> void:
+	if empty():
+		return
+	current_load -= 1
+	RobotState.robot_full = full()
+	RobotState.robot_empty = empty()
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
@@ -100,6 +111,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			handle_item_reached(body)
 		if body is Dragon:
 			handle_dragon_reached(body as Dragon)
+
 
 func handle_item_reached(item):
 	if !full():
@@ -120,6 +132,8 @@ func handle_dragon_reached(dragon: Dragon):
 
 
 func die() -> void:
+	isAlive = false
+	deselect()
 	for item in carried_items:
 		item.queue_free()
 	Events.robot_died.emit(self)
@@ -128,11 +142,15 @@ func die() -> void:
 	anim_player.play(ANIM_DEATH)
 	await anim_player.animation_finished # To wait until animation finishes
 	
-	queue_free()
-
+	# Shrink model and then delete after timer finishes
+	var tween = create_tween()
+	tween.tween_property(model, "scale", Vector3.ZERO, death_animation_timer)
+	tween.tween_callback(queue_free)
 
 # For animation 
 func update_animations() -> void:
+	if !isAlive:
+		return
 	# Check so it won't interrupt death or grab animation
 	if anim_player.current_animation == ANIM_DEATH or anim_player.current_animation == ANIM_GRAB:
 		return
@@ -144,12 +162,5 @@ func update_animations() -> void:
 		anim_player.play(ANIM_IDLE)
 
 
-func _on_mouse_entered() -> void:
-	for node in outline_nodes:
-		node.visible = true
-	
-
-
-func _on_mouse_exited() -> void:
-	for node in outline_nodes:
-		node.visible = false
+func _on_click() -> void:
+	Events.robot_clicked.emit(self)

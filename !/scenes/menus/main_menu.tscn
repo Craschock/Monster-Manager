@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://8awucuimahhb" path="res://!/assets/Sprites/MainMenu_GameTitle.png" id="8_bffc6"]
 [ext_resource type="PackedScene" uid="uid://bfwjodia7ynbc" path="res://!/scenes/menus/button effects/ui_hover_component.tscn" id="9_nykys"]
 
-[node name="Main Menu" type="Control" unique_id=1013141839 node_paths=PackedStringArray("title_sprite", "background_sprites", "menu_buttons")]
+[node name="Main Menu" type="Control" unique_id=1013141839 node_paths=PackedStringArray("title_sprite", "background_sprites", "menu_buttons", "title_timer", "menu_timer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,6 +25,8 @@ script = ExtResource("2_pr7bo")
 title_sprite = NodePath("TPB_Title")
 background_sprites = [NodePath("TPB_Left"), NodePath("TPB_Right")]
 menu_buttons = [NodePath("B_Start"), NodePath("B_Settings"), NodePath("B_Highscore"), NodePath("B_Quit")]
+title_timer = NodePath("TitleTimer")
+menu_timer = NodePath("MenuTimer")
 
 [node name="MainMenuBg" type="Sprite2D" parent="." unique_id=1809482102]
 position = Vector2(960, 540)
@@ -63,6 +65,7 @@ offset_right = 502.0
 offset_bottom = 702.0
 rotation = 0.12570539
 pivot_offset = Vector2(274.5, 81)
+mouse_filter = 2
 text = "Start"
 flat = true
 script = ExtResource("1_olmj7")
@@ -79,6 +82,7 @@ offset_right = 553.0
 offset_bottom = 881.99994
 rotation = 0.054522537
 pivot_offset = Vector2(274.5, 81)
+mouse_filter = 2
 text = "Settings"
 flat = true
 
@@ -93,6 +97,7 @@ offset_right = 601.0
 offset_bottom = 1056.0
 rotation = -0.05136971
 pivot_offset = Vector2(274.5, 81)
+mouse_filter = 2
 text = "Highscore
 "
 flat = true
@@ -107,8 +112,18 @@ offset_right = 1914.0001
 offset_bottom = 1056.0
 rotation = -0.52185345
 pivot_offset = Vector2(120, 81)
+mouse_filter = 2
 text = "Quit"
 flat = true
 script = ExtResource("3_clwcb")
 
 [node name="UIHoverComponent" parent="B_Quit" unique_id=1746445697 instance=ExtResource("9_nykys")]
+
+[node name="TitleTimer" type="Timer" parent="." unique_id=1415029439]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[node name="MenuTimer" type="Timer" parent="." unique_id=1260004571]
+wait_time = 0.5
+one_shot = true

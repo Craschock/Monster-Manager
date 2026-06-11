@@ -3,6 +3,7 @@ extends CanvasLayer
 class_name MainHUD
 
 @onready var currency_label: Label = $L_CurrentCurrency
+@onready var time_label: Label = $L_Time
 
 func _ready() -> void:
 	print("connecting")
@@ -10,6 +11,7 @@ func _ready() -> void:
 	# bcs currency manager loads before this ready function is called
 	# not a clean solution tho :(
 	_on_currency_changed(CurrencyManager.STARTING_BALANCE)
+	Events.time_changed.connect(_on_time_changed)
 
 
 func _on_b_camera_rotate_left_pressed() -> void:
@@ -24,6 +26,12 @@ func _on_b_camera_rotate_right_pressed() -> void:
 
 func _on_currency_changed(new_currency: int) -> void:
 	currency_label.text = str(new_currency)
+
+
+func _on_time_changed(new_time: int) -> void:
+	var min: int = new_time / 60
+	var sec: int = new_time % 60
+	time_label.text = "{0}:{1}".format([min, sec])
 
 
 # todo remove, only for testing purposes
