@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bxwnj224u1xp1"]
+
+[ext_resource type="PackedScene" uid="uid://7bjnqunhfre5" path="res://!/scenes/props/prop_spawner.tscn" id="1_8mhle"]
+[ext_resource type="PackedScene" uid="uid://cf6amgl5b4ot5" path="res://!/scenes/prefabs/water_dispenser.tscn" id="2_3uwvk"]
+[ext_resource type="Script" uid="uid://b6fd836dtaqwi" path="res://!/scenes/props/water_spawner.gd" id="2_o474g"]
+
+[node name="WaterSpawner" unique_id=943194288 instance=ExtResource("1_8mhle")]
+script = ExtResource("2_o474g")
+
+[node name="WaterDispenser" parent="." index="0" unique_id=1309370944 instance=ExtResource("2_3uwvk")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Marker3D" parent="." index="2" unique_id=1176211218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0868425)

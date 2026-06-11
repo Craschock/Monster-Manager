@@ -9,6 +9,7 @@ signal speed_increase_bought
 signal capacity_increase_bought
 signal dragon_spawner_bought
 
+signal water_bought
 signal coffe_bought
 signal cake_bought
 

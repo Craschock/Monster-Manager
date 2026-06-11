@@ -33,6 +33,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Task1_Fill" type="TextureProgressBar" parent="TaskProgressionFrame/SubViewport/TaskType1" unique_id=2111763204]
+visible = false
 layout_mode = 0
 offset_right = 600.0
 offset_bottom = 120.0
@@ -48,6 +49,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Task2_Fill" type="TextureProgressBar" parent="TaskProgressionFrame/SubViewport/TaskType2" unique_id=1530113096]
+visible = false
 layout_mode = 0
 offset_right = 600.0
 offset_bottom = 120.0
@@ -63,6 +65,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Task3_Fill" type="TextureProgressBar" parent="TaskProgressionFrame/SubViewport/TaskType3" unique_id=2102766392]
+visible = false
 layout_mode = 0
 offset_right = 600.0
 offset_bottom = 120.0
