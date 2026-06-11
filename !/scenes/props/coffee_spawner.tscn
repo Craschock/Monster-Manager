@@ -14,5 +14,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 2.0241067)
 
 [node name="CoffeMachine" parent="." unique_id=843045165 instance=ExtResource("2_7tajd")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+visible = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

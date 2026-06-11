@@ -9,6 +9,7 @@ metadata/_custom_type_script = "uid://2k463554ydml"
 
 [node name="Plate" parent="." unique_id=486347335 instance=ExtResource("2_q3tqa")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+visible = false
 
 [node name="Timer" type="Timer" parent="." unique_id=753965900]
 

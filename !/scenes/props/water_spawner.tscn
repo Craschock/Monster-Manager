@@ -9,6 +9,7 @@ script = ExtResource("2_o474g")
 
 [node name="WaterDispenser" parent="." index="0" unique_id=1309370944 instance=ExtResource("2_3uwvk")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
 
 [node name="Marker3D" parent="." index="2" unique_id=1176211218]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0868425)

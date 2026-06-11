@@ -91,13 +91,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6025815, 0.5, 5.758938)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.903304, 0.5, 5.929989)
 
 [node name="CakeSpawner" parent="." unique_id=1160063897 instance=ExtResource("8_ua7wm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22813606, 0, -8.00316)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.434698, 0, 24.265371)
 
 [node name="CoffeSpawner" parent="." unique_id=1423489141 instance=ExtResource("9_ua7wm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.052845, 0, -6.03719)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 18.409298, 0, 24.74752)
 
 [node name="WaterSpawner" parent="." unique_id=943194288 instance=ExtResource("12_biq7h")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8.534499, 0, 0)
+transform = Transform3D(-0.9962779, 0, 0.086199515, 0, 1, 0, -0.086199515, 0, -0.9962779, 0.0932498, 0, 36.25171)
 
 [editable path="DragonSpawner"]
 [editable path="DragonSpawner/Large Dragons/SpawnPoint1"]
