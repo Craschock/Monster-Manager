@@ -48,11 +48,11 @@ var dragon_meshes: Array[GeometryInstance3D] = []
 @onready var mood_timer: Timer = $MoodTimer
 @onready var state_machine = anim_tree.get("parameters/playback") if anim_tree else null
 @onready var task_progression: Sprite3D = $TaskProgressionFrame
-@onready var task_bars: Array[TextureProgressBar] = [
-	$TaskProgressionFrame/SubViewport/TaskType1/Task1_Fill,
-	$TaskProgressionFrame/SubViewport/TaskType2/Task2_Fill,
-	$TaskProgressionFrame/SubViewport/TaskType3/Task3_Fill
-]
+@onready var task_bars: Dictionary[String, TextureProgressBar] = {
+	"bad" : $TaskProgressionFrame/SubViewport/TaskType2/Task2_Fill,
+	"normal" : $TaskProgressionFrame/SubViewport/TaskType1/Task1_Fill,
+	"good" : $TaskProgressionFrame/SubViewport/TaskType3/Task3_Fill
+}
 @onready var task_bar_moods: Array[TextureRect] = [
 	$TaskProgressionFrame/SubViewport/TaskMoods/Task1_Icon,
 	$TaskProgressionFrame/SubViewport/TaskMoods/Task2_Icon,
@@ -96,7 +96,8 @@ func _process(_delta: float) -> void:
 func handle_task_display() -> void:
 	if current_task == null:
 		# Hide all barys
-		for bar in task_bars:
+		for i in task_bars:
+			var bar = task_bars[i]
 			bar.visible = false
 		for barMoods in task_bar_moods:
 			barMoods.visible = false
@@ -109,12 +110,17 @@ func handle_task_display() -> void:
 	var active_index = type
 	
 	# Display correct task bar
-	for i in range(task_bars.size()):
-		if i == active_index:
-			task_bars[i].visible = true
-			task_bars[i].value = percentage
-		else:
-			task_bars[i].visible = false
+	var coef = reward_coefficients[type]
+	var task_bar: TextureProgressBar
+	if coef == 1:
+		task_bar = task_bars["normal"]
+	elif coef > 1:
+		task_bar = task_bars["good"]
+	else:
+		task_bar = task_bars["bad"]
+	
+	task_bar.visible = true
+	task_bar.value = percentage
 	
 	# Display MoodIcon
 	var current_mood: int
