@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://3qoaw6d100xf" path="res://!/assets/fonts/MainUI_Theme.tres" id="3_w40ab"]
 [ext_resource type="PackedScene" uid="uid://bfwjodia7ynbc" path="res://!/scenes/menus/button effects/ui_hover_component.tscn" id="4_0qix8"]
 [ext_resource type="FontFile" uid="uid://1lb0n3jewv3s" path="res://!/assets/fonts/norwester.otf" id="4_inoop"]
+[ext_resource type="Script" uid="uid://cm507dw1ikfwt" path="res://!/scripts/ui/buttons/UIJiggleComponent.gd" id="5_inoop"]
 
 [node name="MainHUD" type="CanvasLayer" unique_id=1019886624]
 script = ExtResource("1_inoop")
@@ -60,6 +61,7 @@ theme_override_fonts/font = ExtResource("4_inoop")
 theme_override_font_sizes/font_size = 96
 text = "100"
 vertical_alignment = 1
+script = ExtResource("5_inoop")
 
 [node name="AddMoney" type="Button" parent="." unique_id=732439523]
 anchors_preset = 3

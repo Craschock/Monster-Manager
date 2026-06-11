@@ -25,7 +25,13 @@ func _on_b_camera_rotate_right_pressed() -> void:
 
 
 func _on_currency_changed(new_currency: int) -> void:
+	var old_currency: int = 0
+	if currency_label.text.is_valid_int():
+		old_currency = int(currency_label.text)
 	currency_label.text = str(new_currency)
+	
+	if currency_label.has_method("play_jiggle"):
+		currency_label.play_jiggle(new_currency >= old_currency)
 
 
 func _on_time_changed(new_time: int) -> void:
