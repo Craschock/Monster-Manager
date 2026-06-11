@@ -7,12 +7,14 @@ class_name Shop
 @onready var capacity_increase_button: BaseButton = $ShopUI/RobotShopPanel/VBoxContainer/B_CapacityIncrease
 @onready var buy_coffe_button: BaseButton = $ShopUI/PropShopPanel/VBoxContainer/B_Coffe
 @onready var buy_cake_button: BaseButton = $ShopUI/PropShopPanel/VBoxContainer/B_Cake
+@onready var buy_water_button: BaseButton = $ShopUI/PropShopPanel/VBoxContainer/B_Water
 
 const BuyRobotSnc: PackedScene = preload("res://!/scenes/shop/buy_robot.tscn")
 const SpeedIncreaseScn: PackedScene = preload("res://!/scenes/shop/speed_increase.tscn")
 const CapacityIncreaseScn: PackedScene = preload("res://!/scenes/shop/capacity_increase.tscn")
 const CoffeScn: PackedScene = preload("res://!/scenes/shop/coffe.tscn")
 const CakeScn: PackedScene = preload("res://!/scenes/shop/cake.tscn")
+const WaterScn: PackedScene = preload("res://!/scenes/shop/water.tscn")
 
 var button_to_item: Dictionary[BaseButton, ShopItem]
 
@@ -22,7 +24,8 @@ func _ready() -> void:
 		speed_increase_button : SpeedIncreaseScn.instantiate(),
 		capacity_increase_button : CapacityIncreaseScn.instantiate(),
 		buy_coffe_button : CoffeScn.instantiate(),
-		buy_cake_button : CakeScn.instantiate()
+		buy_cake_button : CakeScn.instantiate(),
+		buy_water_button : WaterScn.instantiate(),
 	}
 	Events.currency_changed.connect(_on_currency_changed)
 	# bcs currency manager loads before this ready function is called
@@ -44,6 +47,8 @@ func _on_shop_button_pressed(button: BaseButton) -> void:
 	if CurrencyManager.spend_currency(price):
 		item.sig.emit()
 		item.is_bought = true
+		# temporary fix (it is ugly)
+		_on_currency_changed(CurrencyManager.current_currency)
 
 
 func _on_currency_changed(new_currency: int) -> void:

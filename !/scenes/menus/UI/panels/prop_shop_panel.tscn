@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://3qoaw6d100xf" path="res://!/assets/fonts/MainUI_Theme.tres" id="1_1kym2"]
 [ext_resource type="Script" uid="uid://ccwmja2joowx3" path="res://!/scripts/ui/menu stuff/AnimatedPanel.gd" id="1_dssxs"]
 [ext_resource type="Texture2D" uid="uid://h1bo32joj6da" path="res://!/assets/Sprites/Props_BG.png" id="1_ob0h7"]
+[ext_resource type="PackedScene" uid="uid://bfwjodia7ynbc" path="res://!/scenes/menus/button effects/ui_hover_component.tscn" id="4_7wkb6"]
 
 [node name="PropShopPanel" type="Control" unique_id=1258121233 node_paths=PackedStringArray("bg_progress", "ui_elements")]
 layout_mode = 3
@@ -35,12 +36,25 @@ offset_top = 300.0
 offset_right = 750.0
 offset_bottom = 794.0
 
+[node name="B_Water" type="Button" parent="VBoxContainer" unique_id=723935107]
+layout_mode = 2
+theme = ExtResource("1_1kym2")
+theme_override_font_sizes/font_size = 110
+text = "Water"
+flat = true
+
+[node name="UIHoverComponent" parent="VBoxContainer/B_Water" unique_id=1234992636 instance=ExtResource("4_7wkb6")]
+auto_center_pivot = true
+
 [node name="B_Coffe" type="Button" parent="VBoxContainer" unique_id=625681143]
 layout_mode = 2
 theme = ExtResource("1_1kym2")
 theme_override_font_sizes/font_size = 110
 text = "Coffe"
 flat = true
+
+[node name="UIHoverComponent" parent="VBoxContainer/B_Coffe" unique_id=542984459 instance=ExtResource("4_7wkb6")]
+auto_center_pivot = true
 
 [node name="B_Cake" type="Button" parent="VBoxContainer" unique_id=1534728741]
 layout_mode = 2
@@ -50,12 +64,8 @@ theme_override_font_sizes/font_size = 110
 text = "Cake"
 flat = true
 
-[node name="Button3" type="Button" parent="VBoxContainer" unique_id=723935107]
-layout_mode = 2
-theme = ExtResource("1_1kym2")
-theme_override_font_sizes/font_size = 110
-text = "Placeholder"
-flat = true
+[node name="UIHoverComponent" parent="VBoxContainer/B_Cake" unique_id=686743800 instance=ExtResource("4_7wkb6")]
+auto_center_pivot = true
 
 [node name="Title" type="Label" parent="." unique_id=707253074]
 layout_direction = 3

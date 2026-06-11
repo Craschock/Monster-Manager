@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cf6amgl5b4ot5"]
+
+[ext_resource type="PackedScene" uid="uid://1wtgut5owxei" path="res://!/assets/geometry/Office/WaterDispenser.glb" id="1_m13ui"]
+
+[node name="WaterDispenser" unique_id=1309370944 instance=ExtResource("1_m13ui")]

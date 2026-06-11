@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://7qkmhasfopn1"]
+
+[ext_resource type="PackedScene" uid="uid://cn7mlqy0tu8ss" path="res://!/assets/geometry/Office/Plate.glb" id="1_tvkju"]
+
+[node name="Plate2" unique_id=486347335 instance=ExtResource("1_tvkju")]
