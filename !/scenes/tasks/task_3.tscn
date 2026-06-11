@@ -140,8 +140,8 @@ size = Vector3(0.7720947, 1, 0.62786865)
 collision_layer = 4
 collision_mask = 5
 script = ExtResource("1_ricod")
-time_to_complete = 10
-reward = 300
+time_to_complete = 30
+reward = 450
 type = 2
 metadata/_custom_type_script = "uid://k7r6ydg8utbw"
 

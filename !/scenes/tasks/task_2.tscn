@@ -83,7 +83,7 @@ collision_layer = 4
 collision_mask = 5
 script = ExtResource("1_nexf3")
 time_to_complete = 10
-reward = 200
+reward = 150
 type = 1
 metadata/_custom_type_script = "uid://k7r6ydg8utbw"
 
@@ -92,7 +92,7 @@ metadata/_custom_type_script = "uid://k7r6ydg8utbw"
 [node name="Stamp2" parent="MeshInstance3D" unique_id=130496083 instance=ExtResource("2_nexf3")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.25, 0)
 
-[node name="Stamp_outline" type="MeshInstance3D" parent="MeshInstance3D/Stamp2/Stamp" parent_id_path=PackedInt32Array(130496083, 1488955124) index="0" unique_id=1943870557 groups=["outline"]]
+[node name="Stamp_outline" type="MeshInstance3D" parent="MeshInstance3D/Stamp2/Stamp" parent_id_path=PackedInt32Array(130496083, 1642983464) index="0" unique_id=1943870557 groups=["outline"]]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 visible = false
 material_override = ExtResource("3_gg0t5")
