@@ -80,7 +80,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6025815, 0.5, 5.758938)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.903304, 0.5, 5.929989)
 
 [node name="CakeSpawner" parent="." unique_id=1160063897 instance=ExtResource("8_ua7wm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20448112, -1.9073486e-06, 37.718437)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22813606, 0, -8.00316)
 
 [node name="CoffeSpawner" parent="." unique_id=1423489141 instance=ExtResource("9_ua7wm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.052845, 0, -2.297947)
