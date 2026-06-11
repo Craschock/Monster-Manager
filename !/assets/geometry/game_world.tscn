@@ -43,9 +43,17 @@
 [ext_resource type="PackedScene" uid="uid://cuqqdp3vdgexq" path="res://!/assets/geometry/Office/MultiRedKristall.glb" id="40_qw3oy"]
 [ext_resource type="PackedScene" uid="uid://bmt0ropdm1lhi" path="res://!/assets/geometry/Office/NameSign.glb" id="41_rqpvl"]
 [ext_resource type="PackedScene" uid="uid://bijtul16as4yq" path="res://!/assets/geometry/Office/Kristall.glb" id="42_4tanl"]
+[ext_resource type="PackedScene" uid="uid://oiqndj6023kg" path="res://!/assets/geometry/Office/Boss Chair.glb" id="43_t6kmn"]
 [ext_resource type="PackedScene" uid="uid://ddoorgelk85lx" path="res://!/assets/geometry/Office/Spawner.glb" id="44_l1muj"]
 [ext_resource type="PackedScene" uid="uid://bph0hrd8uqc84" path="res://!/assets/geometry/Office/Couch.glb" id="45_07h1k"]
+[ext_resource type="PackedScene" uid="uid://dsbhjujwwkspg" path="res://!/assets/geometry/Office/Geweih.glb" id="46_7yy7v"]
 [ext_resource type="PackedScene" uid="uid://ddoc5ybqixl8m" path="res://!/assets/geometry/Office/PTable.glb" id="46_uj1ad"]
+[ext_resource type="PackedScene" uid="uid://du7smeqpqdfb3" path="res://!/assets/geometry/Office/Capet.glb" id="47_oyuux"]
+[ext_resource type="PackedScene" uid="uid://v405fpt35884" path="res://!/assets/geometry/Office/SignDrakes.glb" id="48_alspj"]
+[ext_resource type="PackedScene" uid="uid://1wtgut5owxei" path="res://!/assets/geometry/Office/WaterDispenser.glb" id="49_f2mxb"]
+[ext_resource type="PackedScene" uid="uid://dsjbedcfwxmav" path="res://!/assets/geometry/Office/CoffeeMaschiene.glb" id="50_wekoi"]
+[ext_resource type="PackedScene" uid="uid://fao0jusuo3ja" path="res://!/assets/geometry/Office/Printer.glb" id="51_dajk0"]
+[ext_resource type="PackedScene" uid="uid://b5gxlmfm5v6pf" path="res://!/assets/geometry/Office/MiniTable.glb" id="52_g4o25"]
 
 [node name="GameWorld" type="Node3D" unique_id=460750166]
 
@@ -127,6 +135,12 @@ transform = Transform3D(-0.97828496, 0, 8.363715e-08, 0, 1.0358303, 0, -8.552438
 [node name="GlassDoor" parent="East Wing/GlassDoor/GlassDoor" unique_id=2110659641 instance=ExtResource("5_ntvx6")]
 transform = Transform3D(-5.123406e-08, 0, 0.7160838, 0, 0.9947566, 0, -1.1720988, 0, -3.1301017e-08, 5.1243567, -0.015788466, 5.8897614)
 
+[node name="GlassDoor2" parent="East Wing" unique_id=867698631 instance=ExtResource("5_ntvx6")]
+transform = Transform3D(2.4374847e-08, 0, -1.8, 0, 1.481836, 0, 2.0440328, 0, 2.1464784e-08, 21.8928, 0.041702107, 23.901634)
+
+[node name="GlassDoor" parent="East Wing/GlassDoor2" unique_id=1172919448 instance=ExtResource("5_ntvx6")]
+transform = Transform3D(-0.97828496, 0, 8.3637154e-08, 0, 1.0358304, 0, -8.5524384e-08, 0, -0.95669746, 0.056188695, -0.015788466, 24.3274)
+
 [node name="South Wing" type="Node3D" parent="." unique_id=630898163]
 
 [node name="Offices Small" type="Node3D" parent="South Wing" unique_id=804441449]
@@ -187,12 +201,6 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.24
 
 [node name="Trash5" parent="South Wing/Offices Small/Office_Small" unique_id=2124715932 instance=ExtResource("16_alspj")]
 transform = Transform3D(-3.4969112e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.4969112e-08, 7.587311, 0.08608191, -0.7454796)
-
-[node name="Display3" parent="South Wing/Offices Small/Office_Small" unique_id=79269054 instance=ExtResource("17_f2mxb")]
-transform = Transform3D(1.4325299, 0, -0.44481236, 0, 1.5, 0, 0.44481236, 0, 1.4325299, 5.358997, 1.2301978, 8.291296)
-
-[node name="Display4" parent="South Wing/Offices Small/Office_Small" unique_id=1146653624 instance=ExtResource("17_f2mxb")]
-transform = Transform3D(1.3879935, 0, 0.56874824, 0, 1.5, 0, -0.56874824, 0, 1.3879935, 2.5590076, 1.212519, 8.375109)
 
 [node name="Office_Small2" type="Node3D" parent="South Wing/Offices Small" unique_id=308268620]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -59.45087, 0, 24.629902)
@@ -474,8 +482,317 @@ transform = Transform3D(-0.32248986, 1.0594743, 0.22606303, 0.0022146115, 0.1311
 
 [node name="Office_Big2" type="Node3D" parent="South Wing/Offices Big" unique_id=1821255407]
 
-[node name="ModernDesk" parent="South Wing/Offices Big" unique_id=1735248287 instance=ExtResource("4_fnmgx")]
+[node name="Display3" parent="South Wing/Offices Big/Office_Big2" unique_id=79269054 instance=ExtResource("17_f2mxb")]
+transform = Transform3D(1.4325299, 0, -0.44481236, 0, 1.5, 0, 0.44481236, 0, 1.4325299, -5.641003, 1.2301978, 27.291296)
+
+[node name="Display4" parent="South Wing/Offices Big/Office_Big2" unique_id=1146653624 instance=ExtResource("17_f2mxb")]
+transform = Transform3D(1.3879935, 0, 0.56874824, 0, 1.5, 0, -0.56874824, 0, 1.3879935, -8.440992, 1.212519, 27.375109)
+
+[node name="ModernDesk" parent="South Wing/Offices Big/Office_Big2" unique_id=1735248287 instance=ExtResource("4_fnmgx")]
 transform = Transform3D(1.466641, 0, 0, 0, 1, 0, 0, 0, 1, -7.7914896, 0.12412213, 27.971176)
+
+[node name="DisplayFree" parent="South Wing/Offices Big/Office_Big2" unique_id=2095914927 instance=ExtResource("36_ju2xw")]
+transform = Transform3D(1.5, 0, 0, 0, 1.4907277, -0.16652694, 0, 0.16652694, 1.4907277, -6.9420724, 1.9935112, 27.12613)
+
+[node name="Keyboard" parent="South Wing/Offices Big/Office_Big2" unique_id=751647160 instance=ExtResource("13_t6kmn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.979059, 1.2274039, 28.62768)
+
+[node name="Mouse" parent="South Wing/Offices Big/Office_Big2" unique_id=1556001835 instance=ExtResource("14_7yy7v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.00347, 1.2217577, 28.727581)
+
+[node name="Boss Chair" parent="South Wing/Offices Big/Office_Big2" unique_id=999229365 instance=ExtResource("43_t6kmn")]
+transform = Transform3D(-1.2, 0, -1.04907336e-07, 0, 1.2, 0, 1.04907336e-07, 0, -1.2, -7.107427, -0.01832144, 29.019276)
+
+[node name="Trashbin" parent="South Wing/Offices Big/Office_Big2" unique_id=699060180 instance=ExtResource("12_d7yxr")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -9.132835, 0.002160372, 29.466568)
+
+[node name="Couch" parent="South Wing/Offices Big/Office_Big2" unique_id=1111619329 instance=ExtResource("45_07h1k")]
+transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, -6.8346615, 0.16578355, 36.76)
+
+[node name="PTable" parent="South Wing/Offices Big/Office_Big2" unique_id=1618768990 instance=ExtResource("46_uj1ad")]
+transform = Transform3D(1.9999553, 0, 0.0133691225, 0, 2, 0, -0.0133691225, 0, 1.9999553, -7.085829, 0.5393684, 33.98506)
+
+[node name="Geweih" parent="South Wing/Offices Big/Office_Big2" unique_id=152916512 instance=ExtResource("46_7yy7v")]
+transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, -9.971278, 1.9418625, 32.43942)
+
+[node name="LargePottetPlant" parent="South Wing/Offices Big/Office_Big2" unique_id=532467945 instance=ExtResource("6_q1neg")]
+transform = Transform3D(0.82293886, 0, 1.1325951, 0, 1.4, 0, -1.1325951, 0, 0.82293886, -4.2087865, 0.0014781952, 32.91553)
+
+[node name="Capet" parent="South Wing/Offices Big/Office_Big2" unique_id=1084706521 instance=ExtResource("47_oyuux")]
+transform = Transform3D(-0.06286586, 0, 1.498682, 0, 1.5, 0, -1.498682, 0, -0.06286586, -7.3211007, 0.020124467, 33.80229)
+
+[node name="SignDrakes" parent="South Wing/Offices Big/Office_Big2" unique_id=84532270 instance=ExtResource("48_alspj")]
+transform = Transform3D(0.028991718, 0, 0.095705174, 0, 0.1, 0, -0.095705174, 0, 0.028991718, -4.643349, 1.2785462, 28.601194)
+
+[node name="WaterDispenser" parent="South Wing/Offices Big" unique_id=76065826 instance=ExtResource("49_f2mxb")]
+transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, -2.7570825, -0.0033540726, 36.304085)
+
+[node name="WaterDispenser2" parent="South Wing/Offices Big" unique_id=1560803757 instance=ExtResource("49_f2mxb")]
+transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, -2.7361295, -0.0033688545, 34.939682)
+
+[node name="WaterDispenser3" parent="South Wing/Offices Big" unique_id=1183578741 instance=ExtResource("49_f2mxb")]
+transform = Transform3D(-1.5, 0, -2.2649371e-07, 0, 1.5, 0, 2.2649371e-07, 0, -1.5, -1.0042357, -0.0034213066, 39.121513)
+
+[node name="WaterDispenser4" parent="South Wing/Offices Big" unique_id=1359218158 instance=ExtResource("49_f2mxb")]
+transform = Transform3D(-1.5, 0, -2.2649371e-07, 0, 1.5, 0, 2.2649371e-07, 0, -1.5, 0.9449285, -0.0046186447, 39.122093)
+
+[node name="Cake" type="Node3D" parent="South Wing" unique_id=1348472733]
+
+[node name="ModernDesk2" parent="South Wing/Cake" unique_id=1352306125 instance=ExtResource("4_fnmgx")]
+transform = Transform3D(1.2631133, 0, 0, 0, 1, 0, 0, 0, 0.7609046, -18.666676, 0.13114403, 22.58881)
+
+[node name="Plate2" parent="South Wing/Cake" unique_id=1284327300 instance=ExtResource("30_7i7v4")]
+transform = Transform3D(1.8201993, 0, 0, 0, 1, 0, 0, 0, 1.7298657, -18.29543, 1.2701215, 22.674433)
+
+[node name="Cake7" parent="South Wing/Cake" unique_id=1275798132 instance=ExtResource("24_3xr51")]
+transform = Transform3D(0.21321791, 0, 0.9770047, 0, 1, 0, -0.9770047, 0, 0.21321791, -17.169909, 1.309196, 22.624578)
+
+[node name="Cake8" parent="South Wing/Cake" unique_id=1064502913 instance=ExtResource("24_3xr51")]
+transform = Transform3D(0.9366049, 0, -0.35038725, 0, 1, 0, 0.35038725, 0, 0.9366049, -16.849037, 1.309196, 22.577776)
+
+[node name="Cake" parent="South Wing/Cake" unique_id=1267303871 instance=ExtResource("24_3xr51")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.327614, 1.309196, 22.549082)
+
+[node name="Cake4" parent="South Wing/Cake" unique_id=489820742 instance=ExtResource("24_3xr51")]
+transform = Transform3D(0.7894806, 0, 0.6137755, 0, 1, 0, -0.6137755, 0, 0.7894806, -18.436789, 1.309196, 22.59821)
+
+[node name="Cake2" parent="South Wing/Cake" unique_id=1781634608 instance=ExtResource("24_3xr51")]
+transform = Transform3D(0.8246399, 0, -0.56565803, 0, 1, 0, 0.56565803, 0, 0.8246399, -18.21789, 1.309196, 22.58373)
+
+[node name="Cake3" parent="South Wing/Cake" unique_id=1734879499 instance=ExtResource("24_3xr51")]
+transform = Transform3D(0.35202134, 0, -0.93599194, 0, 1, 0, 0.93599194, 0, 0.35202134, -18.15148, 1.309196, 22.679018)
+
+[node name="Cake5" parent="South Wing/Cake" unique_id=36560495 instance=ExtResource("24_3xr51")]
+transform = Transform3D(0.8915605, 0, 0.4529016, 0, 1, 0, -0.4529016, 0, 0.8915605, -17.03656, 1.309196, 22.499485)
+
+[node name="Cake6" parent="South Wing/Cake" unique_id=454306656 instance=ExtResource("24_3xr51")]
+transform = Transform3D(-0.7863101, 0, 0.6178321, 0, 1, 0, -0.6178321, 0, -0.7863101, -17.109697, 1.3091959, 22.848879)
+
+[node name="Plate3" parent="South Wing/Cake" unique_id=1749949645 instance=ExtResource("30_7i7v4")]
+transform = Transform3D(1.8201993, 0, 0, 0, 1, 0, 0, 0, 1.7298657, -17.002602, 1.2835294, 22.674433)
+
+[node name="Plate L" parent="South Wing/Cake" unique_id=100682217 instance=ExtResource("33_i1k6r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.144733, 1.2882682, 22.532568)
+
+[node name="Plate L2" parent="South Wing/Cake" unique_id=1185970015 instance=ExtResource("33_i1k6r")]
+transform = Transform3D(0.7333977, 0, 0.6797998, 0, 1, 0, -0.6797998, 0, 0.7333977, -19.45643, 1.2562563, 22.936666)
+
+[node name="Coffee" type="Node3D" parent="South Wing" unique_id=1688662766]
+
+[node name="ModernDesk" parent="South Wing/Coffee" unique_id=1657028652 instance=ExtResource("4_fnmgx")]
+transform = Transform3D(1.1124251, 0, 0, 0, 1, 0, 0, 0, 0.7270505, 16.69559, 0.109655246, 22.828598)
+
+[node name="CoffeeMaschiene" parent="South Wing/Coffee" unique_id=1659190502 instance=ExtResource("50_wekoi")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 16.311604, 1.214149, 22.59219)
+
+[node name="CoffeeMaschiene2" parent="South Wing/Coffee" unique_id=1062592249 instance=ExtResource("50_wekoi")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 18.251842, 1.2078419, 22.583685)
+
+[node name="CoffeeCup" parent="South Wing/Coffee" unique_id=998772820 instance=ExtResource("19_dajk0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.217598, 1.875591, 22.557682)
+
+[node name="CoffeeCup2" parent="South Wing/Coffee" unique_id=827408985 instance=ExtResource("19_dajk0")]
+transform = Transform3D(0.32822376, 0, -0.9446, 0, 1, 0, 0.9446, 0, 0.32822376, 16.3828, 1.8595443, 22.698957)
+
+[node name="CoffeeCup3" parent="South Wing/Coffee" unique_id=626466832 instance=ExtResource("19_dajk0")]
+transform = Transform3D(-0.9949475, 0, 0.100396395, 0, 1, 0, -0.100396395, 0, -0.9949475, 16.953754, 1.2166085, 22.919386)
+
+[node name="CoffeeCup4" parent="South Wing/Coffee" unique_id=1826358155 instance=ExtResource("19_dajk0")]
+transform = Transform3D(-0.96270126, 0, 0.2705667, 0, 1, 0, -0.2705667, 0, -0.96270126, 17.2409, 1.2166085, 22.804644)
+
+[node name="CoffeeCup5" parent="South Wing/Coffee" unique_id=1866335772 instance=ExtResource("19_dajk0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.929811, 1.2166085, 22.696959)
+
+[node name="CoffeeCup6" parent="South Wing/Coffee" unique_id=1980602571 instance=ExtResource("19_dajk0")]
+transform = Transform3D(0.95453215, 0, 0.29810798, 0, 1, 0, -0.29810798, 0, 0.95453215, 17.282776, 1.2166085, 22.604828)
+
+[node name="CoffeeCup7" parent="South Wing/Coffee" unique_id=738662269 instance=ExtResource("19_dajk0")]
+transform = Transform3D(-0.63665706, 0, -0.7711471, 0, 1, 0, 0.7711471, 0, -0.63665706, 17.056639, 1.2166085, 22.494751)
+
+[node name="Archiv" type="Node3D" parent="South Wing" unique_id=697803144]
+
+[node name="ShelfWithFolders" parent="South Wing/Archiv" unique_id=350832079 instance=ExtResource("18_wekoi")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, -8.527521, 0.017118687, 9.337982)
+
+[node name="ShelfWithFolders2" parent="South Wing/Archiv" unique_id=1040239879 instance=ExtResource("18_wekoi")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, -6.0010004, 0.017118687, 9.337982)
+
+[node name="ShelfWithFolders3" parent="South Wing/Archiv" unique_id=294020068 instance=ExtResource("18_wekoi")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, -3.4128568, 0.017118687, 9.337982)
+
+[node name="ShelfWithFolders4" parent="South Wing/Archiv" unique_id=353093725 instance=ExtResource("18_wekoi")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, -8.527521, 0.017118687, 5.8595057)
+
+[node name="ShelfWithFolders5" parent="South Wing/Archiv" unique_id=682043063 instance=ExtResource("18_wekoi")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, -6.001001, 0.017118687, 5.8595057)
+
+[node name="ShelfWithFolders6" parent="South Wing/Archiv" unique_id=1836191785 instance=ExtResource("18_wekoi")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, -3.412857, 0.017118687, 5.8595057)
+
+[node name="ShelfWithFolders13" parent="South Wing/Archiv" unique_id=1171294003 instance=ExtResource("18_wekoi")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, -8.527521, 0.017118687, 2.55039)
+
+[node name="ShelfWithFolders14" parent="South Wing/Archiv" unique_id=31024266 instance=ExtResource("18_wekoi")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, -6.0010014, 0.017118687, 2.55039)
+
+[node name="ShelfWithFolders25" parent="South Wing/Archiv" unique_id=1090120131 instance=ExtResource("18_wekoi")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, -8.527522, 0.017118687, -3.4363167)
+
+[node name="ShelfWithFolders28" parent="South Wing/Archiv" unique_id=483539150 instance=ExtResource("18_wekoi")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, -6.001002, 0.017118687, -3.4363167)
+
+[node name="ShelfWithFolders49" parent="South Wing/Archiv" unique_id=300188719 instance=ExtResource("18_wekoi")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, -8.527522, 0.017118687, -7.0331717)
+
+[node name="ShelfWithFolders50" parent="South Wing/Archiv" unique_id=1356100828 instance=ExtResource("18_wekoi")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, -6.0010023, 0.017118687, -7.0331717)
+
+[node name="ShelfWithFolders19" parent="South Wing/Archiv" unique_id=419950306 instance=ExtResource("18_wekoi")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, 3.229004, 0.017118687, 9.337981)
+
+[node name="ShelfWithFolders20" parent="South Wing/Archiv" unique_id=483308528 instance=ExtResource("18_wekoi")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, 5.7555246, 0.017118687, 9.337981)
+
+[node name="ShelfWithFolders21" parent="South Wing/Archiv" unique_id=227458562 instance=ExtResource("18_wekoi")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, 8.343668, 0.017118687, 9.337981)
+
+[node name="ShelfWithFolders22" parent="South Wing/Archiv" unique_id=1820935720 instance=ExtResource("18_wekoi")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, 3.229004, 0.017118687, 5.8595047)
+
+[node name="ShelfWithFolders23" parent="South Wing/Archiv" unique_id=1435133701 instance=ExtResource("18_wekoi")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, 5.755524, 0.017118687, 5.8595047)
+
+[node name="ShelfWithFolders24" parent="South Wing/Archiv" unique_id=2024184243 instance=ExtResource("18_wekoi")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, 8.343668, 0.017118687, 5.8595047)
+
+[node name="ShelfWithFolders36" parent="South Wing/Archiv" unique_id=563615578 instance=ExtResource("18_wekoi")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, 5.755523, 0.017118687, -7.038336)
+
+[node name="ShelfWithFolders37" parent="South Wing/Archiv" unique_id=21429390 instance=ExtResource("18_wekoi")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, 8.343667, 0.017118687, -7.038336)
+
+[node name="ShelfWithFolders26" parent="South Wing/Archiv" unique_id=114796020 instance=ExtResource("18_wekoi")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, 5.7555237, 0.017118687, 2.550389)
+
+[node name="ShelfWithFolders27" parent="South Wing/Archiv" unique_id=2057532563 instance=ExtResource("18_wekoi")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, 8.343668, 0.017118687, 2.550389)
+
+[node name="ShelfWithFolders31" parent="South Wing/Archiv" unique_id=636316123 instance=ExtResource("18_wekoi")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, 5.755523, 0.017118687, -3.5664623)
+
+[node name="ShelfWithFolders32" parent="South Wing/Archiv" unique_id=1454246873 instance=ExtResource("18_wekoi")]
+transform = Transform3D(-1.3, 0, -1.13649605e-07, 0, 1.3, 0, 1.13649605e-07, 0, -1.3, 8.343667, 0.017118687, -3.5664623)
+
+[node name="ShelfWithFolders7" parent="South Wing/Archiv" unique_id=1606560354 instance=ExtResource("18_wekoi")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -8.527521, 0.017118687, 6.840739)
+
+[node name="ShelfWithFolders8" parent="South Wing/Archiv" unique_id=49750896 instance=ExtResource("18_wekoi")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -6.001001, 0.017118687, 6.840739)
+
+[node name="ShelfWithFolders9" parent="South Wing/Archiv" unique_id=1040007639 instance=ExtResource("18_wekoi")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -3.412857, 0.017118687, 6.840739)
+
+[node name="ShelfWithFolders47" parent="South Wing/Archiv" unique_id=68197173 instance=ExtResource("18_wekoi")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -8.527521, 0.017118687, -5.9972734)
+
+[node name="ShelfWithFolders48" parent="South Wing/Archiv" unique_id=1614077044 instance=ExtResource("18_wekoi")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -6.001001, 0.017118687, -5.9972734)
+
+[node name="ShelfWithFolders16" parent="South Wing/Archiv" unique_id=1697547345 instance=ExtResource("18_wekoi")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 3.2527542, 0.017118687, 6.8147087)
+
+[node name="ShelfWithFolders17" parent="South Wing/Archiv" unique_id=1016752975 instance=ExtResource("18_wekoi")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 5.7792745, 0.017118687, 6.8147087)
+
+[node name="ShelfWithFolders18" parent="South Wing/Archiv" unique_id=1925840977 instance=ExtResource("18_wekoi")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 8.367418, 0.017118687, 6.840739)
+
+[node name="ShelfWithFolders38" parent="South Wing/Archiv" unique_id=1616373164 instance=ExtResource("18_wekoi")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 3.2527542, 0.017118687, -9.245279)
+
+[node name="ShelfWithFolders39" parent="South Wing/Archiv" unique_id=516637286 instance=ExtResource("18_wekoi")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 5.7792745, 0.017118687, -9.245279)
+
+[node name="ShelfWithFolders40" parent="South Wing/Archiv" unique_id=992427224 instance=ExtResource("18_wekoi")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 8.367418, 0.017118687, -9.21925)
+
+[node name="ShelfWithFolders45" parent="South Wing/Archiv" unique_id=2008570498 instance=ExtResource("18_wekoi")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 5.7792745, 0.017118687, -6.031068)
+
+[node name="ShelfWithFolders46" parent="South Wing/Archiv" unique_id=941456091 instance=ExtResource("18_wekoi")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 8.367418, 0.017118687, -6.0050383)
+
+[node name="ShelfWithFolders41" parent="South Wing/Archiv" unique_id=1288276411 instance=ExtResource("18_wekoi")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -8.590511, 0.017118687, -9.245279)
+
+[node name="ShelfWithFolders42" parent="South Wing/Archiv" unique_id=1528085726 instance=ExtResource("18_wekoi")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -6.063991, 0.017118687, -9.245279)
+
+[node name="ShelfWithFolders43" parent="South Wing/Archiv" unique_id=78546507 instance=ExtResource("18_wekoi")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -3.4758472, 0.017118687, -9.21925)
+
+[node name="ShelfWithFolders10" parent="South Wing/Archiv" unique_id=672513925 instance=ExtResource("18_wekoi")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -8.527521, 0.017118687, 3.569414)
+
+[node name="ShelfWithFolders11" parent="South Wing/Archiv" unique_id=1552006681 instance=ExtResource("18_wekoi")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -6.001001, 0.017118687, 3.569414)
+
+[node name="ShelfWithFolders12" parent="South Wing/Archiv" unique_id=988069022 instance=ExtResource("18_wekoi")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -8.527521, 0.017118687, -2.443321)
+
+[node name="ShelfWithFolders15" parent="South Wing/Archiv" unique_id=146527471 instance=ExtResource("18_wekoi")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -6.001001, 0.017118687, -2.443321)
+
+[node name="ShelfWithFolders29" parent="South Wing/Archiv" unique_id=1290674576 instance=ExtResource("18_wekoi")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 5.8042045, 0.017118687, 3.569414)
+
+[node name="ShelfWithFolders30" parent="South Wing/Archiv" unique_id=1816273481 instance=ExtResource("18_wekoi")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 8.392348, 0.017118687, 3.569414)
+
+[node name="ShelfWithFolders33" parent="South Wing/Archiv" unique_id=2112350382 instance=ExtResource("18_wekoi")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 5.8042045, 0.017118687, -2.5214083)
+
+[node name="ShelfWithFolders34" parent="South Wing/Archiv" unique_id=1782987078 instance=ExtResource("18_wekoi")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 8.392348, 0.017118687, -2.5214083)
+
+[node name="Printer" parent="South Wing/Archiv" unique_id=649826497 instance=ExtResource("51_dajk0")]
+transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, 5.1747837, 0.0023956299, 36.12035)
+
+[node name="MiniTable" parent="South Wing/Archiv" unique_id=103245303 instance=ExtResource("52_g4o25")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 3.1777825, 0.22195394, 36.275864)
+
+[node name="StackPaper" parent="South Wing/Archiv" unique_id=1466223627 instance=ExtResource("5_qjtop")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1749277, 0.6284682, 36.27097)
+
+[node name="MiniTable2" parent="South Wing/Archiv" unique_id=1031342167 instance=ExtResource("52_g4o25")]
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 9.618828, 0.18057445, 25.291296)
+
+[node name="Telefone2" parent="South Wing/Archiv" unique_id=524293229 instance=ExtResource("10_grmxq")]
+transform = Transform3D(-1.4938574, 0, -0.13560998, 0, 1.5, 0, 0.13560998, 0, -1.4938574, 9.308834, 0.74269557, 24.90873)
+
+[node name="MiniTable3" parent="South Wing/Archiv" unique_id=31010451 instance=ExtResource("52_g4o25")]
+transform = Transform3D(7.446996, 0, 0, 0, 2.280834, 0, 0, 0, 3.9741585, -0.44766656, 0.14701112, -6.242742)
+
+[node name="Stamp7" parent="South Wing/Archiv" unique_id=1441564947 instance=ExtResource("25_ph258")]
+transform = Transform3D(1.5, 0, 0, 0, -0.11533965, 1.495559, 0, -1.495559, -0.11533965, -1.2116101, 0.8608044, -6.42641)
+
+[node name="Stamp5" parent="South Wing/Archiv" unique_id=1097146207 instance=ExtResource("25_ph258")]
+transform = Transform3D(1.4004831, 0.5372586, 0, 0.04131148, -0.107687496, 1.495559, 0.535668, -1.3963368, -0.11533965, -0.32573742, 0.91854364, -5.6773267)
+
+[node name="Stamp6" parent="South Wing/Archiv" unique_id=1206656246 instance=ExtResource("25_ph258")]
+transform = Transform3D(1.1337287, -0.9821706, -7.450581e-09, -0.07552214, -0.08717592, 1.495559, -0.9792627, -1.1303722, -0.11533965, -0.12381022, 0.8478649, -6.595768)
+
+[node name="Stamp3" parent="South Wing/Archiv" unique_id=1843748099 instance=ExtResource("25_ph258")]
+transform = Transform3D(-0.047508627, 1.4992474, 7.450581e-09, 0.11528178, 0.003653093, 1.4955589, 1.4948087, 0.04736796, -0.11533965, -1.827514, 0.910618, -5.778634)
+
+[node name="Stamp4" parent="South Wing/Archiv" unique_id=696402610 instance=ExtResource("25_ph258")]
+transform = Transform3D(0.1704551, 0.0726181, -1.488513, 0.114592515, 1.4931437, 0.08596642, 1.4858711, -0.12348391, 0.16412829, -0.5449812, 0.9082894, -6.3137164)
+
+[node name="StackPaper2" parent="South Wing/Archiv" unique_id=1700587593 instance=ExtResource("5_qjtop")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51993144, 0.847081, -6.238842)
+
+[node name="Stamp2" parent="South Wing/Archiv" unique_id=1854180340 instance=ExtResource("25_ph258")]
+transform = Transform3D(1.5, 0, 0, 0, -0.11533965, 1.495559, 0, -1.495559, -0.11533965, -1.2116101, 0.8608044, -6.42641)
 
 [node name="West Wing" type="Node3D" parent="." unique_id=241967808]
 
@@ -549,18 +866,3 @@ metadata/_edit_lock_ = true
 
 [node name="Spawner" parent="." unique_id=221290739 instance=ExtResource("44_l1muj")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.058978785, 0.07534909, -0.15241805)
-
-[node name="DisplayFree" parent="." unique_id=2095914927 instance=ExtResource("36_ju2xw")]
-transform = Transform3D(1.5, 0, 0, 0, 1.4907277, -0.16652694, 0, 0.16652694, 1.4907277, -6.9420724, 1.9935112, 27.12613)
-
-[node name="Keyboard" parent="." unique_id=751647160 instance=ExtResource("13_t6kmn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.979059, 1.2274039, 28.62768)
-
-[node name="Mouse" parent="." unique_id=1556001835 instance=ExtResource("14_7yy7v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.00347, 1.2217577, 28.727581)
-
-[node name="Couch" parent="." unique_id=1111619329 instance=ExtResource("45_07h1k")]
-transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, -6.8134637, 0.16578355, 36.76)
-
-[node name="PTable" parent="." unique_id=1618768990 instance=ExtResource("46_uj1ad")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.0999217, 0.5393684, 33.13308)
