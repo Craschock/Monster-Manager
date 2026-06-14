@@ -6680,6 +6680,8 @@ height = 0.01
 
 [node name="Robot" type="CharacterBody3D" unique_id=1959342297]
 collision_layer = 2
+axis_lock_linear_y = true
+axis_lock_angular_y = true
 script = ExtResource("1_p4hhg")
 
 [node name="Model" type="Node3D" parent="." unique_id=1068283064]
