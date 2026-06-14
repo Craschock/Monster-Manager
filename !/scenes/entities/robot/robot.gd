@@ -38,13 +38,12 @@ func _process(_delta: float) -> void:
 	for item in carried_items:
 		var vec = Vector3(0.0, 1.2, 1.2).rotated(Vector3.UP, model.rotation.y)
 		item.global_position = global_position + vec
-		
+
 
 
 func _physics_process(_delta: float) -> void:
 	if not isAlive:
-		velocity.x = 0.0
-		velocity.z = 0.0
+		remove_velocity()
 		return
 	else:
 		var next_path_point := nav_agent.get_next_path_position()
@@ -103,6 +102,9 @@ func remove_load() -> void:
 	RobotState.robot_full = full()
 	RobotState.robot_empty = empty()
 
+func remove_velocity() -> void:
+	velocity.x = 0.0
+	velocity.z = 0.0
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body == target:
@@ -114,22 +116,25 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 
 func handle_item_reached(item):
+	remove_velocity()
+	
 	if !full():
 		add_load()
 		carried_items.push_back(item)
 		Events.item_picked_up.emit(item)
 		
+		
 		# Play grab animation
 		anim_player.play(ANIM_GRAB)
 		anim_player.queue(ANIM_IDLE_GRAB)
 
-
 func handle_dragon_reached(dragon: Dragon):
+	remove_velocity()
+	
 	for item in carried_items:
 		dragon.handle_new_item(item, self)
 		remove_load()
 	carried_items.clear()
-
 
 func die() -> void:
 	isAlive = false
