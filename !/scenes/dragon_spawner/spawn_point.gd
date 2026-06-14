@@ -9,6 +9,7 @@ enum Direction { NORTH, EAST, SOUTH, WEST }
 
 @onready var mesh: MeshInstance3D = $MeshInstance3D
 @onready var clickable_component: ClickableComponent = $ClickableComponent
+@onready var collider: CollisionShape3D = $CollisionShape3D
 
 func _ready() -> void:
 	clickable_component.is_clickable = true
@@ -34,6 +35,7 @@ func get_facing_angle() -> float:
 func bought() -> void:
 	mesh.visible = false
 	clickable_component.is_clickable = false
+	collider.disabled = true
 
 
 func _on_click() -> void:

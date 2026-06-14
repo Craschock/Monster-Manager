@@ -8,7 +8,9 @@
 [sub_resource type="ViewportTexture" id="ViewportTexture_h7cnw"]
 viewport_path = NodePath("TaskProgressionFrame/SubViewport")
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jsroc"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_i62tc"]
+height = 2.1029053
+radius = 3.3564453
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rn1pe"]
 resource_name = "Material"
@@ -454,7 +456,7 @@ states/TakePhone/position = Vector2(617.73285, 329.8823)
 states/Walk/node = SubResource("AnimationNodeAnimation_txa26")
 states/Walk/position = Vector2(1017.0992, 104.281105)
 states/Work/node = SubResource("AnimationNodeAnimation_sd3ry")
-states/Work/position = Vector2(760.8904, 251.96129)
+states/Work/position = Vector2(760.8904, 251.69997)
 transitions = ["Start", "Sleep", SubResource("AnimationNodeStateMachineTransition_uxq61"), "TakePhone", "Calling", SubResource("AnimationNodeStateMachineTransition_amxv5"), "Sleep", "Drinking Coffee Sit", SubResource("AnimationNodeStateMachineTransition_bj4iq"), "Drinking Coffee Sit", "Sleep", SubResource("AnimationNodeStateMachineTransition_hxpn5"), "Sleep", "Stamping", SubResource("AnimationNodeStateMachineTransition_p0r8w"), "Stamping", "Sleep", SubResource("AnimationNodeStateMachineTransition_lddad"), "Sleep", "TakePhone", SubResource("AnimationNodeStateMachineTransition_lit38"), "Calling", "Sleep", SubResource("AnimationNodeStateMachineTransition_txa26"), "Sleep", "Work", SubResource("AnimationNodeStateMachineTransition_sd3ry"), "Work", "Sleep", SubResource("AnimationNodeStateMachineTransition_ahq5y"), "Sleep", "Walk", SubResource("AnimationNodeStateMachineTransition_6p8np"), "DestroySitL", "Sleep", SubResource("AnimationNodeStateMachineTransition_jk721"), "Sleep", "DestroySitL", SubResource("AnimationNodeStateMachineTransition_irmqd"), "DestroySitR", "Sleep", SubResource("AnimationNodeStateMachineTransition_iwu0i"), "Sleep", "DestroySitR", SubResource("AnimationNodeStateMachineTransition_3frk2"), "DragonsBreath_001", "Sleep", SubResource("AnimationNodeStateMachineTransition_fn0xp"), "Sleep", "DragonsBreath_001", SubResource("AnimationNodeStateMachineTransition_7kblo"), "Walk", "End", SubResource("AnimationNodeStateMachineTransition_h7cnw")]
 graph_offset = Vector2(169, -63)
 
@@ -468,8 +470,8 @@ walk_duration = 0.3
 texture = SubResource("ViewportTexture_h7cnw")
 
 [node name="CollisionShape3D" parent="." index="4" unique_id=1127557731]
-transform = Transform3D(-1.3113416e-07, -3, 0, 3, -1.3113416e-07, 0, 0, 0, 3, 0, 1.5, 0)
-shape = SubResource("CapsuleShape3D_jsroc")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16598797, 0.9857788, 0)
+shape = SubResource("CylinderShape3D_i62tc")
 
 [node name="Mesh" parent="." index="6" unique_id=1352069641 instance=ExtResource("2_of2gw")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
@@ -499,12 +501,12 @@ bones/21/rotation = Quaternion(-0.3300966, -0.18958649, 0.003751085, 0.92470497)
 bones/22/rotation = Quaternion(0.758115, 0.2762073, 0.4425465, 0.39131063)
 bones/23/rotation = Quaternion(0.17349504, -0.009681753, -0.02402737, 0.98449403)
 bones/24/rotation = Quaternion(0.4936179, -0.0076085543, -0.013415834, 0.8695421)
-bones/27/rotation = Quaternion(-0.75654197, -0.011650543, -0.4045069, 0.5136952)
+bones/27/rotation = Quaternion(-0.75613594, -0.020978067, -0.403625, 0.5146897)
 bones/28/rotation = Quaternion(0.59258634, 0.1648557, -0.18886842, 0.7655017)
 bones/32/rotation = Quaternion(-0.48826325, -0.1288185, -0.6972298, 0.5087981)
 bones/36/rotation = Quaternion(-0.73926395, -0.103583716, -0.56109655, 0.35767287)
 bones/40/rotation = Quaternion(0.7909787, -0.039618403, 0.5619332, -0.23877636)
-bones/43/rotation = Quaternion(-0.7565429, 0.011649477, 0.40450507, 0.51369536)
+bones/43/rotation = Quaternion(-0.75613683, 0.020976981, 0.403623, 0.5146898)
 bones/44/rotation = Quaternion(0.59258634, -0.16485587, 0.18886861, 0.7655017)
 bones/48/rotation = Quaternion(-0.4882634, 0.1288189, 0.6972296, 0.50879806)
 bones/52/rotation = Quaternion(-0.73926413, 0.10358377, 0.5610965, 0.35767275)
