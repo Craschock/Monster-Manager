@@ -24,3 +24,6 @@ signal task_clicked(task: Task)
 signal prop_clicked(prop: Prop)
 
 signal item_picked_up(item)
+
+# ui signal
+signal game_paused(is_paused: bool)

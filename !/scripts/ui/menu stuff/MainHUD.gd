@@ -12,7 +12,14 @@ func _ready() -> void:
 	# not a clean solution tho :(
 	_on_currency_changed(CurrencyManager.STARTING_BALANCE)
 	Events.time_changed.connect(_on_time_changed)
+	
+	# for enable/disable UI:
+	Events.game_paused.connect(_on_game_paused)
 
+func _on_game_paused(is_paused: bool) -> void:
+	# If paused is true, visible becomes false. 
+	# If paused is false, visible becomes true.
+	visible = not is_paused
 
 func _on_b_camera_rotate_left_pressed() -> void:
 	Input.action_press("rotate_anticlockwise")

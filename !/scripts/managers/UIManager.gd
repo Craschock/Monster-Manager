@@ -22,6 +22,9 @@ func _input(event):
 func toggle_pause():
 	var tree = get_tree()
 	tree.paused = !tree.paused # Flips the pause state when pressing escape
+	
+	# Emitsignal to hide/show MainHUD
+	Events.game_paused.emit(tree.paused)
 
 	if tree.paused:
 		# Instantiate and show the pause menu overlay
